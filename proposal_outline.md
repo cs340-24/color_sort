@@ -1,5 +1,5 @@
 # Color Sort Proposal Outline
-Presentation: 2/16
+Presentation: 2/16<br>
 Final Proposal Due: 2/14
 
 ### header:
