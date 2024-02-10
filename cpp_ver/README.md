@@ -2,8 +2,8 @@
 Written by Shanna Wallace<br>
 Updated: 2/10/2024
 
-This is a C++ implementation of a Color Sort game.
-This version of the game only prints in 1 color, so it will use letters instead of colors.
+This is a C++ implementation of a Color Sort game.<br>
+**This version of the game only prints in 1 color, so it will use letters instead of colors.**
 
 ## What is Color Sort?
 Color Sort is a puzzle game that starts with blocks of various colors shuffled up in bottles. You are given 1 empty bottle if there are 2 or 3 colors to be sorted and 2 empty bottles if there are 4+ colors.<br>
