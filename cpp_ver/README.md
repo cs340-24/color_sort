@@ -3,6 +3,7 @@ Written by Shanna Wallace<br>
 Updated: 2/10/2024
 
 This is a C++ implementation of a Color Sort game.<br>
+
 **This version of the game only prints in 1 color, so it will use letters instead of colors.**
 
 ## What is Color Sort?
