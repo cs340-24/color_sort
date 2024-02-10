@@ -25,12 +25,12 @@ Here's an example of a level with 2 colors (letters for this version). Your goal
 <br>To start, you can either move the top B from bottle 1 to bottle 3, or the top two As from bottle 2 to bottle 3. 
 To move the top As from bottle 2 to bottle 3, we enter "2 3":<br>
 ENTER MOVE: 2 3<br>
-![after 1st move](instr_pics/2.png)
+![after 1st move](instr_pics/2.png) <br>
 
-Now, the only available move is transferring the top B in bottle 1 to bottle 2:
-ENTER MOVE: 1 2
+Now, the only available move is transferring the top B in bottle 1 to bottle 2:<br>
+ENTER MOVE: 1 2<br>
 
-![after 2nd move](instr_pics/3.png)
+![after 2nd move](instr_pics/3.png)<br>
 You can move the top A in bottle 1 to bottle 3, then the B in bottle 1 to bottle 2, then the last A in bottle 1 to bottle 3 to complete the level:<br>
 ![complete level](instr_pics/complete.png)<br>
 
@@ -46,7 +46,7 @@ It will load the game data and display the game to stdout and take user input fr
 After completing a level, it will load the next level in the file, until the user quits the game or all levels in the file have been completed. 
 
 #### Where to Find Game Input Files:
-Input files containing multiple levels per file are in the games directory. 
+Input files containing multiple levels per file are in the games directory. <br>
 The level_files directory contains directories with individual files for each level. 
 
 ## Game Input Files
@@ -55,7 +55,7 @@ Color Sort will read level data from a one-line string in the following format: 
   num_colors num_blocks num_bottles bottles[0] bottles[1] ... bottles[last] <br>
 where num_colors is the number of colors in the level,
 num_blocks is the number of blocks of color per bottle, and 
-num_bottles is the number of bottles in the level. 
+num_bottles is the number of bottles in the level. <br>
 It reads the color value (letter) for each block in the bottles, starting with the top-most block in the 1st bottle and ending with the bottom-most block in the last bottle. <br>
 For example, the level data string: <br> 
 2 4 3 B A B A A A B B - - - -  <br>
@@ -68,7 +68,7 @@ You may put multiple levels in one file with one level's data per line. bin/play
 
 ## Creating Levels
 #### Create 1 Level
-bin/create_1_level will create 1 Color Sort level. 
+bin/create_1_level will create 1 Color Sort level. <br>
 It reads the number of colors for the level to contain from stdin, then outputs the level's data in the format bin/play will read to stdout.
 
 
@@ -90,7 +90,7 @@ output_type: <br>
 
 #### Level Creation Instruction File
 This is the input_file provided to bin/gen_levels.
-This file should contain the number of colors for the levels, followed by a space, then the number of levels you'd like to create with that number of colors, followed by a space or newline. 
+This file should contain the number of colors for the levels, followed by a space, then the number of levels you'd like to create with that number of colors, followed by a space or newline. <br>
 For example, if you want to create 5 levels with 2 colors and 10 levels with 3 colors,your input_file would need to be: <br>
  2 5 <br>
  3 10
