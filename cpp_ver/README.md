@@ -70,15 +70,15 @@ You may put multiple levels in one file with one level's data per line. bin/play
 
 ## Creating Levels
 #### Create 1 Level
-bin/create_1_level will create 1 Color Sort level. <br>
+bin/create1 will create 1 Color Sort level. <br>
 It reads the number of colors for the level to contain from stdin, then outputs the level's data in the format bin/play will read to stdout.
 
 
 #### Create a Set of Levels
-bin/create_level_set will create a set of levels for Color Sort.
+bin/create_set will create a set of levels for Color Sort.
 
 It takes the following command line arguments:<br>
-bin/create_level_set <game_name> <output_type> <input_file><br>
+bin/create_set <game_name> <output_type> <input_file><br>
 
 It generates the number and type of levels requested in <input_file>. You can output all of the levels' data to one file (one level per line), or create an individual file for each level, or both. <br>
 game_name: The name you'd like to give this set of levels.<br>
