@@ -8,19 +8,19 @@ color_sort
 * Logan Lett (netid: llett3 | GitHub:)
 
 ## Introduction
-#### What is Color Sort?
+### What is Color Sort?
 Color Sort is a puzzle game that starts with blocks of various colors shuffled up in bottles. You are given 1 empty bottle if there are 2 or 3 colors to be sorted and 2 empty bottles if there are 4+ colors.<br>
 
 The objective of the game is to sort all of the colors so that all blocks of the same color are in the same bottle.
 
-#### Motivation
+### Motivation
 Our goal is to create a mobile app implementing a Color Sorting game with the following features:
 * Ability to reset levels
 * Ability to undo moves
 * Save user's progress when they leave the app
 * Options for increasing/decreasing difficulty level
 
-#### Market Context
+### Market Context
 Color Sort is a classic puzzle game, and there are a variety of Color Sorting games already available on the Google Play store. Unfortunately, most of these contain a gratuitous number of ads. Some of the apps that charge a fee for ad-free play will still require adds for certain features such as undoing moves or resetting levels. <br>
 Existing Color Sorting apps often lack the ability to customize the difficulty level of the game. 
 
