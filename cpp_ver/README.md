@@ -37,23 +37,24 @@ You can move the top A in bottle 1 to bottle 3, then the B in bottle 1 to bottle
 
 ## How to Run the Game:
 #### Create Executables
-There is a makefile included that compiles the executables on Hydra, so just enter "make" in the cs_cpp directory to create your executables. They will be placed in the "bin" directory. 
+There is a makefile included that compiles the executables on Hydra, so just enter "make" in the cpp_ver directory to create your executables. They will be placed in the "bin" directory. 
 
 #### Start the Game
-To start the Color Sort game, enter the following command from your cs_cpp directory:<br>
+To start the Color Sort game, enter the following command from your cpp_ver directory:<br>
 bin/play input_file <br>
-bin/play takes the name of an input_file containing data for a set of Color Sort levels as a command line argument. 
-It will load the game data and display the game to stdout and take user input from stdin. 
+bin/play takes the name of an input_file containing data for a set of Color Sort levels as a command line argument. <br>
+It will load the game data and display the game to stdout and take user input from stdin. <br>
 After completing a level, it will load the next level in the file, until the user quits the game or all levels in the file have been completed. 
 
 #### Where to Find Game Input Files:
-Input files containing multiple levels per file are in the games directory. <br>
+Input files containing multiple levels per file are in the games directory. The command <br>
+bin/play games/1per.txt will start a game with 1 level per number of colors, starting at 2 and going up to 12. <br>
 The level_files directory contains directories with individual files for each level. 
 
 ## Game Input Files
 #### Level Data String:
 Color Sort will read level data from a one-line string in the following format: <br>
-  num_colors num_blocks num_bottles bottles[0] bottles[1] ... bottles[last] <br>
+num_colors num_blocks num_bottles bottles[0] bottles[1] ... bottles[last] <br>
 where num_colors is the number of colors in the level,
 num_blocks is the number of blocks of color per bottle, and 
 num_bottles is the number of bottles in the level. <br>
