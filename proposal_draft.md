@@ -2,10 +2,10 @@
 #### Team Name:
 color_sort
 #### Members:
-* Shanna Wallace $~~$(netid: swalla16 $~~~$GitHub: shannaw04) 
-* Coleman Oates $~~~$(netid: coates4  $~~~~$GitHub:)
-* Landon Boone $~~~~~$(netid: tww489 $~~~~$GitHub:)
-* Logan Lett $~~~~~~~~~~~$(netid: llett3 $~~~~~~~~$GitHub:)
+* Shanna Wallace (netid: swalla16 | GitHub: shannaw04) 
+* Coleman Oates (netid: coates4 | GitHub:)
+* Landon Boone (netid: tww489 | GitHub:)
+* Logan Lett (netid: llett3 | GitHub:)
 
 ## Introduction
 #### What is Color Sort?
