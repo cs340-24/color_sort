@@ -1,6 +1,6 @@
 # Color Sort Proposal Outline
-Presentation: 2/16<br>
-Final Proposal Due: 2/14
+Presentation: 2/14<br>
+Final Proposal Due: 2/19
 
 ### header:
 * title – something that’ll look good on a resume
