@@ -5,7 +5,7 @@ color_sort
 * Shanna Wallace (netid: swalla16 | GitHub: shannaw04) 
 * Coleman Oates (netid: coates4 | GitHub: coates4)
 * Landon Boone (netid: tww489 | GitHub:)
-* Logan Lett (netid: llett3 | GitHub:)
+* Logan Lett (netid: llett3 | GitHub: 10-Squares)
 
 ## Introduction
 ### What is Color Sort?
