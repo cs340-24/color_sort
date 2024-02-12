@@ -54,7 +54,7 @@ Existing Color Sorting apps often lack the ability to customize the difficulty l
 ### section 5: project management
 * who's working on what and when
 * weekly schedule for tasks and deadlines
-* when and how often we will meet
-* constraints – ethical, regulatory, legal
+* Every Monday 3-5 P.M
+* Our game color sort should have no constraints ethically nor legally, it is just a simple mobile game.
 * required resources - do we have access to everything we need
-* descoping - describe plan if full functionality can’t be implemented
+* Should have no problem implementing the full game before deadline.
