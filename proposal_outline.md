@@ -16,6 +16,7 @@ Final Proposal Due: 2/19
 * other details to orient the reader (maybe simple explanation of how to play the game)
 
 ### section 2: customer value
+* "User Story"
 * what the project does from the customer’s perspective
 * what need does it fill
 * who is customer and what do they want
