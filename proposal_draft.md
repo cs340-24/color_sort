@@ -3,7 +3,7 @@
 color_sort
 #### Members:
 * Shanna Wallace (netid: swalla16 | GitHub: shannaw04) 
-* Coleman Oates (netid: coates4 | GitHub:)
+* Coleman Oates (netid: coates4 | GitHub: coates4)
 * Landon Boone (netid: tww489 | GitHub:)
 * Logan Lett (netid: llett3 | GitHub:)
 
@@ -44,9 +44,12 @@ Existing Color Sorting apps often lack the ability to customize the difficulty l
 
 ### section 4: team
 * background info
-* do we have experience with tools used
-* what each person bringing to project
-* are roles fixed or changing
+* Coleman Oates - C++ and Java, no experience with Godot
+* Logan Lett -
+* Landon Boone -
+* Shanna Wallace -
+* Experience - Landon has expierence with Godot 3.5 developing a game (not mobile), while everyone
+ else is new to Godot. None of us has expierence with mobile app development.
 
 ### section 5: project management
 * who's working on what and when
