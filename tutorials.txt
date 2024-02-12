@@ -1,0 +1,2 @@
+https://docs.godotengine.org/en/3.5/getting_started/first_2d_game/index.html#doc-your-first-2d-game
+https://docs.godotengine.org/en/3.5/tutorials/export/exporting_basics.html
