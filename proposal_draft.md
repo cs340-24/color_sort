@@ -56,7 +56,6 @@ Existing Color Sorting apps often lack the ability to customize the difficulty l
 * what tools used to build it
 
 ## section 4: team
-* background info
 * Coleman Oates - C++ and Java, no experience with Godot
 * Logan Lett - C++, C, a little app development experience, no experience with Godot.
 * Landon Boone -
@@ -67,7 +66,7 @@ Existing Color Sorting apps often lack the ability to customize the difficulty l
 ## section 5: project management
 * who's working on what and when
 * weekly schedule for tasks and deadlines
-* Every Monday 3-5 P.M
+* We will meet as a group every Monday 3-5 P.M
 * Our game color sort should have no constraints ethically nor legally, it is just a simple mobile game.
-* required resources - do we have access to everything we need
+* Required Resources: Godot 
 * Should have no problem implementing the full game before deadline.
