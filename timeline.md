@@ -1,4 +1,4 @@
-## Project Deadlines:
+## Project DEADLINES:
 2/14 - Present project proposal
 2/19 - Final proposal due
 3/4 - Iteration 1 status report: Design and implement minimal viable system
@@ -9,23 +9,23 @@
 
 ## Weekly Timeline:
 ### 2/5 - 2/11
-**Goals:** 
+**GOALS:** 
 1. Finalize team selection
 2. C++ Color Sort game files completed, documented, and posted to Color Sort repo
 3. Begin outlining and drafting proposal
 
 ### 2/12 - 2/18
-**Deadlines:**
+**DEADLINES:**
 * 2/14 Wednesday: Proposal presentation
 
-**Goals:**
+**GOALS:**
 1. Complete project proposal:
     * **Shanna:** Write introduction with short description of the game. Create project timeline and add to Project Management section
     * **Boone:** Write Section 3: Proposed solution and technology
     * **Logan:** Section 2: Customer value and Project Management section
     * **Coleman:** Create a diagram of the system
     * **All:** Add background information to section 4
-2. Create a schedule of tasks, goals, and deadlines
+2. Create a schedule of tasks, GOALS, and DEADLINES
 3. Install and setup software/tools necessary for project:
     * Install Godot 
     * C++ Godot extention installed and working
@@ -40,10 +40,10 @@
 
 
 ### 2/19 - 2/25
-**Deadlines:**
+**DEADLINES:**
 * 2/19 Monday: Final proposal complete
 
-**Goals:**
+**GOALS:**
 1. Start integrating the Color Sort code with Godot
 2. Read level input file and load the level's data into the game
 2. Sucessfully display one Color Sort level to the screen:
@@ -52,17 +52,17 @@
     * Load the color files and display the colors for each block
 
 ### 2/26 - 3/3
-**Goals:**
+**GOALS:**
 1. Write status report 1
 2. Implement "make move" function with touch-screen: have the user select the bottles they'd like to move to/from with their finger 
 3. Successfully complete a level 
 4. Once the level has been completed, load the next level
 
 ### 3/4 - 3/10
-**Deadlines:**
+**DEADLINES:**
 * 3/4: Iteration 1 status report: Design and implement minimal viable system
 
-**Goals:**
+**GOALS:**
 1. Add "reset level" option
 2. Add "undo move" option
     * Need to add code that keeps a list of the user's moves 
@@ -72,41 +72,41 @@
     * Add a button or menu option for user to click to change difficulty
 
 ### 3/11 - 3/17
-**Goals:**
+**GOALS:**
 1. Write status report 2
 2. Add some kind of animation or highlighting to a bottle when it has been selected
 3. Add some kind of message or visual when a user tries to make an invalid move
 
 
 ### 3/18 - 3/24
-**Deadlines:**
+**DEADLINES:**
 * Monday 3/18 - Iteration 2 status report: Iteratively improve minimal viable system
 
-**Goals:**
+**GOALS:**
 1. Try to figure out how to save state, so if user leaves the app and comes back later, it will load the level they were playing last
 2. Save progross on incomplete levels, so user doesn't have to start over if they leave the app and come back in the middle of a level
 
 ### 3/25 - 3/31
-**Deadlines:**
+**DEADLINES:**
 
-**Goals:**
+**GOALS:**
 1. Write status report 3
 1. Add increased difficulty option: hide the color on all blocks except the top block. After user moves top block, the color on the block that was beneath it will be exposed
 
 ### 4/1 - 4/7
-**Deadlines:**
+**DEADLINES:**
 * Monday 4/1 - Iteration 3 status report: Iteratively test and refine solution
 
-**Goals:**
+**GOALS:**
 1. Add some kind of animation when transferring color from one bottle to another
 2. Finish up any final adjustments to the app
 
 ### 4/8 - 4/14
-**Goals:**
+**GOALS:**
 1. Write final project report
 2. Work on project presentation
 
 
 ### 4/15 - 4/21
-**Deadlines:**
+**DEADLINES:**
 * Monday 4/15: Present and submit report of our completed project implementation  
