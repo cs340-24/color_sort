@@ -1,5 +1,7 @@
 https://docs.godotengine.org/en/3.5/getting_started/first_2d_game/index.html#doc-your-first-2d-game
 https://docs.godotengine.org/en/3.5/tutorials/export/exporting_basics.html
+* Setup Godot for C++ https://www.youtube.com/watch?v=02KJouOjQ0c
+
 
 
 Setting up VSCode as an external text editor in godot engine
