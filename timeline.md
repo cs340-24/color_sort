@@ -80,7 +80,7 @@
 
 ### 3/18 - 3/24
 **Deadlines:**
-Monday 3/18 - Iteration 2 status report: Iteratively improve minimal viable system
+* Monday 3/18 - Iteration 2 status report: Iteratively improve minimal viable system
 
 **Goals:**
 1. Try to figure out how to save state, so if user leaves the app and comes back later, it will load the level they were playing last
@@ -95,7 +95,7 @@ Monday 3/18 - Iteration 2 status report: Iteratively improve minimal viable syst
 
 ### 4/1 - 4/7
 **Deadlines:**
-Monday 4/1 - Iteration 3 status report: Iteratively test and refine solution
+* Monday 4/1 - Iteration 3 status report: Iteratively test and refine solution
 
 **Goals:**
 1. Add some kind of animation when transferring color from one bottle to another
@@ -109,4 +109,4 @@ Monday 4/1 - Iteration 3 status report: Iteratively test and refine solution
 
 ### 4/15 - 4/21
 **Deadlines:**
-Monday 4/15: Present and submit report of our completed project implementation  
+* Monday 4/15: Present and submit report of our completed project implementation  
