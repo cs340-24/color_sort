@@ -149,7 +149,10 @@ Logan and Coleman will begin visual design of the app by choosing a color palett
 
 Once Shanna, Logan, and Coleman have gotten up to speed with Godot, we plan to split up tasks and assign them weekly or bi-weekly. <br>
 
-As of now, we are not planning to have set roles. 
+We are not planning to have set roles. 
+
+### Project Manager
+Shanna will take care of administrative tasks for the group, such as booking the study room for our weekly meetings, as well as maintaining our weekly schedule of deadlines, goals, and task assignments.  
 
 ## Project Management
 ### Constraints
