@@ -153,7 +153,8 @@ We do not anticipate encountering any ethical, legal, or regulatory constraints.
 If we are unable to implement the full range of features we desire, such as saving progress, undoing moves, or adding additional challenges, we plan to build an app that will at least support basic gameplay with up to 12 colors.
 
 ### Team meetings
-We plan to meet once a week on Monday afternoons
+We plan to meet once a week on Monday afternoons.<br>
+We also have a Discord group chat to discuss our progress and ideas with each other throughout the week.
 
 ### Tentative Project Timeline
 #### 2/12 - 2/18
