@@ -4,7 +4,7 @@ Color Sort
 ### Members:
 * Shanna Wallace (netid: swalla16 | GitHub: shannaw04) 
 * Coleman Oates (netid: coates4 | GitHub: coates4)
-* Landon Boone (netid: tww489 | GitHub:)
+* Landon Boone (netid: tww489 | GitHub:landon-boone2001)
 * Logan Lett (netid: llett3 | GitHub: 10-Squares)
 
 ## Introduction
