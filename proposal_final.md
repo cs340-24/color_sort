@@ -139,9 +139,11 @@ For the initial set-up phase, since Boone has prior experience with Godot, he wi
 
 Shanna will be adding improvements to the C++ game code. <br>
 
-Logan and Coleman will begin visual design of the app by choosing a color palette, figuring out the optimal way to display up to 14 bottles on a small phone screen, as well as buttons or a menu for additional features, and creating a sketch or diagram of our planned game display.
+Logan and Coleman will begin visual design of the app by choosing a color palette, figuring out the optimal way to display up to 14 bottles on a small phone screen, as well as buttons or a menu for additional features, and creating a sketch or diagram of our planned game display. <br>
 
-Once Shanna, Logan, and Coleman have gotten up to speed with Godot, we plan to split up tasks and assign them weekly or bi-weekly. As of now, we are not planning to have set roles. 
+Once Shanna, Logan, and Coleman have gotten up to speed with Godot, we plan to split up tasks and assign them weekly or bi-weekly. <br>
+
+As of now, we are not planning to have set roles. 
 
 ## Project Management
 ### Constraints
