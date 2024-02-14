@@ -113,8 +113,7 @@ function will be attached to the move function's script that rewrites the genera
  else is new to Godot. None of us has expierence with mobile app development.
 
 ## section 5: project management
-* who's working on what and when
-* weekly schedule for tasks and deadlines
+* Weekly schedule for tasks and deadlines on seperate file.
 * We will meet as a group every Monday 3-5 P.M
 * Our game color sort should have no constraints ethically nor legally, it is just a simple mobile game.
 * Required Resources: Godot 
