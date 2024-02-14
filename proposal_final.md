@@ -1,6 +1,6 @@
 # Color Sort!
-### Team Name:
-color_sort
+### Team Name: 
+Color Sort
 ### Members:
 * Shanna Wallace (netid: swalla16 | GitHub: shannaw04) 
 * Coleman Oates (netid: coates4 | GitHub: coates4)
