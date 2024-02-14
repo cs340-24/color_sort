@@ -25,7 +25,7 @@
     * **Logan:** Section 2: Customer value and Project Management section
     * **Coleman:** Create a diagram of the system
     * **All:** Add background information to section 4
-2. Create a schedule of tasks, GOALS, and DEADLINES
+2. Create a schedule of tasks, goals, and deadlines
 3. Install and setup software/tools necessary for project:
     * Install Godot 
     * C++ Godot extention installed and working
@@ -44,9 +44,9 @@
 * 2/19 Monday: Final proposal complete
 
 **GOALS:**
-1. Start integrating the Color Sort code with Godot
-2. Read level input file and load the level's data into the game
+1. Start integrating the Color Sort code with Godot, reworking in GDScript if necessary
 2. Sucessfully display one Color Sort level to the screen:
+    * Read level input file and load the level's data into the game
     * Create godot objects for the bottles
     * Display the bottles to the screen with our designed layout
     * Load the color files and display the colors for each block
@@ -54,28 +54,27 @@
 ### 2/26 - 3/3
 **GOALS:**
 1. Write status report 1
-2. Implement "make move" function with touch-screen: have the user select the bottles they'd like to move to/from with their finger 
-3. Successfully complete a level 
-4. Once the level has been completed, load the next level
+2. Implement "make move" function  
+3. Touch-screen integration, so the user can select the bottles they'd like to move to/from with their finger 
+4. Successfully complete a level and load the next level
+5. Add "reset level" option
+
 
 ### 3/4 - 3/10
 **DEADLINES:**
 * 3/4: Iteration 1 status report: Design and implement minimal viable system
 
 **GOALS:**
-1. Add "reset level" option
+1. Add options to change difficulty level
+    * Maybe start with 3 level sets, "easy", "medium", and "difficult"?
 2. Add "undo move" option
-    * Need to add code that keeps a list of the user's moves 
+    * Need to add code that keeps some kind of list of the user's moves 
     * Pop the last move off the list and swap the blocks back to where they were
-3. Add options to allow user to change difficulty level 
-    * maybe some level sets with easy, medium, or hard level for the user to choose from?
-    * Add a button or menu option for user to click to change difficulty
+3. Add some kind of visual cue when the user tries to make an invalid move
+4. Write status report 2
 
 ### 3/11 - 3/17
-**GOALS:**
-1. Write status report 2
-2. Add some kind of animation or highlighting to a bottle when it has been selected
-3. Add some kind of message or visual when a user tries to make an invalid move
+SPRING BREAK!
 
 
 ### 3/18 - 3/24
@@ -83,28 +82,28 @@
 * Monday 3/18 - Iteration 2 status report: Iteratively improve minimal viable system
 
 **GOALS:**
-1. Try to figure out how to save state, so if user leaves the app and comes back later, it will load the level they were playing last
-2. Save progross on incomplete levels, so user doesn't have to start over if they leave the app and come back in the middle of a level
+1. Save the game state, so if user leaves the app and comes back later, it will load the level they were playing last
+2. Save progress on incomplete levels, so user doesn't have to start over if they leave the app and come back in the middle of a level
+
 
 ### 3/25 - 3/31
-**DEADLINES:**
-
 **GOALS:**
 1. Write status report 3
-1. Add increased difficulty option: hide the color on all blocks except the top block. After user moves top block, the color on the block that was beneath it will be exposed
+2. Add increased difficulty option: hide the color on all blocks except the top block. After user moves top block, the color on the block that was beneath it will be exposed
+3. Add level timer
 
 ### 4/1 - 4/7
 **DEADLINES:**
 * Monday 4/1 - Iteration 3 status report: Iteratively test and refine solution
 
 **GOALS:**
-1. Add some kind of animation when transferring color from one bottle to another
-2. Finish up any final adjustments to the app
+1. Add animations when transferring color from one bottle to another
+2. Animation when selecting a bottle
 
 ### 4/8 - 4/14
 **GOALS:**
-1. Write final project report
-2. Work on project presentation
+1. Write report and prepare presentation
+2. Complete any final adjustments
 
 
 ### 4/15 - 4/21
