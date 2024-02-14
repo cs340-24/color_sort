@@ -19,10 +19,16 @@ The objective of the game is to sort all of the colors so that all blocks of the
 
 ### Market Context
 Color Sort is a classic puzzle game, and there are a variety of Color Sorting games already available on the Google Play store. Unfortunately, most of these contain a gratuitous number of ads. Some of the apps that charge a fee for ad-free play will still require adds for certain features such as undoing moves or resetting levels. <br>
+
 Additionally, many existing color sorting game apps don't allow the user to customize the difficulty level.
 
 ### Motivation
-Our goal is to build a Color Sort mobile app this is fun to play, easy to use, and offers full functionality with no ads. 
+Our primary motivation for undertaking this project is to learn mobile app development.  <br>
+
+We aim to build a Color Sort mobile app this is fun to play, easy to use, and offers difficulty customization options and full functionality with no ads.<br> 
+
+We believe Color Sort is an ideal beginner app development project, since it is simple enough for implementation to be achievable within two to three months, while also being complex enough to allow us to gain valuable experience with a variety of app development tasks. 
+
 
 ### Planned Features
 * Ability to reset levels
@@ -132,7 +138,7 @@ We all have little to no experience with mobile app development, so this is a ne
 
 Boone has experience using Godot 3.5 and GDScript to develop games for other platforms. <br>
 
-Shanna has written some basic Color Sort gameplay code in C++ that could potentially be used as a starting point for building the app.
+Shanna has written some basic Color Sort gameplay and level generation code in C++ that could potentially be used as a starting point for building the app.
 
 ### Member Roles
 For the initial set-up phase, since Boone has prior experience with Godot, he will take the lead on beginning the mobile app development process.  <br>
@@ -186,7 +192,7 @@ SPRING BREAK!
 
 #### 3/18 - 3/24
 * Save the game state, so if user leaves the app and comes back later, it will load the level they were playing last
-* Save progross on incomplete levels, so user doesn't have to start over if they leave the app and come back in the middle of a level
+* Save progress on incomplete levels, so user doesn't have to start over if they leave the app and come back in the middle of a level
 
 #### 3/25 - 3/31
 * Add increased difficulty option: hide the color on all blocks except the top block. After user moves top block, the color on the block that was beneath it will be exposed
@@ -198,7 +204,7 @@ SPRING BREAK!
 * Animation when selecting a bottle
 
 #### 4/8 - 4/14
-* Write report and prepare presentatoin
+* Write report and prepare presentation
 * Complete any final adjustments
 
 
