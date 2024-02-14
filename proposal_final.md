@@ -147,7 +147,7 @@ As of now, we are not planning to have set roles.
 
 ## Project Management
 ### Constraints
-* We do not anticipate encountering any ethical, legal, or regulatory constraints. 
+We do not anticipate encountering any ethical, legal, or regulatory constraints. 
 
 ### Descoping Plan
 If we are unable to implement the full range of features we desire, such as saving progress, undoing moves, or adding additional challenges, we plan to build an app that will at least support basic gameplay with up to 12 colors.
