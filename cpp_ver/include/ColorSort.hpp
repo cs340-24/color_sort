@@ -12,7 +12,7 @@
  *   space, then the color value (int) for each bottle's blocks, 
  *   starting with the 1st bottle's top block and ending with the last 
  *   bottle's bottom block, each separated with a space.
- *   Indicate empty blocks with the '-' intacter.
+ *   Indicate empty blocks with the 0 intacter.
  * 
  * print_bottles() will print the game state to stdout with ASCII art.
  *  

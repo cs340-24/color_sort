@@ -167,14 +167,14 @@ bool ColorSort::make_move(int from, int to){
 
 	// Find the top color in the "from" bottle and number of 
     // consecutive blocks of that color
-	color = '-';
+	color = 0;
     consec_blocks = 1; 
 	for (i = 0; i < num_blocks; i++){
-        if (bottles[from_index + i] != '-'){
-            // If color was '-', then this is the top color
+        if (bottles[from_index + i] != 0){
+            // If color was 0, then this is the top color
             // Set color = this color. Save the index the color
             // starts at with from_start
-            if (color == '-'){
+            if (color == 0){
                 color = bottles[from_index + i];
                 from_start = i;
             
@@ -198,7 +198,7 @@ bool ColorSort::make_move(int from, int to){
 	for (i = 0; i < num_blocks; i++){
         // If the bottle isn't empty, check that its top color matches
         // the color being moved from "from"
-        if (bottles[to_index + i] != '-'){
+        if (bottles[to_index + i] != 0){
             if (bottles[to_index + i] != color){
                 return false;
             }
@@ -269,7 +269,7 @@ bool ColorSort::transfer_blocks(int from_index, int to_index, int blocks_to_move
 
 	for (i = 0; i < blocks_to_move; i++){
         color = bottles[from_index +  i];
-		bottles[from_index +  i] = '-';
+		bottles[from_index +  i] = 0;
 		bottles[to_index - i] = color;
 	}
 
@@ -297,9 +297,9 @@ bool ColorSort::bottle_complete(int bottle){
     // vector indexes starting at 0
 	index = (bottle - 1) * num_blocks;
 	
-    // If the top color is '-', then the bottle is not full
+    // If the top color is 0, then the bottle is not full
 	color = bottles[index];
-	if (color == '-'){
+	if (color == 0){
 		return false;
 	}
 	
@@ -416,10 +416,10 @@ bool ColorSort::bottles_valid(int from, int to){
 
 	// Check that the bottle moving to isn't already full or that 
     // bottle moving from isn't empty
-	if (bottles[to] != '-'){
+	if (bottles[to] != 0){
 		return false;
 	}
-	if (bottles[from + (num_blocks - 1)] == '-'){
+	if (bottles[from + (num_blocks - 1)] == 0){
 		return false;
 	}
 
