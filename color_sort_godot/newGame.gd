@@ -68,7 +68,7 @@ func read_level():
 				var newBlock = block.instance()
 				newBlock.set_name("purpleBlock")
 				newBlock.color = Color(1,0,1,0)
-		#		newBottle.newBlock.Area2D.ColorRect.Color = '#d404ff'
+		#		newBottle.newBlock.Area2	D.ColorRect.Color = '#d404ff'
 				newBlock.rect_position.x = blockXPos
 				newBlock.rect_position.y = blockYPos
 				newBottle.add_child(newBlock)
