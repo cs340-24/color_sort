@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tempBottle.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 141, 216 )
+
+[node name="tempBottle" type="Node2D"]
+position = Vector2( -2, -1 )
+scale = Vector2( 0.54495, 0.653944 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 282.0
+margin_bottom = 433.0
+rect_scale = Vector2( 1.01699, 1.0446 )
+color = Color( 0.0784314, 0.772549, 0.807843, 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 140.5, 216 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 1 )
