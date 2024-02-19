@@ -44,12 +44,18 @@
 * 2/19 Monday: Final proposal complete
 
 **GOALS:**
-1. Start integrating the Color Sort code with Godot, reworking in GDScript if necessary
-2. Sucessfully display one Color Sort level to the screen:
-    * Read level input file and load the level's data into the game
-    * Create godot objects for the bottles
-    * Display the bottles to the screen with our designed layout
-    * Load the color files and display the colors for each block
+1. Decide on basic tree and node structure for the level:
+    * Create a simple level in Godot
+2. Input level data file and create the level:
+    * **Shanna:** Adjust level generator to output in new format. Create level sets with the new file format. 
+    * **Shanna:** Write Bottle and Block scripts to add properties to bottle and block nodes 
+    * **Boone:** Write GDScript code to parse the input file
+    * Create the number of bottle and block nodes indicated in the input file (4 bottles with 4 blocks each and  3 colors to sort for the initial level)
+    * **Coleman:** Get the RBG values for the 12 colors. Add the color numbers to the blocks (set_color()) depending on the color_num value that was loaded from the input file (whether _get_color_num == 1, 2, etc) 
+    * **Logan:** Work on button design for the "Undo"/"Reset level"/"Help" buttons. Work on writing script to load the buttons and assigning action to execute when they're pressed.
+3. Sucessfully display one 3 color Color Sort level that was loaded from an input file
+
+
 
 ### 2/26 - 3/3
 **GOALS:**
