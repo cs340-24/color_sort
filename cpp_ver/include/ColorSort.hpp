@@ -9,10 +9,10 @@
  * Use load_level(string level) to load the level's data. It needs to
  * be in the format: 
  *   num_colors, num_blocks, num_bottles each separated by a 
- *   space, then the color value (char) for each bottle's blocks, 
+ *   space, then the color value (int) for each bottle's blocks, 
  *   starting with the 1st bottle's top block and ending with the last 
  *   bottle's bottom block, each separated with a space.
- *   Indicate empty blocks with the '-' character.
+ *   Indicate empty blocks with the '-' intacter.
  * 
  * print_bottles() will print the game state to stdout with ASCII art.
  *  
@@ -73,8 +73,8 @@ public:
     int num_bottles_complete();       
 
 protected:
-	std::vector <char> bottles;      // Current state of bottles
-    std::vector <char> bottles_init; // Initial state of bottles
+	std::vector <int> bottles;      // Current state of bottles
+    std::vector <int> bottles_init; // Initial state of bottles
     int num_colors;                  // Number of colors in the level
     int num_blocks;                  // Number of blocks per bottle
     int num_bottles;                 // Number of bottles in the level
