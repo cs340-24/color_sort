@@ -59,13 +59,15 @@ func read_level():
 				newBlock.color = Color(0,1,0,1) 
 			if levelContent[str(counter)] == 'C':
 				var newBlock = block.instance()
+				newBlock.set_name("blueBlock")
 				newBlock.color = Color(0,0,1, 1) 
 				newBlock.rect_position.x = blockXPos
 				newBlock.rect_position.y = blockYPos
 				newBottle.add_child(newBlock) 
 			if levelContent[str(counter)] == 'D':
 				var newBlock = block.instance()
-				newBlock.color = Color(1,1,1,0)
+				newBlock.set_name("purpleBlock")
+				newBlock.color = Color(1,0,1,0)
 		#		newBottle.newBlock.Area2D.ColorRect.Color = '#d404ff'
 				newBlock.rect_position.x = blockXPos
 				newBlock.rect_position.y = blockYPos
