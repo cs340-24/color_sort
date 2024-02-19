@@ -52,7 +52,8 @@
     * **Boone:** Write GDScript code to parse the input file
     * Create the number of bottle and block nodes indicated in the input file (4 bottles with 4 blocks each and  3 colors to sort for the initial level)
     * **Coleman:** Get the RBG values for the 12 colors. Add the color numbers to the blocks (set_color()) depending on the color_num value that was loaded from the input file (whether _get_color_num == 1, 2, etc) 
-    * **Logan:** Work on button design for the "Undo"/"Reset level"/"Help" buttons. Work on writing script to load the buttons and assigning action to execute when they're pressed.
+
+    * **Logan:** Work on button design for the "Undo"/"Reset level"/"Help" buttons. Work on writing script to load the buttons and assigning action to execute when they're pressed.
 3. Sucessfully display one 3 color Color Sort level that was loaded from an input file
 
 
@@ -64,6 +65,7 @@
 3. Touch-screen integration, so the user can select the bottles they'd like to move to/from with their finger 
 4. Successfully complete a level and load the next level
 5. Add "reset level" option
+6. Add animation when a bottle is selected 
 
 
 ### 3/4 - 3/10
