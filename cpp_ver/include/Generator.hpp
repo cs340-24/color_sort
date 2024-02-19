@@ -21,7 +21,7 @@
  * using Generator(const int &blocks, const int &max), where max is a 
  * value between 2 and 12. 
  * Both constructors create a bank of max_colors colors to be used, 
- * where the "colors" are chars starting with 'A'. 
+ * where the "colors" are ints starting with 'A'. 
  * 
  * You can use print_level_display(ostream &stream) to print the level 
  * with ASCII art, the way it will be displayed in the Color Sort game.
@@ -63,9 +63,9 @@ public:
     int get_num_blocks();
 
 protected:
-    std::vector <char> colors;   // Bank of colors available to use 
-                                 // (chars starting with 'A')
-    std::vector <char> bottles;  // Contents of the bottles
+    std::vector <int> colors;   // Bank of colors available to use 
+                                 // (ints starting with 'A')
+    std::vector <int> bottles;  // Contents of the bottles
     int num_colors;              // Number of colors in the level
     int max_colors;              // Max number of colors level can have
     int num_blocks;              // Number of blocks of color per bottle
