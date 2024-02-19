@@ -7,14 +7,16 @@
 
 
 #### 2/19 - 2/25
-* Start integrating the Color Sort code with Godot, reworking in GDScript if necessary
-* Sucessfully load and display one Color Sort level to the screen
+* Decide on basic tree and node structure for the level
+* Input level data file and create the level
+* Sucessfully display one 3 color Color Sort level that was loaded from an input file
 
 #### 2/26 - 3/3
 * Implement "make move" function 
 * Touch-screen integration, so the user can select the bottles they'd like to move to/from with their finger 
 * Successfully complete a level and load the next level
 * Add "reset level" option
+* Add animation when a bottle is selected 
 
 #### 3/4 - 3/10
 * Add "undo move" option
