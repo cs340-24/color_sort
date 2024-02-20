@@ -14,7 +14,7 @@
     * 720 x 1280 (16:9) is a pretty typical aspect ratio for a smartphone display 
 
 ## GODOT'S TOOLBARS AND PANELS
-#### Viewing the Scene (window in center of screen)
+### Viewing the Scene (window in center of screen)
 * Select "**2D**" at the top for 2D game display
     * The Viewport is the area inside the blue borders on the 2D display screen
 * Select "**Script**" to open a text editor for any project scripts. 
@@ -32,7 +32,7 @@
     * The green circle with a plus sign has anchor options: can anchor node to the center, right edge, top edge, etc 
 
 
-#### Node List (top left side of screen)
+### Node List (top left side of screen)
 * Can click and drag nodes to a different place in the tree to re-order them or reassign to a different parent node
 * Dragging Node 1 on top of Node 2 will make Node 1 a child node of Node 2
 * Click the eyeball icon next to a node to hide it
@@ -43,12 +43,12 @@
     * Open the Godot documentation page for the node type
     * Add scripts - add a script to a node to add special properties
     * Copy/cut/paste/delete the node
-#### FileSystem (bottom left side of screen)
+### FileSystem (bottom left side of screen)
 * List of files in your project folder
 * You can drag-and-drop files from this list
     * For example, if you want to add a picture to a texture box node, you can click the picture's filename then drag it into the texture box for the node
 
-#### Inspector Tab (right side of screen)
+### Inspector Tab (right side of screen)
 * Here's where you find all the customization options for the node, like themes, sizing, visibility
 * **Layout**:
     * **Anchor**: 
@@ -94,9 +94,9 @@
     * I thiiiiiink this might be how you can add properties to nodes instead of manually defining them in a script?
     * So we might be able to add the properties like "bool is_complete", "int top_color" etc here instead of in a script? maybe?
     * not sure if we would still need to manually define getter/setter functions to work with our game script tho 
-#### Node Tab (right side of screen)
+### Node Tab (right side of screen)
 * Shows a list of methods for the node
-#### History Tab (right side of screen .. might have to use the lil > button to see it)
+### History Tab (right side of screen .. might have to use the lil > button to see it)
 * See list of the changes made
 * Can click on them to go back
 
@@ -105,7 +105,7 @@
 * Control nodes have a bounding rectangle and is anchored relative to it's parent node or the current viewport
 * Offsets update automatically if the size of the screen, the node, or the node's parent node changes
 
-#### Container Nodes:
+### Container Nodes:
 * **Container**
     * General container type
 * **BoxContainer**
@@ -124,7 +124,7 @@
     * **HFlowContainer**: Will arrnage nodes side by side like a HBoxContainer until it runs out of room, then it will wrap around to a new row underneath
     * **VFlowContainer**: Will arrnage nodes on top of each other like a VBoxContainer until it runs out of room, then it will wrap around and create a new column
 
-#### ColorRect
+### ColorRect
 * Rectangular shaped node that displays a solid color
 * Can use the color wheel to pick a color or input hex values or RGB numbers. There's also an eyedropper you can use to select colors from the screen
 * has a **Color** value:
@@ -133,9 +133,9 @@
     * getter: get_color()
     * setter: set_color(value)
     * boolean: Color(0, 0, 0, 1) will evaluate to false while any other color gives true
-#### TextureRect
+### TextureRect
 * Node that can display a picture
 * settings for stretching the picture,  adjusting it to fit, tiling it
 * Can drag-and-drop pics from the FileSystem on the left to the Texture box in the Inspector panel
-#### Buttons
+### Buttons
                 
