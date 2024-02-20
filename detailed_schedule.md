@@ -52,8 +52,7 @@
     * **Boone:** Write GDScript code to parse the input file
     * Create the number of bottle and block nodes indicated in the input file (4 bottles with 4 blocks each and  3 colors to sort for the initial level)
     * **Coleman:** Get the RBG values for the 12 colors. Add the color numbers to the blocks (set_color()) depending on the color_num value that was loaded from the input file (whether _get_color_num == 1, 2, etc) 
-
-    * **Logan:** Work on button design for the "Undo"/"Reset level"/"Help" buttons. Work on writing script to load the buttons and assigning action to execute when they're pressed.
+    * **Logan:** Work on button design for the "Undo"/"Reset level"/"Help" buttons. Work on writing script to load the buttons and assigning action to execute when they're pressed. 
 3. Sucessfully display one 3 color Color Sort level that was loaded from an input file
 
 
@@ -61,11 +60,30 @@
 ### 2/26 - 3/3
 **GOALS:**
 1. Write status report 1
-2. Implement "make move" function  
-3. Touch-screen integration, so the user can select the bottles they'd like to move to/from with their finger 
-4. Successfully complete a level and load the next level
-5. Add "reset level" option
-6. Add animation when a bottle is selected 
+2. Implement "make move" function:
+   * Need to add function to check if a bottle is complete:
+      * Need to check bottles for completeness when the initial state of the level is loaded since the generator doesn't check if generated bottles are alerady sorted. 
+   * Add function to check if level is complete (if number of bottles complete == number of colors) 
+   * Functions to check for top color in a bottle, number of consecutive top color blocks, number of empty blocks
+   * Boolean function is_valid to check if a move is valid:
+      * false if:
+         * Destination bottle is full (if get_empty_blocks == 0)
+         * Source bottle is empty (if get_top_color() == 0)
+         * Either bottle is already complete (if _get_complete() == true)
+         * Top colors in source and destination bottle don't match (if bottle1._get_complete() != bottle2._get_complete())
+   * Boolean make_move function:
+      * Calls is_valid(bottle1, bottle2) to verify the move is possible
+      * Determine number of blocks being moved (either the number of empty blocks in the destination bottle or number of consecutive top blocks in source bottle, whichever is smaller.
+      * Make the move by swapping the colors on the blocks
+      * return true if move was made or false if not       
+4. Touch-screen integration, so the user can select the bottles they'd like to move to/from with their finger:
+   * Do we need to add some kind of button functionality to the bottles?
+   * Do we need to add anything special to the bottle nodes for them to recieve touch screen input?  
+6. Successfully complete a level and load the next level:
+   * How to load next level: should all the levels for a set be in one file? Maybe some kind of special character in the input file to signal the end of 1 level?     * Or should we have each level in an individual file? Can we load individual files in a directory in a particular order? 
+8. Add "reset level" option:
+   * Store initial state or just reload the file?
+9. Add animation when a bottle is selected 
 
 
 ### 3/4 - 3/10
