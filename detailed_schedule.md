@@ -1,10 +1,10 @@
 ## Project DEADLINES:
-2/14 - Present project proposal
-2/19 - Final proposal due
-3/4 - Iteration 1 status report: Design and implement minimal viable system
-3/18 - Iteration 2 status report: Iteratively improve minimal viable system
-4/1 - Iteration 3 status report: Iteratively test and refine solution
-4/15 - Present and submit report of our completed project implementation  
+2/14 - Present project proposal<br>
+2/19 - Final proposal due<br>
+3/4 - Iteration 1 status report: Design and implement minimal viable system<br>
+3/18 - Iteration 2 status report: Iteratively improve minimal viable system<Br>
+4/1 - Iteration 3 status report: Iteratively test and refine solution<br>
+4/15 - Present and submit report of our completed project implementation <Br> 
 
 
 ## Weekly Timeline:
