@@ -33,13 +33,16 @@ SPRING BREAK!
 * Save progress on incomplete levels, so user doesn't have to start over if they leave the app and come back in the middle of a level
 
 #### 3/25 - 3/31
+* Write status report 3
+* Add options to change difficulty level
+    * Maybe have "easy", "medium", and "difficult" sets of levels to choose from?
 * Add increased difficulty option: hide the color on all blocks except the top block. After user moves top block, the color on the block that was beneath it will be exposed
 * Add level timer
  
 
 #### 4/1 - 4/7
 * Add animations when transferring color from one bottle to another
-* Animation when selecting a bottle
+* Background music and sound effects
 
 #### 4/8 - 4/14
 * Write report and prepare presentation
