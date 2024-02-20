@@ -80,7 +80,9 @@
    * Do we need to add some kind of button functionality to the bottles?
    * Do we need to add anything special to the bottle nodes for them to recieve touch screen input?  
 6. Successfully complete a level and load the next level:
-   * How to load next level: should all the levels for a set be in one file? Maybe some kind of special character in the input file to signal the end of 1 level?     * Or should we have each level in an individual file? Can we load individual files in a directory in a particular order? 
+   * How to load next level:
+      * Should all the levels for a set be in one file? Maybe some kind of special character inbetween the levels in the input file to signal the end of each level?
+      * Or should we have each level in an individual file? Can we load individual files in a directory in a particular order? 
 8. Add "reset level" option:
    * Store initial state or just reload the file?
 9. Add animation when a bottle is selected 
