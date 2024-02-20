@@ -91,12 +91,12 @@
 * 3/4: Iteration 1 status report: Design and implement minimal viable system
 
 **GOALS:**
-1. Add options to change difficulty level
-    * Maybe start with 3 level sets, "easy", "medium", and "difficult"?
+1. Load levels with varying number of colors and figure out how to adjust the layout as more bottles are added
 2. Add "undo move" option
     * Need to add code that keeps some kind of list of the user's moves 
     * Pop the last move off the list and swap the blocks back to where they were
-3. Add some kind of visual cue when the user tries to make an invalid move
+    * Make sure pressing "undo" button triggers this function to run
+3. Add some kind of visual cue when the user tries to make an invalid move, like an animation or popup message
 4. Write status report 2
 
 ### 3/11 - 3/17
@@ -115,8 +115,10 @@ SPRING BREAK!
 ### 3/25 - 3/31
 **GOALS:**
 1. Write status report 3
-2. Add increased difficulty option: hide the color on all blocks except the top block. After user moves top block, the color on the block that was beneath it will be exposed
-3. Add level timer
+2. Add options to change difficulty level
+    * Maybe have "easy", "medium", and "difficult" sets of levels to choose from?
+3. Add increased difficulty option: hide the color on all blocks except the top block. After user moves top block, the color on the block that was beneath it will be exposed
+4. Add level timer
 
 ### 4/1 - 4/7
 **DEADLINES:**
@@ -124,7 +126,7 @@ SPRING BREAK!
 
 **GOALS:**
 1. Add animations when transferring color from one bottle to another
-2. Animation when selecting a bottle
+2. Background music and sound effects
 
 ### 4/8 - 4/14
 **GOALS:**
