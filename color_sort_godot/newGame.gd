@@ -36,16 +36,16 @@ func read_level():
 	var oldY = blockYPos
 	var counter = 3
 	for j in int(numBottles):
-		var newBottle = bottle.instance()
-		add_child(newBottle)
-		newBottle.rect_position.x  = botXPos
-		newBottle.rect_position.y = 200
+		var newBottle = bottle.instantiate()
+		bottleCont.add_child(newBottle)
+		# newBottle.rect_position.x  = botXPos
+		# newBottle.rect_position.y = 200
 		newBottle.set_name("bottle")
 		blockYPos = oldY
 		for k in int(numSpots):
 			print("Spawned Block")
 			if levelContent[str(counter)] == '1':
-				var newBlock = block.instance()
+				var newBlock = block.instantiate()
 				newBlock.set_name("redBlock")
 				newBlock.color = Color(1,0,0, 1) 
 				# newBlock.rect_position.x = blockXPos
@@ -53,14 +53,14 @@ func read_level():
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
 			if levelContent[str(counter)] == '2':
-				var newBlock = block.instance()
+				var newBlock = block.instantiate()
 				newBlock.set_name("greenBlock")
 				newBlock.color = Color(0,1,0, 1) 
 				# newBlock.rect_position.x = blockXPos
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 			if levelContent[str(counter)] == '3':
-				var newBlock = block.instance()
+				var newBlock = block.instantiate()
 				newBlock.set_name("blueBlock")
 				newBlock.color = Color(0,0,1, 1) 
 				# newBlock.rect_position.x = blockXPos
@@ -68,7 +68,7 @@ func read_level():
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
 			if levelContent[str(counter)] == '4':
-				var newBlock = block.instance()
+				var newBlock = block.instantiate()
 				newBlock.set_name("purpleBlock")
 				newBlock.color = Color(1,0,1,0)
 		#		newBottle.newBlock.Area2	D.ColorRect.Color = '#d404ff'
@@ -77,7 +77,7 @@ func read_level():
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
 			if levelContent[str(counter)] == '0':
-				var newBlock = block.instance()
+				var newBlock = block.instantiate()
 				newBlock.set_name("nullBlock")
 				newBlock.color = Color(0,0,0,0) 
 				#newBottle.get_node("nullBlock"+str(counter-4)).Area2D.ColorRect.Color = '#fffff'
