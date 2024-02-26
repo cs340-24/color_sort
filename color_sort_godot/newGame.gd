@@ -47,6 +47,7 @@ func read_level():
 		newBottle.set_name("bottle")
 		blockYPos = oldY
 		for k in int(numSpots):
+			print("Spawned Block")
 			if levelContent[str(counter)] == 'A':
 				var newBlock = block.instance()
 				newBlock.set_name("redBlock")
@@ -58,15 +59,16 @@ func read_level():
 			if levelContent[str(counter)] == 'B':
 				var newBlock = block.instance()
 				newBlock.set_name("greenBlock")
-				newBlock.rect_position.x = blockXPos
-				newBlock.rect_position.y = blockYPos
+				newBlock.color = Color(0,1,0, 1) 
+				# newBlock.rect_position.x = blockXPos
+				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 			if levelContent[str(counter)] == 'C':
 				var newBlock = block.instance()
 				newBlock.set_name("blueBlock")
 				newBlock.color = Color(0,0,1, 1) 
-				newBlock.rect_position.x = blockXPos
-				newBlock.rect_position.y = blockYPos
+				# newBlock.rect_position.x = blockXPos
+				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
 			if levelContent[str(counter)] == 'D':
@@ -74,8 +76,8 @@ func read_level():
 				newBlock.set_name("purpleBlock")
 				newBlock.color = Color(1,0,1,0)
 		#		newBottle.newBlock.Area2	D.ColorRect.Color = '#d404ff'
-				newBlock.rect_position.x = blockXPos
-				newBlock.rect_position.y = blockYPos
+				# newBlock.rect_position.x = blockXPos
+				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
 			if levelContent[str(counter)] == '-':
@@ -83,8 +85,8 @@ func read_level():
 				newBlock.set_name("nullBlock")
 				newBlock.color = Color(0,0,0,0) 
 				#newBottle.get_node("nullBlock"+str(counter-4)).Area2D.ColorRect.Color = '#fffff'
-				newBlock.rect_position.x = blockXPos
-				newBlock.rect_position.y = blockYPos
+				# newBlock.rect_position.x = blockXPos
+				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
 

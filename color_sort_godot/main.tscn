@@ -7,3 +7,5 @@
 
 [node name="newGame" parent="." instance=ExtResource( 2 )]
 script = ExtResource( 1 )
+
+[editable path="newGame"]
