@@ -19,7 +19,7 @@ func _ready():
 
 func read_level():
 	var levelFile = File.new()
-	levelFile.open('res://testLevel.txt', File.READ)
+	levelFile.open('res://2_1.txt', File.READ)
 	if !levelFile.is_open(): 
 		print("ERROR: FILE NOT OPEN")
 	var i = 1
@@ -29,16 +29,12 @@ func read_level():
 		i += 1
 	levelFile.close()
 	## TO CHANGE
-	# numBottles = levelContent["1"]
-	# numBlocks = levelContent["2"]
 	numBottles = levelContent["1"]
 	numSpots = levelContent["2"]
-	numBottles = levelContent["3"]
 	print(numBottles)
 	i = 0
 	var oldY = blockYPos
-	var counter = 4
-	## var counter = 3
+	var counter = 3
 	for j in int(numBottles):
 		var newBottle = bottle.instance()
 		add_child(newBottle)
@@ -48,7 +44,7 @@ func read_level():
 		blockYPos = oldY
 		for k in int(numSpots):
 			print("Spawned Block")
-			if levelContent[str(counter)] == 'A':
+			if levelContent[str(counter)] == '1':
 				var newBlock = block.instance()
 				newBlock.set_name("redBlock")
 				newBlock.color = Color(1,0,0, 1) 
@@ -56,14 +52,14 @@ func read_level():
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
-			if levelContent[str(counter)] == 'B':
+			if levelContent[str(counter)] == '2':
 				var newBlock = block.instance()
 				newBlock.set_name("greenBlock")
 				newBlock.color = Color(0,1,0, 1) 
 				# newBlock.rect_position.x = blockXPos
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
-			if levelContent[str(counter)] == 'C':
+			if levelContent[str(counter)] == '3':
 				var newBlock = block.instance()
 				newBlock.set_name("blueBlock")
 				newBlock.color = Color(0,0,1, 1) 
@@ -71,7 +67,7 @@ func read_level():
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
-			if levelContent[str(counter)] == 'D':
+			if levelContent[str(counter)] == '4':
 				var newBlock = block.instance()
 				newBlock.set_name("purpleBlock")
 				newBlock.color = Color(1,0,1,0)
@@ -80,7 +76,7 @@ func read_level():
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
-			if levelContent[str(counter)] == '-':
+			if levelContent[str(counter)] == '0':
 				var newBlock = block.instance()
 				newBlock.set_name("nullBlock")
 				newBlock.color = Color(0,0,0,0) 
