@@ -1,10 +1,10 @@
 ## Project DEADLINES:
-2/14 - Present project proposal
-2/19 - Final proposal due
-3/4 - Iteration 1 status report: Design and implement minimal viable system
-3/18 - Iteration 2 status report: Iteratively improve minimal viable system
-4/1 - Iteration 3 status report: Iteratively test and refine solution
-4/15 - Present and submit report of our completed project implementation  
+2/14 - Present project proposal<br>
+2/19 - Final proposal due<br>
+3/4 - Iteration 1 status report: Design and implement minimal viable system<br>
+3/18 - Iteration 2 status report: Iteratively improve minimal viable system<Br>
+4/1 - Iteration 3 status report: Iteratively test and refine solution<br>
+4/15 - Present and submit report of our completed project implementation <Br> 
 
 
 ## Weekly Timeline:
@@ -44,20 +44,48 @@
 * 2/19 Monday: Final proposal complete
 
 **GOALS:**
-1. Start integrating the Color Sort code with Godot, reworking in GDScript if necessary
-2. Sucessfully display one Color Sort level to the screen:
-    * Read level input file and load the level's data into the game
-    * Create godot objects for the bottles
-    * Display the bottles to the screen with our designed layout
-    * Load the color files and display the colors for each block
+1. Decide on basic tree and node structure for the level:
+    * Create a simple level in Godot
+2. Input level data file and create the level:
+    * **Shanna:** Adjust level generator to output in new format. Create level sets with the new file format. 
+    * **Shanna:** Write Bottle and Block scripts to add properties to bottle and block nodes 
+    * **Boone:** Write GDScript code to parse the input file
+    * Create the number of bottle and block nodes indicated in the input file (4 bottles with 4 blocks each and  3 colors to sort for the initial level)
+    * **Coleman:** Get the RBG values for the 12 colors. Add the color numbers to the blocks (set_color()) depending on the color_num value that was loaded from the input file (whether _get_color_num == 1, 2, etc) 
+    * **Logan:** Work on button design for the "Undo"/"Reset level"/"Help" buttons. Work on writing script to load the buttons and assigning action to execute when they're pressed. 
+3. Sucessfully display one 3 color Color Sort level that was loaded from an input file
+
+
 
 ### 2/26 - 3/3
 **GOALS:**
 1. Write status report 1
-2. Implement "make move" function  
-3. Touch-screen integration, so the user can select the bottles they'd like to move to/from with their finger 
-4. Successfully complete a level and load the next level
-5. Add "reset level" option
+2. Implement "make move" function:
+   * Need to add function to check if a bottle is complete:
+      * Need to check bottles for completeness when the initial state of the level is loaded since the generator doesn't check if generated bottles are alerady sorted. 
+   * Add function to check if level is complete (if number of bottles complete == number of colors) 
+   * Functions to check for top color in a bottle, number of consecutive top color blocks, number of empty blocks
+   * Boolean function is_valid to check if a move is valid:
+      * false if:
+         * Destination bottle is full (if get_empty_blocks == 0)
+         * Source bottle is empty (if get_top_color() == 0)
+         * Either bottle is already complete (if _get_complete() == true)
+         * Top colors in source and destination bottle don't match (if bottle1._get_complete() != bottle2._get_complete())
+   * Boolean make_move function:
+      * Calls is_valid(bottle1, bottle2) to verify the move is possible
+      * Determine number of blocks being moved (either the number of empty blocks in the destination bottle or number of consecutive top blocks in source bottle, whichever is smaller.
+      * Make the move by swapping the colors on the blocks
+      * return true if move was made or false if not       
+4. Touch-screen integration, so the user can select the bottles they'd like to move to/from with their finger:
+   * Do we need to add some kind of button functionality to the bottles?
+   * Do we need to add anything special to the bottle nodes for them to recieve touch screen input?  
+6. Successfully complete a level and load the next level:
+   * How to load next level:
+      * Should all the levels for a set be in one file? Maybe some kind of special character inbetween the levels in the input file to signal the end of each level?
+      * Or should we have each level in an individual file? Can we load individual files in a directory in a particular order? 
+8. Add "reset level" option:
+   * Store initial state or just reload the file?
+9. Add animation when a bottle is selected 
 
 
 ### 3/4 - 3/10
@@ -65,12 +93,12 @@
 * 3/4: Iteration 1 status report: Design and implement minimal viable system
 
 **GOALS:**
-1. Add options to change difficulty level
-    * Maybe start with 3 level sets, "easy", "medium", and "difficult"?
+1. Load levels with varying number of colors and figure out how to adjust the layout as more bottles are added
 2. Add "undo move" option
     * Need to add code that keeps some kind of list of the user's moves 
     * Pop the last move off the list and swap the blocks back to where they were
-3. Add some kind of visual cue when the user tries to make an invalid move
+    * Make sure pressing "undo" button triggers this function to run
+3. Add some kind of visual cue when the user tries to make an invalid move, like an animation or popup message
 4. Write status report 2
 
 ### 3/11 - 3/17
@@ -89,8 +117,10 @@ SPRING BREAK!
 ### 3/25 - 3/31
 **GOALS:**
 1. Write status report 3
-2. Add increased difficulty option: hide the color on all blocks except the top block. After user moves top block, the color on the block that was beneath it will be exposed
-3. Add level timer
+2. Add options to change difficulty level
+    * Maybe have "easy", "medium", and "difficult" sets of levels to choose from?
+3. Add increased difficulty option: hide the color on all blocks except the top block. After user moves top block, the color on the block that was beneath it will be exposed
+4. Add level timer
 
 ### 4/1 - 4/7
 **DEADLINES:**
@@ -98,7 +128,7 @@ SPRING BREAK!
 
 **GOALS:**
 1. Add animations when transferring color from one bottle to another
-2. Animation when selecting a bottle
+2. Background music and sound effects
 
 ### 4/8 - 4/14
 **GOALS:**

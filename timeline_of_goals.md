@@ -7,14 +7,16 @@
 
 
 #### 2/19 - 2/25
-* Start integrating the Color Sort code with Godot, reworking in GDScript if necessary
-* Sucessfully load and display one Color Sort level to the screen
+* Decide on basic tree and node structure for the level
+* Input level data file and create the level
+* Sucessfully display one 3 color Color Sort level that was loaded from an input file
 
 #### 2/26 - 3/3
 * Implement "make move" function 
 * Touch-screen integration, so the user can select the bottles they'd like to move to/from with their finger 
 * Successfully complete a level and load the next level
 * Add "reset level" option
+* Add animation when a bottle is selected 
 
 #### 3/4 - 3/10
 * Add "undo move" option
@@ -31,13 +33,16 @@ SPRING BREAK!
 * Save progress on incomplete levels, so user doesn't have to start over if they leave the app and come back in the middle of a level
 
 #### 3/25 - 3/31
+* Write status report 3
+* Add options to change difficulty level
+    * Maybe have "easy", "medium", and "difficult" sets of levels to choose from?
 * Add increased difficulty option: hide the color on all blocks except the top block. After user moves top block, the color on the block that was beneath it will be exposed
 * Add level timer
  
 
 #### 4/1 - 4/7
 * Add animations when transferring color from one bottle to another
-* Animation when selecting a bottle
+* Background music and sound effects
 
 #### 4/8 - 4/14
 * Write report and prepare presentation
