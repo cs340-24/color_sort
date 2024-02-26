@@ -6,23 +6,29 @@
 size = Vector2(282, 432)
 
 [node name="tempBottle" type="ColorRect"]
+clip_contents = true
 custom_minimum_size = Vector2(200, 400)
-offset_top = 20.0
-offset_right = 282.0
-offset_bottom = 465.0
-scale = Vector2(0.384213, 0.262233)
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 283.0
+offset_bottom = 448.0
+scale = Vector2(0.37997, 0.381241)
 size_flags_horizontal = 6
 size_flags_vertical = 6
 size_flags_stretch_ratio = 0.0
 theme = SubResource("2")
 color = Color(0.0784314, 0.772549, 0.807843, 1)
+metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(140.5, 216)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 0)
+scale = Vector2(1, 1)
 shape = SubResource("1")
+metadata/_edit_group_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -30,3 +36,4 @@ offset_right = 279.0
 offset_bottom = 453.0
 scale = Vector2(1.00755, 0.974935)
 theme_override_constants/separation = -1
+metadata/_edit_group_ = true
