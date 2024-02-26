@@ -38,10 +38,9 @@ using namespace std;
  * level if they wish.
  * 
  * Parameters: const string &level. This string needs to be in the format: 
- *   num_colors, num_blocks, num_bottles each separated by a 
- *   space, then the color value for each bottle's blocks, starting 
- *   with the 1st bottle's top block and ending with the last bottle's 
- *   bottom block, each separated with a space. 
+ *   num_bottles, num_blocks, then the color value for each bottle's 
+ *   blocks, starting with the 1st bottle's top block and ending with the 
+ *   last bottle's bottom block, each value separated with a space. 
  * Returns: true if the level was loaded sucessfully. 
  *          false if the level could not be loaded */
 bool ColorSort::load_level(const string &level){
@@ -50,9 +49,21 @@ bool ColorSort::load_level(const string &level){
     int i;
     istringstream ss;
 
+    cout << "in load_level" << endl;
+
     ss.clear();
     ss.str(level);
-    ss >> num_colors >> num_blocks >> num_bottles;
+    ss >> num_bottles >> num_blocks;
+
+    cout << "read num_bottles and num_blocks" << endl;
+
+    if (num_bottles < 5){
+        num_colors = num_bottles - 1;
+    } else {
+        num_colors = num_bottles - 2;
+    }
+
+    cout << "num_bottles = " << num_bottles << "   num_blocks = " << num_blocks << "   num_colors = " << num_colors << endl;
 
     bottles.clear();
     while (ss >> color){
@@ -85,6 +96,8 @@ void ColorSort::print_bottles(){
     int i, j;
 	int index;
 
+    cout << "in print bottles" << endl;
+
     if (bottles.size() == 0){
         return;
     }
@@ -102,6 +115,7 @@ void ColorSort::print_bottles(){
 	for (i = 0; i < num_blocks; i++){
 		for (j = 0; j < num_bottles; j++){		
 			index = i + (j*num_blocks);
+            //cout << "| " << char(bottles[index] + 'A') << " |  ";
             cout << "| " << bottles[index] << " |  ";
 		}
         cout << endl;

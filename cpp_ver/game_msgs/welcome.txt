@@ -9,6 +9,6 @@
 *                                                                     *
 *  Enter R to reset the level.                                        *
 *  Enter Q to quit.                                                   *
-*  Enter H to see instructions on how to play Color Sort.                *
+*  Enter H to see instructions on how to play Color Sort.             *
 *                                                                     *
 ***********************************************************************
