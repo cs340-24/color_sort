@@ -1,11 +1,11 @@
-2 4 3 B A B A A A B B - - - -
-3 4 4 A C C B B C B A C B A A - - - -
-4 4 6 A A C C D C B D B C A B B A D D - - - - - - - -
-5 4 7 B A E D C C C A D D E A E E C B B D A B - - - - - - - -
-6 4 8 D D B F F E A E D F E C C C A C E B F A B A D B - - - - - - - -
-7 4 9 B A G D A E A D D F C F A F C D E E C G G F B G B E B C - - - - - - - -
-8 4 10 H B E D G G C D D H G A D A H A B F F F E C C C E B A G H B F E - - - - - - - -
-9 4 11 C E B B G B G F C A H H G A B D C A E I I G F D E C F F H D D A I E I H - - - - - - - -
-10 4 12 H A C A J G B E F H B D C C D J J E A E B G B F F C H G I E G I D F H D A I I J - - - - - - - -
-11 4 13 F J E K J C E I F B C B G D D E I A F G A B I D H H E K D C H B A C J G K G H F J A K I - - - - - - - -
-12 4 14 D A I G H J E K H J G L K B A I G A B E D D I E H E K H C F F J C K J G C I C A F L D F B L B L - - - - - - - -
+3 4 1 1 2 2 2 2 1 1 0 0 0 0
+4 4 2 3 3 1 2 2 1 2 1 3 3 1 0 0 0 0
+6 4 3 4 2 3 2 3 1 1 3 4 4 2 1 2 4 1 0 0 0 0 0 0 0 0
+7 4 5 3 2 1 1 1 4 5 2 5 4 4 5 2 2 3 1 4 3 3 0 0 0 0 0 0 0 0
+8 4 5 6 4 2 5 1 2 6 4 2 1 4 5 2 3 6 4 5 1 3 6 3 3 1 0 0 0 0 0 0 0 0
+9 4 2 3 7 1 4 7 4 5 2 6 1 7 3 2 7 2 3 6 4 5 3 6 1 1 5 6 4 5 0 0 0 0 0 0 0 0
+10 4 6 6 1 3 8 7 8 5 4 1 5 5 3 7 2 2 8 3 1 4 8 1 7 2 4 7 4 6 3 2 5 6 0 0 0 0 0 0 0 0
+11 4 3 2 8 2 5 1 6 9 4 7 5 7 3 4 9 4 2 3 6 4 1 2 7 6 5 3 5 7 1 8 8 9 1 8 9 6 0 0 0 0 0 0 0 0
+12 4 9 9 1 10 5 6 6 8 4 7 2 5 6 7 7 3 4 8 3 2 5 8 9 3 5 3 10 1 6 1 1 4 9 2 10 10 7 2 4 8 0 0 0 0 0 0 0 0
+13 4 1 10 3 9 10 11 5 11 5 4 11 4 5 5 6 7 1 11 7 2 2 4 10 9 3 1 1 8 6 8 2 6 6 8 4 9 2 3 7 10 8 3 9 7 0 0 0 0 0 0 0 0
+14 4 6 3 9 9 11 10 7 5 3 6 6 9 8 7 2 4 12 2 12 4 1 8 4 10 6 3 2 11 9 7 11 10 1 5 4 1 2 8 5 5 1 11 12 12 3 10 7 8 0 0 0 0 0 0 0 0

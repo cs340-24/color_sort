@@ -44,8 +44,8 @@ Generator::Generator(){
     num_blocks = 4;
     num_bottles = 0;
     
-    for (i = 0; i < max_colors; i++){
-        colors.push_back(char(i) + 'A');
+    for (i = 1; i <= max_colors; i++){
+        colors.push_back(i);
     }
 }
 
@@ -70,7 +70,7 @@ Generator::Generator(const int &blocks, const int &max){
     num_bottles = 0;
     
     for (i = 0; i < max_colors; i++){
-        colors.push_back(char(i) + 'A');
+        colors.push_back(int(i) + 'A');
     }
 
 }
@@ -124,7 +124,7 @@ bool Generator::generate_level(const int &number_colors){
 
     for (i = 0; i < empty_blocks; i++){
         // - for an empty block
-        bottles.push_back('-');
+        bottles.push_back(0);
     }
 
     return true;
@@ -172,10 +172,9 @@ void Generator::print_level_display(ostream &stream){
 
 /* print_level_data()
  * prints the level's data to stdout. 
- * It prints num_colors, followed by a space, num_blocks followed by a space, 
- * num_bottles followed by a space, then the color value for each bottle's 
+ * It prints num_bottles, num_blocks, then the color value for each bottle's 
  * blocks, starting with the 1st bottle's top block and ending with the last 
- * bottle's bottom block, each separated with a space. 
+ * bottle's bottom block, on 1 line with each value separated with a space. 
  * 
  * Parameters: 
  *   ostream &stream: stream you'd like to print the display to. cout 
@@ -184,11 +183,11 @@ void Generator::print_level_data(ostream& stream){
 
     size_t i;
 
-    stream << num_colors << " " << num_blocks << " " << num_bottles << " ";
+    stream << num_bottles << " " << num_blocks << " ";
     for (i = 0; i < bottles.size()-1; i++){
         stream << bottles[i] << " ";
     }
-    stream << bottles[i] << endl;
+    stream << bottles[bottles.size()-1] << endl;
 }
 
 
