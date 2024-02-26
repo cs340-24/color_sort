@@ -28,18 +28,22 @@ func read_level():
 		levelContent[str(i)] = line
 		i += 1
 	levelFile.close()
-	numColors = levelContent["1"]
+	## TO CHANGE
+	# numBottles = levelContent["1"]
+	# numBlocks = levelContent["2"]
+	numBottles = levelContent["1"]
 	numSpots = levelContent["2"]
 	numBottles = levelContent["3"]
 	print(numBottles)
 	i = 0
 	var oldY = blockYPos
 	var counter = 4
+	## var counter = 3
 	for j in int(numBottles):
 		var newBottle = bottle.instance()
 		add_child(newBottle)
-		newBottle.position.x = botXPos
-		newBottle.position.y = 200
+		newBottle.rect_position.x  = botXPos
+		newBottle.rect_position.y = 200
 		newBottle.set_name("bottle")
 		blockYPos = oldY
 		for k in int(numSpots):
@@ -47,23 +51,24 @@ func read_level():
 				var newBlock = block.instance()
 				newBlock.set_name("redBlock")
 				newBlock.color = Color(1,0,0, 1) 
-				newBlock.rect_position.x = blockXPos
-				newBlock.rect_position.y = blockYPos
-				newBottle.add_child(newBlock) 
+				# newBlock.rect_position.x = blockXPos
+				# newBlock.rect_position.y = blockYPos
+				newBottle.get_node("VBoxContainer").add_child(newBlock) 
+
 			if levelContent[str(counter)] == 'B':
 				var newBlock = block.instance()
 				newBlock.set_name("greenBlock")
 				newBlock.rect_position.x = blockXPos
 				newBlock.rect_position.y = blockYPos
-				newBottle.add_child(newBlock)
-				newBlock.color = Color(0,1,0,1) 
+				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 			if levelContent[str(counter)] == 'C':
 				var newBlock = block.instance()
 				newBlock.set_name("blueBlock")
 				newBlock.color = Color(0,0,1, 1) 
 				newBlock.rect_position.x = blockXPos
 				newBlock.rect_position.y = blockYPos
-				newBottle.add_child(newBlock) 
+				newBottle.get_node("VBoxContainer").add_child(newBlock) 
+
 			if levelContent[str(counter)] == 'D':
 				var newBlock = block.instance()
 				newBlock.set_name("purpleBlock")
@@ -71,7 +76,8 @@ func read_level():
 		#		newBottle.newBlock.Area2	D.ColorRect.Color = '#d404ff'
 				newBlock.rect_position.x = blockXPos
 				newBlock.rect_position.y = blockYPos
-				newBottle.add_child(newBlock)
+				newBottle.get_node("VBoxContainer").add_child(newBlock) 
+
 			if levelContent[str(counter)] == '-':
 				var newBlock = block.instance()
 				newBlock.set_name("nullBlock")
@@ -79,12 +85,15 @@ func read_level():
 				#newBottle.get_node("nullBlock"+str(counter-4)).Area2D.ColorRect.Color = '#fffff'
 				newBlock.rect_position.x = blockXPos
 				newBlock.rect_position.y = blockYPos
-				newBottle.add_child(newBlock) 
+				newBottle.get_node("VBoxContainer").add_child(newBlock) 
+
+
 			blockYPos -= 70
-			blockXPos + 150
+			blockXPos += 150
 			counter += 1
-		botXPos += 200
-		
+
+		botXPos += 250
+	print("Level Generated")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
