@@ -1,7 +1,7 @@
 /************************************************************************
- * Color Sort: create_1_level.cpp
+ * Color Sort: create1.cpp
  * Shanna Wallace
- * Updated: 2/10/2024
+ * Updated: 2/26/2024
  * 
  * This program generates one Color Sort level. 
  * 

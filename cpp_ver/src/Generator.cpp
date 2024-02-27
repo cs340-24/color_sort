@@ -1,7 +1,7 @@
 /***************************************************************************
  * Color Sort: Generator.cpp
  * Shanna Wallace
- * Updated: 2/10/2024
+ * Updated: 2/26/2024
  * 
  * This file contains the implementations for class Generator methods:
  *   Generator();                                  
@@ -69,8 +69,8 @@ Generator::Generator(const int &blocks, const int &max){
     num_blocks = blocks;
     num_bottles = 0;
     
-    for (i = 0; i < max_colors; i++){
-        colors.push_back(int(i) + 'A');
+    for (i = 1; i <= max_colors; i++){
+        colors.push_back(i);
     }
 
 }
@@ -123,7 +123,7 @@ bool Generator::generate_level(const int &number_colors){
     shuffle(bottles.begin(), bottles.end(), default_random_engine(seed));
 
     for (i = 0; i < empty_blocks; i++){
-        // - for an empty block
+        // 0 for an empty block
         bottles.push_back(0);
     }
 
