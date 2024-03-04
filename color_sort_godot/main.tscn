@@ -11,9 +11,10 @@ script = ExtResource("1")
 
 [node name="bottleCont" type="GridContainer" parent="Game"]
 clip_contents = true
-offset_left = -8.0
-offset_right = 492.0
-offset_bottom = 900.0
+offset_left = 13.9564
+offset_top = 172.884
+offset_right = 513.956
+offset_bottom = 785.884
 scale = Vector2(2.01746, 0.707767)
 size_flags_horizontal = 6
 size_flags_vertical = 6
