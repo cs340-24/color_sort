@@ -48,6 +48,7 @@ func read_level():
 				var newBlock = block.instantiate()
 				newBlock.set_name("redBlock")
 				newBlock.color = Color(1,0,0, 1) 
+				newBlock._set_color_num(1)
 				# newBlock.rect_position.x = blockXPos
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
@@ -56,6 +57,8 @@ func read_level():
 				var newBlock = block.instantiate()
 				newBlock.set_name("greenBlock")
 				newBlock.color = Color(0,1,0, 1) 
+				newBlock._set_color_num(2)
+
 				# newBlock.rect_position.x = blockXPos
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
@@ -63,6 +66,7 @@ func read_level():
 				var newBlock = block.instantiate()
 				newBlock.set_name("blueBlock")
 				newBlock.color = Color(0,0,1, 1) 
+				newBlock._set_color_num(3)
 				# newBlock.rect_position.x = blockXPos
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
@@ -71,6 +75,7 @@ func read_level():
 				var newBlock = block.instantiate()
 				newBlock.set_name("purpleBlock")
 				newBlock.color = Color(1,0,1,0)
+				newBlock._set_color_num(4)
 		#		newBottle.newBlock.Area2	D.ColorRect.Color = '#d404ff'
 				# newBlock.rect_position.x = blockXPos
 				# newBlock.rect_position.y = blockYPos
@@ -80,6 +85,7 @@ func read_level():
 				var newBlock = block.instantiate()
 				newBlock.set_name("nullBlock")
 				newBlock.color = Color(0,0,0,0) 
+				newBlock._set_color_num(0)
 				#newBottle.get_node("nullBlock"+str(counter-4)).Area2D.ColorRect.Color = '#fffff'
 				# newBlock.rect_position.x = blockXPos
 				# newBlock.rect_position.y = blockYPos

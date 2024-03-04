@@ -1,7 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://bt1uhqfsta8bd"]
+[gd_scene load_steps=12 format=3 uid="uid://bq07jr2hqhojr"]
 
 [ext_resource type="Script" path="res://playGame.gd" id="1"]
 [ext_resource type="PackedScene" path="res://newGame.tscn" id="2"]
+[ext_resource type="Theme" uid="uid://5c0t4s2d0oqu" path="res://introButton.tres" id="3_mom3o"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ojrpk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qud45"]
+texture = SubResource("CanvasTexture_ojrpk")
+modulate_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vjhny"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0xtsj"]
+texture = SubResource("CanvasTexture_vjhny")
+modulate_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ni3vw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r0h1h"]
+texture = SubResource("CanvasTexture_ni3vw")
+modulate_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vw8j4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5e7y"]
+texture = SubResource("CanvasTexture_vw8j4")
+modulate_color = Color(1, 0, 1, 1)
 
 [node name="main" type="Node2D"]
 
@@ -9,17 +34,70 @@
 scale = Vector2(0.716517, 2.1286)
 script = ExtResource("1")
 
+[node name="ColorRect" parent="Game/background" index="0"]
+offset_right = 1008.0
+color = Color(0.580392, 0.784314, 0.776471, 1)
+
+[node name="CollisionShape2D" parent="Game/background" index="1"]
+position = Vector2(503.826, 303)
+scale = Vector2(1, 1)
+
 [node name="bottleCont" type="GridContainer" parent="Game"]
 clip_contents = true
-offset_left = 13.9564
-offset_top = 172.884
-offset_right = 513.956
-offset_bottom = 785.884
-scale = Vector2(2.01746, 0.707767)
+offset_left = 14.0
+offset_top = 173.0
+offset_right = 1027.0
+offset_bottom = 1397.0
+scale = Vector2(1, 0.351)
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 15
 columns = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Game"]
+offset_left = 30.7041
+offset_top = 6.57709
+offset_right = 978.704
+offset_bottom = 112.577
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.66
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="resetLevel" type="Button" parent="Game/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mom3o")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_qud45")
+text = "Reset Level"
+metadata/_edit_group_ = true
+
+[node name="Undo" type="Button" parent="Game/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mom3o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0xtsj")
+text = "Undo Move"
+metadata/_edit_group_ = true
+
+[node name="ChangeDifficulty" type="Button" parent="Game/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mom3o")
+theme_override_colors/icon_normal_color = Color(1, 0, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_r0h1h")
+text = "Change Difficulty"
+metadata/_edit_group_ = true
+
+[node name="Help" type="Button" parent="Game/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mom3o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_q5e7y")
+text = "Help"
+metadata/_edit_group_ = true
 
 [editable path="Game"]
