@@ -1,5 +1,5 @@
 extends Node2D
-# DEPRECATED FILE -- NO LOGNER IN USE. USER PLAYGAME.GD INSTEAD
+
 
 # Declare member variables here. Examples:
 # var a = 2

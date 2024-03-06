@@ -1,3 +1,6 @@
 res://main.tscn
 res://introButton.tres
 res://playGame.gd
+res://BlockScript.gd
+res://BottleScript.gd
+res://newGame.gd
