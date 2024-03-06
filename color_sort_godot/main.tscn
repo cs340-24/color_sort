@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bq07jr2hqhojr"]
+[gd_scene load_steps=14 format=3 uid="uid://bq07jr2hqhojr"]
 
 [ext_resource type="Script" path="res://playGame.gd" id="1"]
 [ext_resource type="PackedScene" path="res://newGame.tscn" id="2"]
@@ -28,6 +28,12 @@ modulate_color = Color(1, 0, 1, 1)
 texture = SubResource("CanvasTexture_vw8j4")
 modulate_color = Color(1, 0, 1, 1)
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_5yvo1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_353ud"]
+texture = SubResource("CanvasTexture_5yvo1")
+modulate_color = Color(1, 0, 1, 1)
+
 [node name="main" type="Node2D"]
 
 [node name="Game" parent="." instance=ExtResource("2")]
@@ -40,7 +46,6 @@ color = Color(0.580392, 0.784314, 0.776471, 1)
 
 [node name="CollisionShape2D" parent="Game/background" index="1"]
 position = Vector2(503.826, 303)
-scale = Vector2(1, 1)
 
 [node name="bottleCont" type="GridContainer" parent="Game"]
 clip_contents = true
@@ -99,5 +104,15 @@ theme = ExtResource("3_mom3o")
 theme_override_styles/normal = SubResource("StyleBoxTexture_q5e7y")
 text = "Help"
 metadata/_edit_group_ = true
+
+[node name="nextLevel" type="Button" parent="Game/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mom3o")
+theme_override_colors/icon_normal_color = Color(1, 0, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_353ud")
+text = "DEBUG: Next Level"
+
+[connection signal="pressed" from="Game/HBoxContainer/nextLevel" to="Game" method="_on_next_level_pressed"]
 
 [editable path="Game"]

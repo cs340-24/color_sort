@@ -1,5 +1,5 @@
 extends Node2D
-
+# DEPRECATED FILE -- NO LOGNER IN USE. USER PLAYGAME.GD INSTEAD
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -15,9 +15,10 @@ var blockXPos = 125
 var blockYPos = 300
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	read_level()
+	read_levels()
+	generate_level(1)
 
-func read_level():
+func read_levels():
 	var levelFile = File.new()
 	levelFile.open('res://2_1.txt', File.READ)
 	if !levelFile.is_open(): 
@@ -28,6 +29,8 @@ func read_level():
 		levelContent[str(i)] = line
 		i += 1
 	levelFile.close()
+
+func generate_level(levelFile):
 	## TO CHANGE
 	numBottles = levelContent["1"]
 	numSpots = levelContent["2"]

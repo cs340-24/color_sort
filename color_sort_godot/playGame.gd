@@ -5,6 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var levelContent = {}
+var currLevel = {}
 var numColors
 var numSpots
 var numBottles
@@ -13,12 +14,14 @@ var bottle = load("res://tempBottle.tscn")
 var botXPos = 200
 var blockXPos = 125
 var blockYPos = 300
+var levelNum = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	read_level()
+	generate_level(levelContent, levelNum)
 
 func read_level():
-	var levelFile = FileAccess.open('res://2_1.txt', FileAccess.READ)
+	var levelFile = FileAccess.open('res://3colors.txt', FileAccess.READ)
 	if !levelFile.is_open(): 
 		print("ERROR: FILE NOT OPEN")
 	var i = 1
@@ -28,12 +31,15 @@ func read_level():
 		i += 1
 	levelFile.close()
 	## TO CHANGE
-	numBottles = levelContent["1"]
-	numSpots = levelContent["2"]
+
+func generate_level(levelContent, levelNum):
+	currLevel = levelContent[str(levelNum)].split(" ", false, 30)
+	numBottles = currLevel[0]
+	numSpots = currLevel[1]
 	print(numBottles)
-	i = 0
+	var i = 0
 	var oldY = blockYPos
-	var counter = 3
+	var counter = 2
 	for j in int(numBottles):
 		var newBottle = bottle.instantiate()
 		$bottleCont.add_child(newBottle)
@@ -43,7 +49,7 @@ func read_level():
 		blockYPos = oldY
 		for k in int(numSpots):
 			print("Spawned Block")
-			if levelContent[str(counter)] == '1':
+			if currLevel[counter] == '1':
 				var newBlock = block.instantiate()
 				newBlock.set_name("redBlock")
 				newBlock.color = Color(1,0,0, 1) 
@@ -51,14 +57,14 @@ func read_level():
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
-			if levelContent[str(counter)] == '2':
+			if currLevel[counter] == '2':
 				var newBlock = block.instantiate()
 				newBlock.set_name("greenBlock")
 				newBlock.color = Color(0,1,0, 1) 
 				# newBlock.rect_position.x = blockXPos
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
-			if levelContent[str(counter)] == '3':
+			if currLevel[counter] == '3':
 				var newBlock = block.instantiate()
 				newBlock.set_name("blueBlock")
 				newBlock.color = Color(0,0,1, 1) 
@@ -66,7 +72,7 @@ func read_level():
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
-			if levelContent[str(counter)] == '4':
+			if currLevel[counter] == '4':
 				var newBlock = block.instantiate()
 				newBlock.set_name("purpleBlock")
 				newBlock.color = Color(1,0,1,0)
@@ -75,7 +81,7 @@ func read_level():
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
-			if levelContent[str(counter)] == '0':
+			if currLevel[counter] == '0':
 				var newBlock = block.instantiate()
 				newBlock.set_name("nullBlock")
 				newBlock.color = Color(0,0,0,0) 
@@ -95,3 +101,12 @@ func read_level():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+# Debug button added in order to test level switching
+func _on_next_level_pressed():
+	for n in $bottleCont.get_children():
+		$bottleCont.remove_child(n)
+		n.queue_free()
+	currLevel = {}
+	levelNum += 1
+	generate_level(levelContent,levelNum)
