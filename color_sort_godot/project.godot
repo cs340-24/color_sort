@@ -14,6 +14,14 @@ config/name="color_sort"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/size/window_width_override=720
+window/size/window_height_override=1280
+window/stretch/mode="viewport"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
