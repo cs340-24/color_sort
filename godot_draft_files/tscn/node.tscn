@@ -1,7 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ygf5n6ibovhw"]
-
-[ext_resource type="Script" path="res://ResetLevel.gd" id="1_55w2q"]
-[ext_resource type="Script" path="res://node.gd" id="1_u01ic"]
+[gd_scene load_steps=3 format=3 uid="uid://ygf5n6ibovhw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eva0p"]
 bg_color = Color(0.478431, 0.0509804, 0.431373, 1)
@@ -16,7 +13,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_u01ic")
 
 [node name="Toolbar" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -31,7 +27,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_mhkfg")
 text = "Reset Level"
-script = ExtResource("1_55w2q")
 
 [node name="UndoMove" type="Button" parent="Toolbar"]
 z_index = 1
@@ -39,7 +34,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_mhkfg")
 text = "Undo"
-script = ExtResource("1_55w2q")
 
 [node name="ChangeDifficulty" type="Button" parent="Toolbar"]
 z_index = 1
@@ -47,7 +41,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_mhkfg")
 text = "Change Difficulty"
-script = ExtResource("1_55w2q")
 
 [node name="Help" type="Button" parent="Toolbar"]
 z_index = 1
@@ -55,7 +48,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_mhkfg")
 text = "Help"
-script = ExtResource("1_55w2q")
 
 [node name="BottlesGrid" type="GridContainer" parent="."]
 layout_mode = 1

@@ -12,16 +12,15 @@
 * Sucessfully display one 3 color Color Sort level that was loaded from an input file
 
 #### 2/26 - 3/3
-* Implement "make move" function 
-* Touch-screen integration, so the user can select the bottles they'd like to move to/from with their finger 
-* Successfully complete a level and load the next level
-* Add "reset level" option
-* Add animation when a bottle is selected 
+* Write status report 1
+* Read input file and successfully load 1 level with correct colors (3 colors 4 bottles)  
+* Begin implementing game play functions
 
 #### 3/4 - 3/10
-* Add "undo move" option
-* Add options to change difficulty level
-* Add some kind of visual cue when the user tries to make an invalid move
+* Game play functions working correctly
+* Play level, clear the level data, then load the next level. Make sure this loop is working correctly.
+* Add undo move function
+* Add reset move function
 
 
 #### 3/11 - 3/17
@@ -29,8 +28,8 @@ SPRING BREAK!
 
 
 #### 3/18 - 3/24
-* Save the game state, so if user leaves the app and comes back later, it will load the level they were playing last
-* Save progress on incomplete levels, so user doesn't have to start over if they leave the app and come back in the middle of a level
+* Saving the game: save the level file list so they can start on the level they were on when the game is reloaded. Save progress on incomplete levels. 
+* Add more bottles, figure out if adjustments to grid container will be necessary as more bottles are added
 
 #### 3/25 - 3/31
 * Write status report 3
