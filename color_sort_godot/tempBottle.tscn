@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://t2vyofig8kup"]
+
+[ext_resource type="Script" path="res://tempBottle.gd" id="1_6u256"]
+
+[sub_resource type="Theme" id="2"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(282, 432)
+
+[node name="tempBottle" type="ColorRect"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 400)
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 283.0
+offset_bottom = 444.0
+scale = Vector2(0.393302, 0.408635)
+size_flags_horizontal = 6
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme = SubResource("2")
+color = Color(0.0784314, 0.772549, 0.807843, 1)
+script = ExtResource("1_6u256")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(140.5, 216)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("1")
+metadata/_edit_group_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 279.0
+offset_bottom = 579.0
+scale = Vector2(1.00755, 0.763235)
+theme_override_constants/separation = -1
+
+[node name="BottlePressed" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+flat = true
+
+[connection signal="pressed" from="BottlePressed" to="." method="_on_bottle_pressed_pressed"]
