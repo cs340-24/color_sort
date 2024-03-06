@@ -1,10 +1,7 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var levelContent = {}
+var bottles = Array()
 var numColors
 var numSpots
 var numBottles
@@ -13,6 +10,7 @@ var bottle = load("res://tempBottle.tscn")
 var botXPos = 200
 var blockXPos = 125
 var blockYPos = 300
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	read_level()
@@ -34,6 +32,7 @@ func read_level():
 	i = 0
 	var oldY = blockYPos
 	var counter = 3
+	
 	for j in int(numBottles):
 		var newBottle = bottle.instantiate()
 		$bottleCont.add_child(newBottle)
@@ -41,6 +40,8 @@ func read_level():
 		newBottle.position.y = 200
 		newBottle.set_name("bottle")
 		blockYPos = oldY
+		bottles.append(newBottle)
+		
 		for k in int(numSpots):
 			print("Spawned Block")
 			if levelContent[str(counter)] == '1':
@@ -93,5 +94,44 @@ func read_level():
 	print("Level Generated")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	check_bottles_pressed(bottles)
+
+# Checks to see if two bottles are pressed, simulating a potential move.
+func check_bottles_pressed(bottlesToCheck):
+	var printString
+	var i
+	var howManyPressed
+	var pressedBottles
+	
+	i = 0
+	howManyPressed = 0
+	printString = ""
+	pressedBottles = []
+	
+	for currentBottle in bottlesToCheck:
+		
+		if currentBottle.hasBeenPressed:
+			howManyPressed += 1
+			pressedBottles.append(currentBottle)
+			
+		i += 1
+		
+	if howManyPressed >= 2:
+		pressedBottles[0].hasBeenPressed = false
+		pressedBottles[1].hasBeenPressed = false
+		print("Two bottles pressed. Resetting bottles.")
+		
+	return
+
+func _on_reset_level_pressed():
+	print("Resest Level Button Pressed.")
+
+func _on_undo_pressed():
+	print("Undo Button Pressed.")
+
+func _on_change_difficulty_pressed():
+	print("Change Difficulty Button Pressed.")
+
+func _on_help_pressed():
+	print("Help Button Pressed.")

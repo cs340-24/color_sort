@@ -1,2 +1,8 @@
 res://main.tscn
 res://introButton.tres
+res://playGame.gd
+res://newGame.tscn
+res://tempBottle.tscn
+res://block.tscn
+res://BlockScript.gd
+res://tempBottle.gd
