@@ -8,25 +8,25 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qud45"]
 texture = SubResource("CanvasTexture_ojrpk")
-modulate_color = Color(0, 0, 0, 1)
+modulate_color = Color(1, 0, 1, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ni3vw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r0h1h"]
 texture = SubResource("CanvasTexture_ni3vw")
-modulate_color = Color(0, 0, 0, 1)
+modulate_color = Color(1, 0, 1, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vjhny"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0xtsj"]
 texture = SubResource("CanvasTexture_vjhny")
-modulate_color = Color(0, 0, 0, 1)
+modulate_color = Color(1, 0, 1, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vw8j4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5e7y"]
 texture = SubResource("CanvasTexture_vw8j4")
-modulate_color = Color(0, 0, 0, 1)
+modulate_color = Color(1, 0, 1, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5yvo1"]
 
@@ -45,11 +45,7 @@ offset_right = 1008.0
 color = Color(0.580392, 0.784314, 0.776471, 1)
 
 [node name="CollisionShape2D" parent="Game/background" index="1"]
-<<<<<<< HEAD
-position = Vector2(503.826, 303)
-=======
 position = Vector2(503, 303)
->>>>>>> 6f0ba5ff07c53fbf8298557c56208a6cd405b6b6
 
 [node name="bottleCont" type="GridContainer" parent="Game"]
 clip_contents = true
@@ -108,8 +104,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_q5e7y")
 text = "Help"
 metadata/_edit_group_ = true
 
-<<<<<<< HEAD
-[node name="nextLevel" type="Button" parent="Game/HBoxContainer"]
+[node name="next_level" type="Button" parent="Game/UpperButtons"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_mom3o")
@@ -117,12 +112,10 @@ theme_override_colors/icon_normal_color = Color(1, 0, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxTexture_353ud")
 text = "DEBUG: Next Level"
 
-[connection signal="pressed" from="Game/HBoxContainer/nextLevel" to="Game" method="_on_next_level_pressed"]
-=======
 [connection signal="pressed" from="Game/UpperButtons/resetLevel" to="Game" method="_on_reset_level_pressed"]
 [connection signal="pressed" from="Game/UpperButtons/ChangeDifficulty" to="Game" method="_on_change_difficulty_pressed"]
 [connection signal="pressed" from="Game/UpperButtons/Undo" to="Game" method="_on_undo_pressed"]
 [connection signal="pressed" from="Game/UpperButtons/Help" to="Game" method="_on_help_pressed"]
->>>>>>> 6f0ba5ff07c53fbf8298557c56208a6cd405b6b6
+[connection signal="pressed" from="Game/UpperButtons/next_level" to="Game" method="_on_next_level_pressed"]
 
 [editable path="Game"]
