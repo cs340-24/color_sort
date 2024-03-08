@@ -62,6 +62,8 @@ public:
     // Returns the number of blocks per bottle
     int get_num_blocks();
 
+    void set_rows_cols();
+
 protected:
     std::vector <int> colors;   // Bank of colors available to use 
                                  // (ints starting with 'A')
@@ -70,4 +72,6 @@ protected:
     int max_colors;              // Max number of colors level can have
     int num_blocks;              // Number of blocks of color per bottle
     int num_bottles;             // Number of bottles in the level
+    int rows;
+    int cols;
 };

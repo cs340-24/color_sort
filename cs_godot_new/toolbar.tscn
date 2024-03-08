@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dso5mlog2m67y"]
+[gd_scene load_steps=2 format=3 uid="uid://dso5mlog2m67y"]
+
+[sub_resource type="Theme" id="Theme_3tauq"]
+default_font_size = 10
 
 [node name="toolbar" type="Control"]
 layout_mode = 3
@@ -16,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+[node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.964706, 0.517647, 0, 1)
+theme = SubResource("Theme_3tauq")
