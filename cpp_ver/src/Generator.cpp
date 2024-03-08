@@ -111,6 +111,8 @@ bool Generator::generate_level(const int &number_colors){
         empty_blocks = 2 * num_blocks;
     }
 
+    set_rows_cols();
+
     // Put colors in bottles, shuffle the colors, then add empty bottles
     bottles.clear();
     for (i = 0; i < num_colors; i++){
@@ -183,7 +185,7 @@ void Generator::print_level_data(ostream& stream){
 
     size_t i;
 
-    stream << num_bottles << " " << num_blocks << " ";
+    stream << rows << " " << cols << " " << num_bottles << " " << num_blocks << " ";
     for (i = 0; i < bottles.size()-1; i++){
         stream << bottles[i] << " ";
     }
@@ -206,4 +208,46 @@ int Generator::get_max_colors(){
 /* Returns number of blocks per bottle */
 int Generator::get_num_blocks(){
     return num_blocks;
+}
+
+
+/* Determine how many rows and columns the output should have
+ * 1 - 3 Rows
+ * 2 - 5 Columns */
+void Generator::set_rows_cols(){
+
+    int bottles;
+    int rem;
+
+    // if num_bottles is a mult of 3, want 3 cols if num_bottles < 9 or 4 if 10+
+    if (num_bottles % 3 == 0){
+        if (num_bottles <= 9){
+            cols = 3;
+        } else {
+            cols = 4;
+        }
+        rows = num_bottles / cols;
+        return;
+    }
+
+    // if odd, will be same dimensions as num_bottles+1
+    if (num_bottles % 2 == 1){
+        bottles = num_bottles + 1;
+    } else {
+        bottles = num_bottles;
+    }
+
+    // if 2 rows gives more than 5 columns, will need 3 rows
+    cols = bottles / 2;
+    if (cols > 5){
+        rows = 3;
+        cols = bottles / 3;
+        rem = bottles % 3;
+        if (rem != 0){
+            cols++;
+        }
+    } else {
+        rows = 2;
+    }
+    return;
 }

@@ -1,32 +1,29 @@
-/*************************************************************************
- * Color Sort: play.cpp
+/***************************************************************************
+ * Color Sort: playjgraph.cpp
  * Shanna Wallace
- * Updated: 2/10/2024
  * 
- * This program allows you to play multiple levels of Color Sort. 
+ * This program allows you to play multiple levels of Color Sort. It 
+ * uses jgraph to generate a jpg of the game (colorsort.jpg)
  * 
  * It takes the following command line arguments:
- * bin/play <input_file>
- * 
- * input_file: the name of a file containing data for the levels.
- * This file should have data for one level per line in the format:
- *   num_colors, num_blocks, and num_bottles, each separated by a space, 
- *   then the values for each block in the bottles, starting with the 
- *   top block in the 1st bottle and ending with the bottom block in 
- *   the last bottle, each separated by a space. 
- * 
- * The program will load the level on the 1st line of the input_file 
- * first, then when that level has been completed, will load the next level
- * in the input_file. This will continue until the user quits the game
- * or completes all of the levels in the input_file. 
+ * bin/playj.cpp <input_file>
+ * input_file: the name of a file containing data for the Color Sort levels.
+ * This file should have one line in the format:
+ *   num_bottles, num_blocks, then the values for each block in the bottles, 
+ *   starting with the top block in the 1st bottle and ending with the bottom 
+ *   block in the last bottle, each separated by a space. 
  * 
  * To play the game, the user may enter:
  *   H to see instructions on how to play Color Sort
  *   R to reset the level
  *   Q to quit.
- *   B1 B2 to make a move, where B1 is the number of the source bottle and 
- *       B2 is the number of the destination bottle, separated by a space.
- *************************************************************************/ 
+ *   n1 n2 to make a move, where n1 is the number of the source bottle and 
+ *       n2 is the number of the destination bottle, separated by a space.
+ * 
+ * You will need to open colorsort.jpg in an application that automatically
+ * refreshes when the file is changed or manually refresh the .jpg after 
+ * you make a move.
+*****************************************************************************/
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -64,7 +61,8 @@ int main(int argc, char *argv[]) {
 
 
     // Print welcome message
-    game->print_msg_file(WELCOME_MSG);
+    cout << "Hello, welcome to Color Sort! \nOpen the file colorsort.jpg to see the game. You may need to manually refresh the picture after you make a move if the app you're using does not manually refresh.\n";
+    cout << "Enter H to see instructions on how to play the game.\n\n";
 
     // Load each level
     level_num = 1;
@@ -75,9 +73,10 @@ int main(int argc, char *argv[]) {
             cout << "LEVEL " << level_num << ":\n";
 
             while (game->level_complete() == false){
+            game->create_jgraph();
+            //game->print_bottles();
 
-                game->print_bottles();
-
+                cin.clear();
                 cout << "ENTER MOVE: ";
                 getline(cin, input);
 
@@ -88,10 +87,9 @@ int main(int argc, char *argv[]) {
                 // Quit game
                 } else if (input == "Q" || input == "q"){
                     cout << "\nThanks for playing Color Sort!\nGoodbye\n";
-                    input_file.close();
                     return 0;
                 
-                // Print gameplay instructions
+                // Print instructions
                 } else if (input == "H" || input == "h"){
                     game->print_msg_file(INSTR);
 
@@ -100,21 +98,20 @@ int main(int argc, char *argv[]) {
                     if (game->make_move(from, to) == false){ 
                         cerr << "Cannot move from " << from << " to " << to << ".\n";
                     }
+
                 } else {
                     cerr << "Invalid input.\n";
                 }
+            
             }
 
-            // If they get out of this while loop, they've completed the level
-            game->print_bottles();
-            cout << "\n\n**********  LEVEL COMPLETE!  **********\n\n";
-        
-        } else {
-            cerr << "Could not load level " << level_num << endl;
-        }
-        level_num++;
-    }
+            game->create_jgraph();
+            //game->print_bottles();
 
+            cout << "\n**********  LEVEL COMPLETE!  **********\n\n";
+            return 0;
+
+        }
 
     cout << "\n\n**********  CONGRATS! YOU HAVE COMPLETED ALL LEVELS  **********\n";
     input_file.close();
