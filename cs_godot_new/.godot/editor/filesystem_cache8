@@ -1,9 +1,0 @@
-ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709887912
-blockScript.gd::GDScript::-1::1709877363::0::1::::<>ColorRect<>::
-bottles.tscn::PackedScene::8237227817157474809::1709887152::0::1::::<><>::
-bottleScript.gd::GDScript::-1::1709882544::0::1::::<>Control<>::
-colors.txt::TextFile::-1::1709703461::0::1::::<><>::
-main.tscn::PackedScene::3563011576613177171::1709887180::0::1::::<><>::res://playGame.gd<>uid://dpmf66dwtvs0h::::res://bottles.tscn<>uid://dso5mlog2m67y::::res://toolbar.tscn
-playGame.gd::GDScript::-1::1709887103::0::1::::<>Control<>::
-toolbar.tscn::PackedScene::8453406064123891236::1709887152::0::1::::<><>::
