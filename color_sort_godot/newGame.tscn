@@ -1,17 +1,17 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://bwu2w6ohubyia"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 512.5, 301 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(1025, 602)
 
 [node name="newGame" type="Node2D"]
 
 [node name="background" type="Area2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="background"]
-margin_right = 1024.0
-margin_bottom = 600.0
-color = Color( 0.768627, 1, 0.952941, 0.87451 )
+offset_right = 1024.0
+offset_bottom = 600.0
+color = Color(0.768627, 1, 0.952941, 0.87451)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="background"]
-position = Vector2( 512.5, 303 )
-shape = SubResource( 1 )
+position = Vector2(512.5, 303)
+shape = SubResource("1")

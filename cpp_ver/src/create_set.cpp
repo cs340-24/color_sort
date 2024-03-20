@@ -1,7 +1,7 @@
 /**************************************************************************************** 
- * Color Sort: create_level_set.cpp
+ * Color Sort: create_set.cpp
  * Shanna Wallace
- * Updated: 2/10/2024
+ * Updated: 2/26/2024
  * 
  * This program creates a set of multiple levels for Color Sort. It generates the 
  * number and type of levels requested in <input_file>. You can output all of the level 

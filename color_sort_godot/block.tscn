@@ -1,21 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://dejdp5qgdka31"]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.75, 19.5625 )
+[ext_resource type="Script" path="res://BlockScript.gd" id="1_mw2o5"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(39.5, 39.125)
 
 [node name="block" type="ColorRect"]
-margin_right = 75.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 50, 50 )
+custom_minimum_size = Vector2(50, 50)
+offset_right = 75.0
+offset_bottom = 75.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-__meta__ = {
-"_edit_group_": true
-}
+script = ExtResource("1_mw2o5")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2( 1.83714, 1.93584 )
+scale = Vector2(1.83714, 1.93584)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 19.25, 19.4375 )
-shape = SubResource( 1 )
+position = Vector2(19.25, 19.4375)
+shape = SubResource("1")
