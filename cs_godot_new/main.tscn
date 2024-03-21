@@ -30,4 +30,3 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Toolbar" parent="Game" instance=ExtResource("3_f2l3e")]
 layout_mode = 1
-offset_bottom = -1130.0

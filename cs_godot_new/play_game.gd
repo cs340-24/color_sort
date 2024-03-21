@@ -1,12 +1,14 @@
 extends Node
 
-@onready var level
-@onready var bottle 
-@onready var blocks
-@onready var block 
+var level
+var bottle 
+var blocks
+var block 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
+	
 	for level_data in GameData.levels:
 		level = GameData.bottles_scene.instantiate()
 		level.set_position(GameData.level_pos)
@@ -18,7 +20,12 @@ func _ready():
 		GameData.bottles_pressed = 0
 		load_level_data(level_data)
 		
-		# wait for level_complete signal
+		
+		get_parent().get_child(0).connect("reset_level", self.reset_level)
+		print(get_parent().get_child(0).name)
+		print("connected: ", is_connected("reset_level", self.reset_level))
+		
+		#.connect("reset", self.reset)
 		level.connect("level_complete", self.clear_level)
 		await level.level_complete
 	
@@ -60,8 +67,16 @@ func load_level_data(level_data):
 		new_bottle.set_name(node_name)
 		level.add_child(new_bottle)
 		new_bottle.set_owner(get_node("."))
-		
-	# iterate through the color blocks, setting their colors
+	
+	set_colors(level_data)
+						
+	return true
+
+
+# iterate through the color blocks and set their colors
+# set bottle metadata (top_color, top_blocks, empty_blocks
+func set_colors(level_data):
+		# iterate through the color blocks, setting their colors
 	var block_index = 0
 	for i in level.get_children():
 		# set the block's colors
@@ -99,10 +114,6 @@ func load_level_data(level_data):
 			else:
 				i.set_meta("is_complete", false)
 	
-						
-	return true
-
-
 
 func print_metadata(bottles):
 	for i in bottles.get_children():
@@ -112,6 +123,9 @@ func print_metadata(bottles):
 			print(j.get_name(), ": S", j.get_color())
 	print("\n")	
 
+
+func reset_level():
+	print("resetting level")
 
 		
 func clear_level():
