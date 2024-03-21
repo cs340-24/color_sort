@@ -8,6 +8,7 @@ func _ready():
 	button.pressed.connect(self._button_pressed)
 	add_child(button)
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

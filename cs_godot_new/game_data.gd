@@ -4,6 +4,8 @@ var game_filename = "res://levelData/1per.txt"
 var color_filename = "res://colors.txt"
 var bottles_scene = preload("res://level.tscn")
 
+signal reset_level
+
 var max_colors  # number of colors in the color file
 
 @export var level_data = {}  # data for one level
@@ -23,7 +25,10 @@ var level_size = Vector2(620, 1050) # size of the grid on the game screen
 
 
 func _ready():
+	var reset_button = get_node("/root/main/Game/Toolbar/HBoxContainer/Reset")
+	reset_button.connect("reset", self.reset)
 	load_game_data()
+
 
 func load_game_data():
 	# Make a list of the available colors
@@ -85,6 +90,10 @@ func load_game_data():
 		print("Error: Could not load level data.")
 		return false
 
+
+func reset():
+	print("emitting signal")
+	emit_signal("reset_level")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
