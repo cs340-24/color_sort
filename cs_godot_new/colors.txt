@@ -1,4 +1,4 @@
-empty .202 .258 .349 1
+empty .202 .258 .349 1 
 light_blue .369 .878 1 1
 light_green .447 1 .447 1
 lavender .8 .6 1 1
