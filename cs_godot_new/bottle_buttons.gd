@@ -7,6 +7,7 @@ func _ready():
 	# this makes it invisible
 	button.modulate = Color(0,0,0,0)
 	rect_behind.modulate = Color(0,0,0,0)
+	button.pressed.connect(_button_pressed)
 	rect_behind.z_index = -1
 	add_child(rect_behind)
 	add_child(button)
