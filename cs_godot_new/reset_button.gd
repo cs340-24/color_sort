@@ -12,4 +12,4 @@ func _process(delta):
 
 func _button_pressed():
 	print("sending reset signal")
-	emit_signal("reset")
+	GameData.reset_level.emit()
