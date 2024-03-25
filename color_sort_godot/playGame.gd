@@ -107,7 +107,13 @@ func generate_level(levelContent, levelNum):
 			counter += 1
 
 		botXPos += 250
+	var newFile = FileAccess.open('res://levelData/currentLevelGen.txt', 7)
+	for x in currLevel.size():
+		newFile.store_string(currLevel[x] + " ")
 	print("Level Generated")
+
+func save_level():
+	pass
 
 func select_block():
 	pass
@@ -115,8 +121,8 @@ func select_block():
 func move_block():
 	pass
 
-func save_level(levelVec):
-	pass
+#func save_level(levelVec):
+#	pass
 
 func write_to_file(currLevelFile, numBottles, numSpots):
 	pass

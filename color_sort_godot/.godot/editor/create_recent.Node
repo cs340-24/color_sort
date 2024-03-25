@@ -1,6 +1,7 @@
+Node2D
+ColorRect
 Button
 HBoxContainer
 Control
-Node2D
 MenuButton
 TouchScreenButton

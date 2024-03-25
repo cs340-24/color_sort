@@ -13,8 +13,14 @@ func _ready():
 func _process(_delta):
 	pass
 
-
 func _on_bottle_pressed_pressed():
-	print("Button Pressed.")
-	hasBeenPressed = true
+	if hasBeenPressed == false:
+		print("Button Pressed.")
+		hasBeenPressed = true
+		color = Color(0.02,0.40,0.42, 1)
+	elif hasBeenPressed == true:
+		hasBeenPressed = false
+		color = Color(0.07,0.77,0.80, 1)
 	print(str(hasBeenPressed))
+
+
