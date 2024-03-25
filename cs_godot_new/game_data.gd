@@ -5,12 +5,14 @@ var color_filename = "res://colors.txt"
 var bottles_scene = preload("res://level.tscn")
 
 signal reset_level
+signal make_move
+signal level_complete
 
 var max_colors  # number of colors in the color file
 
-@export var level_data = {}  # data for one level
-@export var levels = []      # each element is an array of data for 1 level
-@export var colors = {}      # ckey: name of color
+var level_data = {}  # data for one level
+var levels = []      # each element is an array of data for 1 level
+var colors = {}      # ckey: name of color
 							 # val: Color(r,g,b,a)
 var top_color                # top color in a bottle
 var empty_color              # color used for empty blocks
