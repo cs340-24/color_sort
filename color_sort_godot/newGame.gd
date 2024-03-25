@@ -39,16 +39,16 @@ func generate_level(levelFile):
 	var oldY = blockYPos
 	var counter = 3
 	for j in int(numBottles):
-		var newBottle = bottle.instance()
+		var newBottle = bottle.instantiate()
 		add_child(newBottle)
-		newBottle.rect_position.x  = botXPos
-		newBottle.rect_position.y = 200
+		newBottle.position.x  = botXPos
+		newBottle.position.y = 200
 		newBottle.set_name("bottle")
 		blockYPos = oldY
 		for k in int(numSpots):
 			print("Spawned Block")
 			if levelContent[str(counter)] == '1':
-				var newBlock = block.instance()
+				var newBlock = block.instantiate()
 				newBlock.set_name("redBlock")
 				newBlock.color = Color(1,0,0, 1) 
 				newBlock._set_color_num(1)
@@ -57,7 +57,7 @@ func generate_level(levelFile):
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
 			if levelContent[str(counter)] == '2':
-				var newBlock = block.instance()
+				var newBlock = block.instantiate()
 				newBlock.set_name("greenBlock")
 				newBlock.color = Color(0,1,0, 1) 
 				newBlock._set_color_num(2)
@@ -66,7 +66,7 @@ func generate_level(levelFile):
 				# newBlock.rect_position.y = blockYPos
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 			if levelContent[str(counter)] == '3':
-				var newBlock = block.instance()
+				var newBlock = block.instantiate()
 				newBlock.set_name("blueBlock")
 				newBlock.color = Color(0,0,1, 1) 
 				newBlock._set_color_num(3)
@@ -75,7 +75,7 @@ func generate_level(levelFile):
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
 			if levelContent[str(counter)] == '4':
-				var newBlock = block.instance()
+				var newBlock = block.instantiate()
 				newBlock.set_name("purpleBlock")
 				newBlock.color = Color(1,0,1,0)
 				newBlock._set_color_num(4)
@@ -85,7 +85,7 @@ func generate_level(levelFile):
 				newBottle.get_node("VBoxContainer").add_child(newBlock) 
 
 			if levelContent[str(counter)] == '0':
-				var newBlock = block.instance()
+				var newBlock = block.instantiate()
 				newBlock.set_name("nullBlock")
 				newBlock.color = Color(0,0,0,0) 
 				newBlock._set_color_num(0)
