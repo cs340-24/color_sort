@@ -12,6 +12,7 @@ func _ready():
 	add_child(rect_behind)
 	add_child(button)
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

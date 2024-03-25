@@ -1,34 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq07jr2hqhojr"]
+[gd_scene load_steps=2 format=3 uid="uid://bq07jr2hqhojr"]
 
-[ext_resource type="Script" path="res://play_game.gd" id="1_27iii"]
-[ext_resource type="PackedScene" uid="uid://dso5mlog2m67y" path="res://toolbar.tscn" id="3_f2l3e"]
+[ext_resource type="Script" path="res://load_game.gd" id="1_7glyq"]
 
 [node name="main" type="Node2D"]
-
-[node name="Game" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 720.0
-offset_bottom = 1280.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("1_27iii")
-
-[node name="Background" type="ColorRect" parent="Game"]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.17, 0.22, 0.3, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Toolbar" parent="Game" instance=ExtResource("3_f2l3e")]
-layout_mode = 1
-offset_bottom = -1130.0
+script = ExtResource("1_7glyq")

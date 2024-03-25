@@ -8,23 +8,28 @@ var block
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameData.reset_level.connect(reset)
+	await GameData.game_loaded
+	
 	for level_data in GameData.levels:
+		# load the level scene
 		level = GameData.bottles_scene.instantiate()
 		level.set_position(GameData.level_pos)
 		level.set_size(GameData.level_size)
 		level.set_name("Level")
 		add_child(level)
-		GameData.level_data = level_data
+		GameData.level_data = level_data 
 		
+		# bottles_completed and bottles_pressed need to be 0 to start
 		GameData.bottles_completed = 0
 		GameData.bottles_pressed = 0
+		
+		# load the level's data
 		load_level_data(level_data)
-
-		#.connect("reset", self.reset)
 
 		GameData.level_complete.connect(clear_level)
 		await GameData.level_complete
-	
+
+	GameData.game_complete.emit()
 
 # Duplicate nodes to create numBottles bottles with numBlocks blocks each.
 # Set the color values for the blocks and spacing around the bottles
@@ -133,7 +138,4 @@ func clear_level():
 	
 func _deferred_clear_level(level):
 	level.free()
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+

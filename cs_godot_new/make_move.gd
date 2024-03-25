@@ -1,9 +1,9 @@
 extends GridContainer
 
-signal level_complete # signal to Level that the level is complete
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GameData.make_move.connect(make_move)
 	pass # Replace with function body.
 
 
@@ -95,7 +95,7 @@ func make_move(bottle_from, bottle_to):
 		
 		if (GameData.bottles_completed == GameData.num_colors):
 			print("emitting level complete")
-			emit_signal("level_complete")
+			GameData.level_complete.emit()
 	
 	else:
 		print("no move for you")	
