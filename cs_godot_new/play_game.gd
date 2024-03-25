@@ -4,9 +4,10 @@ var level
 var bottle 
 var blocks
 var block 
-
+var ld 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
 
 	
 	for level_data in GameData.levels:
@@ -15,16 +16,13 @@ func _ready():
 		level.set_size(GameData.level_size)
 		level.set_name("Level")
 		add_child(level)
+		ld = level_data
+		GameData.reset_level.connect(reset)
 		
 		GameData.bottles_completed = 0
 		GameData.bottles_pressed = 0
 		load_level_data(level_data)
-		
-		
-		get_parent().get_child(0).connect("reset_level", self.reset_level)
-		print(get_parent().get_child(0).name)
-		print("connected: ", is_connected("reset_level", self.reset_level))
-		
+
 		#.connect("reset", self.reset)
 		level.connect("level_complete", self.clear_level)
 		await level.level_complete
@@ -124,8 +122,9 @@ func print_metadata(bottles):
 	print("\n")	
 
 
-func reset_level():
-	print("resetting level")
+func reset():
+	GameData.bottles_completed = 0
+	set_colors(ld)
 
 		
 func clear_level():

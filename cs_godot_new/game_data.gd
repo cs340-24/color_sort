@@ -25,8 +25,6 @@ var level_size = Vector2(620, 1050) # size of the grid on the game screen
 
 
 func _ready():
-	var reset_button = get_node("/root/main/Game/Toolbar/HBoxContainer/Reset")
-	reset_button.connect("reset", self.reset)
 	load_game_data()
 
 
@@ -91,9 +89,7 @@ func load_game_data():
 		return false
 
 
-func reset():
-	print("emitting signal")
-	emit_signal("reset_level")
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
