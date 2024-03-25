@@ -13,15 +13,22 @@ config_version=5
 config/name="color_sort"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://icon.png"
+
+[autoload]
+
+GameData="*res://game_data.gd"
 
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
+window/size/mode=2
 window/size/window_width_override=720
 window/size/window_height_override=1280
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
 
 [gui]
 

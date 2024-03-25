@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpmf66dwtvs0h"]
+
+[ext_resource type="Script" path="res://make_move.gd" id="1_h6whg"]
+[ext_resource type="Script" path="res://bottle_buttons.gd" id="2_eg7lx"]
+
+[sub_resource type="GDScript" id="GDScript_skjfl"]
+script/source = "extends VBoxContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Level" type="GridContainer"]
+offset_left = 421.0
+offset_top = 564.0
+offset_right = 446.0
+offset_bottom = 664.0
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 100
+columns = 2
+script = ExtResource("1_h6whg")
+
+[node name="Bottle1" type="AspectRatioContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ratio = 0.25
+script = ExtResource("2_eg7lx")
+metadata/top_color = Color(0, 0, 0, 1)
+metadata/top_blocks = 0
+metadata/is_complete = false
+metadata/empty_blocks = 0
+
+[node name="Blocks" type="VBoxContainer" parent="Bottle1"]
+layout_mode = 2
+theme_override_constants/separation = -1
+script = SubResource("GDScript_skjfl")
+
+[node name="Block1" type="ColorRect" parent="Bottle1/Blocks"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.396078, 1, 1, 1)
