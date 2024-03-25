@@ -54,4 +54,3 @@ func load_colors():
 		print("Error: Could not load color file.")
 		return false
 	
-
