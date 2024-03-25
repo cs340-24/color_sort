@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -15,13 +15,18 @@ var botXPos = 200
 var blockXPos = 125
 var blockYPos = 300
 var levelNum = 1
+var levelVec = {}
+var moveBlockVec = {}
+var currLevelFile
+var levelGenText = 'res://levelData/3colors.txt'
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node("UpperButtons/ChangeDifficulty/Difficulty").hide()
 	read_level()
-	generate_level(levelContent, levelNum)
+
 
 func read_level():
-	var levelFile = FileAccess.open('res://3colors.txt', FileAccess.READ)
+	var levelFile = FileAccess.open(levelGenText, FileAccess.READ)
 	if !levelFile.is_open(): 
 		print("ERROR: FILE NOT OPEN")
 	var i = 1
@@ -30,12 +35,18 @@ func read_level():
 		levelContent[str(i)] = line
 		i += 1
 	levelFile.close()
+	generate_level(levelContent, levelNum)
 	## TO CHANGE
 
 func generate_level(levelContent, levelNum):
+	for n in $bottleCont.get_children():
+		$bottleCont.remove_child(n)
+		n.queue_free()
+	currLevel = {}
 	currLevel = levelContent[str(levelNum)].split(" ", false, 30)
 	numBottles = currLevel[0]
 	numSpots = currLevel[1]
+	get_node('bottleCont').columns = int(numBottles) / 2 
 	print(numBottles)
 	var i = 0
 	var oldY = blockYPos
@@ -98,15 +109,60 @@ func generate_level(levelContent, levelNum):
 		botXPos += 250
 	print("Level Generated")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func select_block():
+	pass
+
+func move_block():
+	pass
+
+func save_level(levelVec):
+	pass
+
+func write_to_file(currLevelFile, numBottles, numSpots):
+	pass
+
 
 # Debug button added in order to test level switching
 func _on_next_level_pressed():
-	for n in $bottleCont.get_children():
-		$bottleCont.remove_child(n)
-		n.queue_free()
-	currLevel = {}
 	levelNum += 1
 	generate_level(levelContent,levelNum)
+
+func _process(delta):
+	# if $tempBottle.hasBeenPressed == true:
+	# 	$tempBottle.get_node("block")
+	pass
+
+
+
+func _on_reset_level_pressed():
+	generate_level(levelContent, levelNum)
+	print("Level Reset")
+
+
+func _on_change_difficulty_pressed():
+	get_node("UpperButtons/ChangeDifficulty/Difficulty").show()
+
+func _on_three_color_pressed():
+	print("Three Color!")
+	levelGenText = 'res://levelData/3colors.txt'
+	levelNum = 1
+	get_node("UpperButtons/ChangeDifficulty/Difficulty").hide()
+	read_level()
+
+func _on_four_color_pressed():
+	print("Four Color!")
+	levelGenText = 'res://levelData/4colors.txt'
+	levelNum = 1	
+	get_node("UpperButtons/ChangeDifficulty/Difficulty").hide()
+	read_level()
+
+func _on_five_color_pressed():
+	print("Five Color!")
+	levelGenText = 'res://levelData/5colors.txt'
+	levelNum = 1	
+	get_node("UpperButtons/ChangeDifficulty/Difficulty").hide()
+	read_level()
+
+func _on_cancel_pressed():
+	print("Cancel!")
+	get_node("UpperButtons/ChangeDifficulty/Difficulty").hide()

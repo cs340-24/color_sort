@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bq07jr2hqhojr"]
+[gd_scene load_steps=22 format=3 uid="uid://bt1uhqfsta8bd"]
 
 [ext_resource type="Script" path="res://playGame.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bwu2w6ohubyia" path="res://newGame.tscn" id="2"]
-[ext_resource type="Theme" uid="uid://5c0t4s2d0oqu" path="res://introButton.tres" id="3_mom3o"]
+[ext_resource type="Theme" uid="uid://d2fp84exltpwq" path="res://introButton.tres" id="3_mom3o"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ojrpk"]
 
@@ -14,6 +14,30 @@ modulate_color = Color(1, 0, 1, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r0h1h"]
 texture = SubResource("CanvasTexture_ni3vw")
+modulate_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_p2ea1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8cj7p"]
+texture = SubResource("CanvasTexture_p2ea1")
+modulate_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wq8fc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bf2j3"]
+texture = SubResource("CanvasTexture_wq8fc")
+modulate_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_aeis2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7f4lm"]
+texture = SubResource("CanvasTexture_aeis2")
+modulate_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nked5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_etyjr"]
+texture = SubResource("CanvasTexture_nked5")
 modulate_color = Color(1, 0, 1, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vjhny"]
@@ -49,24 +73,27 @@ position = Vector2(503, 303)
 
 [node name="bottleCont" type="GridContainer" parent="Game"]
 clip_contents = true
-offset_left = -2.79128
-offset_top = 88.7908
-offset_right = 1010.21
-offset_bottom = 1267.79
+layout_mode = 0
+offset_left = 37.6823
+offset_top = 84.0928
+offset_right = 1050.68
+offset_bottom = 1263.09
 scale = Vector2(1, 0.351)
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 15
 columns = 2
 
 [node name="UpperButtons" type="HBoxContainer" parent="Game"]
+layout_mode = 0
 offset_left = 80.0
 offset_top = 7.0
 offset_right = 950.0
 offset_bottom = 87.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("3_mom3o")
 theme_override_constants/separation = 25
 alignment = 1
 metadata/_edit_group_ = true
@@ -87,6 +114,41 @@ theme = ExtResource("3_mom3o")
 theme_override_styles/normal = SubResource("StyleBoxTexture_r0h1h")
 text = "Change Difficulty"
 metadata/_edit_group_ = true
+
+[node name="Difficulty" type="HBoxContainer" parent="Game/UpperButtons/ChangeDifficulty"]
+layout_mode = 0
+offset_left = -150.0
+offset_top = 86.0
+offset_right = 443.0
+offset_bottom = 185.0
+
+[node name="threeColor" type="Button" parent="Game/UpperButtons/ChangeDifficulty/Difficulty"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mom3o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8cj7p")
+text = "Three Colors"
+
+[node name="fourColor" type="Button" parent="Game/UpperButtons/ChangeDifficulty/Difficulty"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mom3o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bf2j3")
+text = "Four Colors"
+
+[node name="fiveColor" type="Button" parent="Game/UpperButtons/ChangeDifficulty/Difficulty"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mom3o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7f4lm")
+text = "FIve Colors"
+
+[node name="cancel" type="Button" parent="Game/UpperButtons/ChangeDifficulty/Difficulty"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_mom3o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_etyjr")
+text = "Cancel"
 
 [node name="Undo" type="Button" parent="Game/UpperButtons"]
 layout_mode = 2
@@ -114,6 +176,10 @@ text = "DEBUG: Next Level"
 
 [connection signal="pressed" from="Game/UpperButtons/resetLevel" to="Game" method="_on_reset_level_pressed"]
 [connection signal="pressed" from="Game/UpperButtons/ChangeDifficulty" to="Game" method="_on_change_difficulty_pressed"]
+[connection signal="pressed" from="Game/UpperButtons/ChangeDifficulty/Difficulty/threeColor" to="Game" method="_on_three_color_pressed"]
+[connection signal="pressed" from="Game/UpperButtons/ChangeDifficulty/Difficulty/fourColor" to="Game" method="_on_four_color_pressed"]
+[connection signal="pressed" from="Game/UpperButtons/ChangeDifficulty/Difficulty/fiveColor" to="Game" method="_on_five_color_pressed"]
+[connection signal="pressed" from="Game/UpperButtons/ChangeDifficulty/Difficulty/cancel" to="Game" method="_on_cancel_pressed"]
 [connection signal="pressed" from="Game/UpperButtons/Undo" to="Game" method="_on_undo_pressed"]
 [connection signal="pressed" from="Game/UpperButtons/Help" to="Game" method="_on_help_pressed"]
 [connection signal="pressed" from="Game/UpperButtons/next_level" to="Game" method="_on_next_level_pressed"]

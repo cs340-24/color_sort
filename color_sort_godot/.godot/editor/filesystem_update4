@@ -1,7 +1,9 @@
 res://main.tscn
 res://introButton.tres
-res://playGame.gd
-res://newGame.tscn
 res://tempBottle.tscn
-res://blockScript.gd
 res://block.tscn
+res://level.tscn
+res://BlockScript.gd
+res://playGame.gd
+res://tempBottle.gd
+res://newGame.tscn

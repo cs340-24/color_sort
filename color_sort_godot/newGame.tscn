@@ -3,7 +3,9 @@
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(1025, 602)
 
-[node name="newGame" type="Node2D"]
+[node name="newGame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="background" type="Area2D" parent="."]
 
