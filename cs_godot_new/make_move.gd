@@ -4,15 +4,8 @@ extends GridContainer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameData.make_move.connect(make_move)
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-
+	
 func make_move(bottle_from, bottle_to):
 	var blocks_to_move # number of blocks getting moved. min of top blocks in source or
 					   # empty blocks in destination
@@ -39,9 +32,10 @@ func make_move(bottle_from, bottle_to):
 			to_index = to_index - 1
 			
 			# change empty block to color
-			bottle_to.get_child(0).get_child(to_index).set_color(color)
+			bottle_to.get_child(0).get_child(to_index).set_bg_color(color)
+			
 			# change color block to empty 
-			bottle_from.get_child(0).get_child(i + from_index).set_color(GameData.empty_color)
+			bottle_from.get_child(0).get_child(i + from_index).set_bg_color(GameData.empty_color)
 			
 
 		# increment number of emtpy blocks in source bottle
@@ -52,14 +46,14 @@ func make_move(bottle_from, bottle_to):
 		if bottle_from.get_meta("empty_blocks") != GameData.num_blocks:
 			# increment from_index by block_to_move to get index of new top block after move
 			from_index = from_index + blocks_to_move
-			var new_color = bottle_from.get_child(0).get_child(from_index).get_color()
+			var new_color = bottle_from.get_child(0).get_child(from_index).get_theme_stylebox("bottle_button").get_bg_color()
 			bottle_from.set_meta("top_color", new_color)
 			
 			# count consecutive blocks
 			blocks = bottle_from.get_child(0).get_children()
 			var top_blocks = 0
 			for j in range(from_index, blocks.size()):
-				if blocks[j].get_color() == new_color:
+				if blocks[j].get_theme_stylebox("bottle_button").get_bg_color() == new_color:
 					top_blocks = top_blocks + 1
 				else:
 					break
@@ -77,7 +71,7 @@ func make_move(bottle_from, bottle_to):
 		var top_blocks = 0
 		# start at the first non-empty block
 		for j in range(to_index, blocks.size()):
-			if blocks[j].get_color() == color:
+			if blocks[j].get_theme_stylebox("bottle_button").get_bg_color() == color:
 				top_blocks = top_blocks + 1
 			else:
 				break

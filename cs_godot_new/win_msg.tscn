@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dg4fqacol5hoq"]
+
+[node name="PopupPanel" type="PopupPanel"]
+size = Vector2i(600, 300)
+visible = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 596.0
+offset_bottom = 296.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 100
+text = "      Level 
+  Complete!"
+fit_content = true

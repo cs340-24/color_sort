@@ -4,6 +4,7 @@ extends Node
 var color_filename = "res://colors.txt"
 var bottles_scene = preload("res://level.tscn")
 var game_screen = preload("res://game.tscn")
+var win_msg = preload("res://win_msg.tscn")
 
 signal reset_level
 signal make_move
@@ -12,6 +13,7 @@ signal start
 signal load_game
 signal game_loaded
 signal game_complete
+signal borders
 
 var max_colors  # number of colors in the color file
 

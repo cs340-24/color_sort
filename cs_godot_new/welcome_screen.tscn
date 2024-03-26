@@ -29,6 +29,58 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.168627, 0.219608, 0.301961, 1)
 
+[node name="PlayGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 110.0
+offset_right = 200.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_lon7r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("1_0yikw")
+theme_override_styles/hover = ExtResource("1_0yikw")
+theme_override_styles/pressed = ExtResource("1_0yikw")
+theme_override_styles/disabled = ExtResource("1_0yikw")
+theme_override_styles/focus = ExtResource("1_0yikw")
+action_mode = 0
+shortcut = SubResource("Shortcut_k3xuq")
+text = "Play Game"
+script = ExtResource("1_w2il2")
+
+[node name="HowTo" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 260.0
+offset_right = 200.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_lon7r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("1_0yikw")
+theme_override_styles/hover = ExtResource("1_0yikw")
+theme_override_styles/pressed = ExtResource("1_0yikw")
+theme_override_styles/disabled = ExtResource("1_0yikw")
+theme_override_styles/focus = ExtResource("1_0yikw")
+action_mode = 0
+shortcut = SubResource("Shortcut_k3xuq")
+text = "How To Play"
+script = ExtResource("1_w2il2")
+
 [node name="RightBorder" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 9
@@ -420,6 +472,7 @@ text = "L"
 fit_content = true
 
 [node name="O3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 401.0
 offset_top = 227.323
 offset_right = 495.0
@@ -454,6 +507,7 @@ text = "R"
 fit_content = true
 
 [node name="S" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 208.485
 offset_top = 383.0
 offset_right = 302.485
@@ -487,6 +541,7 @@ text = "O"
 fit_content = true
 
 [node name="R2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 331.485
 offset_top = 406.0
 offset_right = 425.485
@@ -503,6 +558,7 @@ text = "R"
 fit_content = true
 
 [node name="T" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 450.485
 offset_top = 406.0
 offset_right = 575.485
@@ -519,6 +575,7 @@ text = "T"
 fit_content = true
 
 [node name="!" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 535.0
 offset_top = 406.0
 offset_right = 660.0
@@ -533,29 +590,3 @@ theme_override_font_sizes/bold_italics_font_size = 50
 theme_override_font_sizes/mono_font_size = 50
 text = "!"
 fit_content = true
-
-[node name="Reset" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = 110.0
-offset_right = 200.0
-offset_bottom = 210.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-theme = SubResource("Theme_lon7r")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = ExtResource("1_0yikw")
-theme_override_styles/hover = ExtResource("1_0yikw")
-theme_override_styles/pressed = ExtResource("1_0yikw")
-theme_override_styles/disabled = ExtResource("1_0yikw")
-theme_override_styles/focus = ExtResource("1_0yikw")
-action_mode = 0
-shortcut = SubResource("Shortcut_k3xuq")
-text = "Play Game"
-script = ExtResource("1_w2il2")
