@@ -6,4 +6,5 @@ func _ready():
 
 
 func _button_pressed():
+	print("emitting reset level signal")
 	GameData.reset_level.emit(GameData.level_data)

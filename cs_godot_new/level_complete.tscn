@@ -3,7 +3,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmrmh"]
 
 [node name="Popup" type="PopupPanel"]
-position = Vector2i(60, 200)
+position = Vector2i(60, 0)
 size = Vector2i(600, 300)
 visible = true
 max_size = Vector2i(720, 1280)

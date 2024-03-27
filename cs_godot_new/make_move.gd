@@ -32,10 +32,11 @@ func make_move(bottle_from, bottle_to):
 			to_index = to_index - 1
 			
 			# change empty block to color
-			bottle_to.get_child(0).get_child(to_index).set_bg_color(color)
+			
+			bottle_to.get_child(0).get_child(0).get_child(to_index).get_theme_stylebox("panel").bg_color = color 
 			
 			# change color block to empty 
-			bottle_from.get_child(0).get_child(i + from_index).set_bg_color(GameData.empty_color)
+			bottle_from.get_child(0).get_child(0).get_child(i + from_index).get_theme_stylebox("panel").bg_color = GameData.empty_color
 			
 
 		# increment number of emtpy blocks in source bottle
@@ -46,14 +47,14 @@ func make_move(bottle_from, bottle_to):
 		if bottle_from.get_meta("empty_blocks") != GameData.num_blocks:
 			# increment from_index by block_to_move to get index of new top block after move
 			from_index = from_index + blocks_to_move
-			var new_color = bottle_from.get_child(0).get_child(from_index).get_theme_stylebox("bottle_button").get_bg_color()
+			var new_color = bottle_from.get_child(0).get_child(0).get_child(from_index).get_theme_stylebox("panel").bg_color
 			bottle_from.set_meta("top_color", new_color)
 			
 			# count consecutive blocks
-			blocks = bottle_from.get_child(0).get_children()
+			blocks = bottle_from.get_child(0).get_child(0).get_children()
 			var top_blocks = 0
 			for j in range(from_index, blocks.size()):
-				if blocks[j].get_theme_stylebox("bottle_button").get_bg_color() == new_color:
+				if blocks[j].get_theme_stylebox("panel").bg_color == new_color:
 					top_blocks = top_blocks + 1
 				else:
 					break
@@ -67,11 +68,11 @@ func make_move(bottle_from, bottle_to):
 		bottle_to.set_meta("empty_blocks", to_index)
 		
 		# count consecutive top color blocks in source. skip over the empties.
-		blocks = bottle_to.get_child(0).get_children()
+		blocks = bottle_to.get_child(0).get_child(0).get_children()
 		var top_blocks = 0
 		# start at the first non-empty block
 		for j in range(to_index, blocks.size()):
-			if blocks[j].get_theme_stylebox("bottle_button").get_bg_color() == color:
+			if blocks[j].get_theme_stylebox("panel").bg_color == color:
 				top_blocks = top_blocks + 1
 			else:
 				break

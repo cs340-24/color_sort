@@ -7,4 +7,5 @@ func _ready():
 
 
 func _button_pressed():
+	print("emitting start game signal")
 	GameData.start.emit()

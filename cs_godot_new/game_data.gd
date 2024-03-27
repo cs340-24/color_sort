@@ -46,7 +46,7 @@ func load_colors():
 			# rgba[0] is the name of the color. the next 4 vals are the rgba values of the color
 			var rgba = color_file.get_line().split(" ")
 			# add the color to the list
-			colors[rgba[0]] = Color(float(rgba[1]), float(rgba[2]), float(rgba[3]), float(rgba[4]))
+			colors[rgba[0]] = Color(rgba[1])
 			
 		color_file.close()
 		empty_color = colors["empty"]
