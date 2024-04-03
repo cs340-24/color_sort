@@ -2,7 +2,7 @@ extends Node2D
 
 var welcome
 var game
-var game_filename = "res://levelData/1per.txt"
+var game_filename = "res://levelData/1level.txt"
 var welcome_screen = preload("res://welcome_screen.tscn")
 
 # Called when the node enters the scene tree for the first time.

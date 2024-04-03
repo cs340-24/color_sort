@@ -21,6 +21,6 @@ func _button_pressed():
 		GameData.bottles_pressed = 2
 		GameData.bottle_to = get_parent()
 
-		GameData.emit_signal("make_move", GameData.bottle_from, GameData.bottle_to)
+		GameData.emit_signal("make_move", GameData.bottle_from, GameData.bottle_to, 0)
 		#GameData.bottle_from.get_child(1).modulate = Color(0,0,0,0)
 

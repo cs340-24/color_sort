@@ -21,7 +21,6 @@ func _ready():
 		load_level_data(level_data)
 
 		#.connect("reset", self.reset)
-
 		GameData.level_complete.connect(clear_level)
 		await GameData.level_complete
 	

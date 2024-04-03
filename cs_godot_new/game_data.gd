@@ -13,10 +13,11 @@ signal start
 signal load_game
 signal game_loaded
 signal game_complete
-signal borders
+signal undo_move
 
 var max_colors  # number of colors in the color file
 
+var move_array = []  # keeps track of moves
 var level_data = {}  # data for one level
 var levels = []      # each element is an array of data for 1 level
 var colors = {}      # ckey: name of color
