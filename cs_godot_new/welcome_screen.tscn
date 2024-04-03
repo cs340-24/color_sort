@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://k8hnf3djk3l7"]
+[gd_scene load_steps=5 format=3 uid="uid://dwenejnu7gmtx"]
 
-[ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://toolbar_button.tres" id="1_0yikw"]
+[ext_resource type="StyleBox" path="res://toolbar_button.tres" id="1_0yikw"]
 [ext_resource type="Script" path="res://start_button.gd" id="1_w2il2"]
 
 [sub_resource type="Theme" id="Theme_lon7r"]
@@ -399,6 +399,7 @@ text = "R"
 fit_content = true
 
 [node name="S" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 169.0
 offset_top = 409.0
 offset_right = 263.0
@@ -415,6 +416,7 @@ text = "S"
 fit_content = true
 
 [node name="O3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 257.0
 offset_top = 374.0
 offset_right = 351.0
@@ -430,6 +432,7 @@ text = "O"
 fit_content = true
 
 [node name="R2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 351.0
 offset_top = 397.0
 offset_right = 445.0
@@ -446,6 +449,7 @@ text = "R"
 fit_content = true
 
 [node name="T" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 460.0
 offset_top = 378.0
 offset_right = 585.0

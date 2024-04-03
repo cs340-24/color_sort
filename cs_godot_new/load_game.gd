@@ -4,7 +4,6 @@ var welcome
 var game
 var game_filename = "res://levelData/1per.txt"
 var welcome_screen = preload("res://welcome_screen.tscn")
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# load the welcome screen
@@ -82,7 +81,8 @@ func load_game_data():
 				"cols" : nums[1], 
 				"num_colors" : 0,
 				"num_bottles" : nums[2], 
-				"num_blocks" : nums[3], 
+				"num_blocks" : nums[3],
+				"level_string" : numStr 
 			}
 			
 			# add number of colors 

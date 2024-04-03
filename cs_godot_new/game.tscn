@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci8gcwtf01e7r"]
+[gd_scene load_steps=3 format=3 uid="uid://bei5bl4jmctvc"]
 
 [ext_resource type="Script" path="res://load_level.gd" id="1_xg253"]
 [ext_resource type="PackedScene" uid="uid://dso5mlog2m67y" path="res://toolbar.tscn" id="2_8i01n"]
@@ -17,6 +17,7 @@ size_flags_vertical = 3
 script = ExtResource("1_xg253")
 
 [node name="Background" type="ColorRect" parent="."]
+z_index = -1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

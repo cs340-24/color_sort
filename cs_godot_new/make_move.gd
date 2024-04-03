@@ -4,6 +4,7 @@ extends GridContainer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameData.make_move.connect(make_move)
+	GameData.undo_move.connect(undo_move)
 	pass # Replace with function body.
 
 
@@ -13,18 +14,22 @@ func _process(delta):
 
 
 
-func make_move(bottle_from, bottle_to):
+func make_move(bottle_from, bottle_to,undo):
 	var blocks_to_move # number of blocks getting moved. min of top blocks in source or
 					   # empty blocks in destination
 	var blocks         # vertical container holding the blocks
-	
-
-	if check_bottles(bottle_from, bottle_to):
+	print(bottle_from.get_meta("top_blocks"),bottle_to.get_meta("top_blocks"))
+	if check_bottles(bottle_from, bottle_to,undo):
 		print("make_move: ", bottle_from.name, " ", bottle_to.name)
 		print("top blocks: ", bottle_from.get_meta("top_blocks"), " empties: ", bottle_to.get_meta("empty_blocks"))
 		print("moving ", min(bottle_from.get_meta("top_blocks"), bottle_to.get_meta("empty_blocks")), " blocks")
-		
-		blocks_to_move = min(bottle_from.get_meta("top_blocks"), bottle_to.get_meta("empty_blocks"))
+		if(!undo):
+			GameData.move_array.push_back(bottle_from.get_meta("top_blocks"))
+			GameData.move_array.push_back(bottle_to.get_meta("top_blocks"))
+		if(undo):
+			blocks_to_move = GameData.move_array.pop_back()
+		else:
+			blocks_to_move = min(bottle_from.get_meta("top_blocks"), bottle_to.get_meta("empty_blocks"))
 		
 		# color being moved
 		var color = bottle_from.get_meta("top_color")
@@ -82,7 +87,12 @@ func make_move(bottle_from, bottle_to):
 			else:
 				break
 		bottle_to.set_meta("top_blocks", top_blocks)
-		
+		if(undo):
+			bottle_from.set_meta("top_blocks", GameData.move_array.pop_back())
+			bottle_to.set_meta("top_blocks", GameData.move_array.pop_back())
+			if(bottle_from.get_meta("is_complete")):
+				bottle_from.set_meta("is_complete", false)
+				GameData.bottles_completed = GameData.bottles_completed - 1
 		# if the number of top blocks == num_blocks, then this bottle is done! woo!
 		if top_blocks == GameData.num_blocks:
 			bottle_to.set_meta("is_complete", true)
@@ -92,18 +102,25 @@ func make_move(bottle_from, bottle_to):
 			
 			
 		get_parent().print_metadata(bottle_from.get_parent())
-		
+		GameData.save_level_type.emit("Save")
 		if (GameData.bottles_completed == GameData.num_colors):
 			print("emitting level complete")
 			GameData.level_complete.emit()
+			GameData.save_level_type.emit("Complete")
 	
 	else:
-		print("no move for you")	
+		print("no move for you")
+	if(!undo):
+		GameData.move_array.push_back(blocks_to_move)
+		GameData.move_array.push_back(bottle_from)
+		GameData.move_array.push_back(bottle_to)
+		
+	print(bottle_from.get_meta("top_blocks"),bottle_to.get_meta("top_blocks"))
 
-	
 
-
-func check_bottles(bottle_from, bottle_to):
+func check_bottles(bottle_from, bottle_to,undo):
+	if undo:
+		return true
 	if bottle_from == bottle_to:
 		print("bottles equal")
 		return false
@@ -124,3 +141,9 @@ func check_bottles(bottle_from, bottle_to):
 
 	return true
 		
+
+func undo_move():
+	if(GameData.move_array.back() == null):
+		print("No move to undo please make a move")
+	else:
+		make_move(GameData.move_array.pop_back(),GameData.move_array.pop_back(),1)

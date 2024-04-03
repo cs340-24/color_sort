@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dso5mlog2m67y"]
 
 [ext_resource type="Script" path="res://reset_button.gd" id="1_46l8a"]
-[ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://toolbar_button.tres" id="1_ny3u1"]
+[ext_resource type="StyleBox" path="res://toolbar_button.tres" id="1_ny3u1"]
 
 [sub_resource type="Theme" id="Theme_3tauq"]
 default_font_size = 10
