@@ -12,6 +12,8 @@ signal start
 signal load_game
 signal game_loaded
 signal game_complete
+signal help
+signal back_to_game
 
 var max_colors  # number of colors in the color file
 

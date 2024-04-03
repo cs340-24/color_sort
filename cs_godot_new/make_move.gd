@@ -100,9 +100,6 @@ func make_move(bottle_from, bottle_to):
 	else:
 		print("no move for you")	
 
-	
-
-
 func check_bottles(bottle_from, bottle_to):
 	if bottle_from == bottle_to:
 		print("bottles equal")

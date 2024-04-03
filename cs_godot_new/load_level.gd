@@ -3,11 +3,15 @@ extends Node
 var level
 var bottle 
 var blocks
-var block 
+var block
+var help_screen = preload("res://help.tscn")
+var help_var
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameData.reset_level.connect(reset)
+	GameData.help.connect(display_help)
+	GameData.back_to_game.connect(clear_help_screen)
 	await GameData.game_loaded
 	
 	for level_data in GameData.levels:
@@ -129,7 +133,18 @@ func reset(level_data):
 	GameData.bottles_completed = 0
 	set_colors(level_data)
 
-		
+func display_help():
+	help_var = help_screen.instantiate()
+	help_var.set_name("HelpScreen")
+	get_tree().root.add_child(help_var)
+	help_var.set_owner(get_tree().root)
+
+func clear_help_screen():
+	call_deferred("_deffered_clear_help_screen", help_var)
+
+func _deffered_clear_help_screen(help_var):
+	help_var.free()
+
 func clear_level():
 	# call_deferred forces it to wait for level to finish up before trying to free it.
 	# if you don't, the game gets mad that you're trying to free level while level is 

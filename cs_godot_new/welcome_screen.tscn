@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwenejnu7gmtx"]
 
-[ext_resource type="StyleBox" path="res://toolbar_button.tres" id="1_0yikw"]
+[ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://toolbar_button.tres" id="1_0yikw"]
 [ext_resource type="Script" path="res://start_button.gd" id="1_w2il2"]
 
 [sub_resource type="Theme" id="Theme_lon7r"]
