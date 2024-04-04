@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dso5mlog2m67y"]
+[gd_scene load_steps=8 format=3 uid="uid://dso5mlog2m67y"]
 
 [ext_resource type="Script" path="res://reset_button.gd" id="1_46l8a"]
 [ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://toolbar_button.tres" id="1_ny3u1"]
+[ext_resource type="Script" path="res://undo_button.gd" id="2_lic3n"]
 [ext_resource type="Script" path="res://help_button.gd" id="3_qsdwp"]
 
 [sub_resource type="Theme" id="Theme_3tauq"]
@@ -41,6 +42,7 @@ theme_override_styles/pressed = ExtResource("1_ny3u1")
 theme_override_styles/disabled = ExtResource("1_ny3u1")
 theme_override_styles/focus = ExtResource("1_ny3u1")
 text = "Undo"
+script = ExtResource("2_lic3n")
 
 [node name="Reset" type="Button" parent="Buttons"]
 layout_mode = 2
