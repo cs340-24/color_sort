@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddxjsvd1edph"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmrmh"]
+
+[node name="Popup" type="PopupPanel"]
+position = Vector2i(60, 0)
+size = Vector2i(600, 300)
+visible = true
+max_size = Vector2i(720, 1280)
+content_scale_size = Vector2i(1200, 300)
+theme_override_styles/panel = SubResource("StyleBoxFlat_rmrmh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 600.0
+offset_bottom = 300.0
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 30
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 75
+text = "    Level 
+Complete!"
+fit_content = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwenejnu7gmtx"]
+[gd_scene load_steps=5 format=3 uid="uid://k8hnf3djk3l7"]
 
 [ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://toolbar_button.tres" id="1_0yikw"]
 [ext_resource type="Script" path="res://start_button.gd" id="1_w2il2"]
@@ -29,11 +29,63 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.168627, 0.219608, 0.301961, 1)
 
+[node name="PlayGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 110.0
+offset_right = 200.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_lon7r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("1_0yikw")
+theme_override_styles/hover = ExtResource("1_0yikw")
+theme_override_styles/pressed = ExtResource("1_0yikw")
+theme_override_styles/disabled = ExtResource("1_0yikw")
+theme_override_styles/focus = ExtResource("1_0yikw")
+action_mode = 0
+shortcut = SubResource("Shortcut_k3xuq")
+text = "Play Game"
+script = ExtResource("1_w2il2")
+
+[node name="HowTo" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 260.0
+offset_right = 200.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_lon7r")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("1_0yikw")
+theme_override_styles/hover = ExtResource("1_0yikw")
+theme_override_styles/pressed = ExtResource("1_0yikw")
+theme_override_styles/disabled = ExtResource("1_0yikw")
+theme_override_styles/focus = ExtResource("1_0yikw")
+action_mode = 0
+shortcut = SubResource("Shortcut_k3xuq")
+text = "How To Play"
+script = ExtResource("1_w2il2")
+
 [node name="RightBorder" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 645.0
+offset_left = 660.0
 offset_right = 720.0
 grow_vertical = 2
 theme_override_constants/separation = -1
@@ -41,6 +93,7 @@ theme_override_constants/separation = -1
 [node name="DarkBlue2" type="ColorRect" parent="RightBorder"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
 color = Color(0.125, 0.549, 0.729, 1)
 
 [node name="LightGreen" type="ColorRect" parent="RightBorder"]
@@ -103,26 +156,42 @@ layout_mode = 2
 size_flags_vertical = 3
 color = Color(1, 0.760784, 0.8, 1)
 
+[node name="LightBlue" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.369, 0.878, 1, 1)
+
 [node name="DarkPurple" type="ColorRect" parent="RightBorder"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.588235, 0.168627, 0.588235, 1)
 
-[node name="LightBlue" type="ColorRect" parent="RightBorder"]
+[node name="Orange2" type="ColorRect" parent="RightBorder"]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0.369, 0.878, 1, 1)
+color = Color(1, 0.588, 0.271, 1)
+
+[node name="DarkBlue3" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.125, 0.549, 0.729, 1)
 
 [node name="ColorRect12" type="ColorRect" parent="RightBorder"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.16, 0.64, 0.16, 1)
 
+[node name="LightBlue3" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.87
+color = Color(0.369, 0.878, 1, 1)
+
 [node name="LeftBorder" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 75.0
+offset_right = 60.0
 grow_vertical = 2
 theme_override_constants/separation = -1
 
@@ -136,10 +205,20 @@ layout_mode = 2
 size_flags_vertical = 3
 color = Color(1, 0.588, 0.271, 1)
 
+[node name="LightBlue" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.369, 0.878, 1, 1)
+
 [node name="DarkPurple" type="ColorRect" parent="LeftBorder"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.588, 0.169, 0.588, 1)
+
+[node name="DarkBlue2" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.125, 0.549, 0.729, 1)
 
 [node name="Yellow" type="ColorRect" parent="LeftBorder"]
 layout_mode = 2
@@ -150,6 +229,16 @@ color = Color(1, 1, 0.306, 1)
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(1, 0.761, 0.8, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.16, 0.64, 0.16, 1)
+
+[node name="Orange3" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.588, 0.271, 1)
 
 [node name="LightBlue2" type="ColorRect" parent="LeftBorder"]
 layout_mode = 2
@@ -176,41 +265,47 @@ layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.69, 0.165, 0.314, 1)
 
-[node name="LightBlue" type="ColorRect" parent="LeftBorder"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.369, 0.878, 1, 1)
-
 [node name="LightPink2" type="ColorRect" parent="LeftBorder"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(1, 0.761, 0.8, 1)
 
-[node name="ColorRect12" type="ColorRect" parent="LeftBorder"]
+[node name="LightBlue3" type="ColorRect" parent="LeftBorder"]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0.16, 0.64, 0.16, 1)
+color = Color(0.369, 0.878, 1, 1)
 
-[node name="Lilac3" type="ColorRect" parent="LeftBorder"]
+[node name="Orange2" type="ColorRect" parent="LeftBorder"]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0.8, 0.6, 1, 1)
-
-[node name="DarkBlue" type="ColorRect" parent="LeftBorder"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.125, 0.549, 0.729, 1)
+color = Color(1, 0.588235, 0.270588, 1)
 
 [node name="Yellow2" type="ColorRect" parent="LeftBorder"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(1, 1, 0.306, 1)
 
+[node name="Lilac3" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.8, 0.6, 1, 1)
+
+[node name="DarkPink2" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.968627, 0.329412, 0.490196, 1)
+
+[node name="DarkBlue" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.97
+color = Color(0.125, 0.549, 0.729, 1)
+
 [node name="TopBorder" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 75.0
-offset_right = 645.0
-offset_bottom = 75.0
+offset_left = 60.0
+offset_right = 660.0
+offset_bottom = 60.0
 theme_override_constants/separation = -1
 
 [node name="ColorRect7" type="ColorRect" parent="TopBorder"]
@@ -219,23 +314,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.969, 0.329, 0.49, 1)
 
-[node name="ColorRect6" type="ColorRect" parent="TopBorder"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.588, 0.169, 0.588, 1)
-
 [node name="ColorRect" type="ColorRect" parent="TopBorder"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.369, 0.878, 1, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="TopBorder"]
+[node name="LightPink" type="ColorRect" parent="TopBorder"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0.447, 1, 0.447, 1)
+color = Color(1, 0.760784, 0.8, 1)
 
 [node name="Orange" type="ColorRect" parent="TopBorder"]
 layout_mode = 2
@@ -243,11 +332,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(1, 0.588, 0.271, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="TopBorder"]
+[node name="ColorRect2" type="ColorRect" parent="TopBorder"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color(0.8, 0.6, 1, 1)
+color = Color(0.447, 1, 0.447, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="TopBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.588, 0.169, 0.588, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="TopBorder"]
 layout_mode = 2
@@ -255,43 +350,19 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(1, 1, 0.306, 1)
 
-[node name="BottomBorder" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 75.0
-offset_top = 1205.0
-offset_right = 645.0
-offset_bottom = 1280.0
-theme_override_constants/separation = -1
-
-[node name="ColorRect7" type="ColorRect" parent="BottomBorder"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.969, 0.329, 0.49, 1)
-
-[node name="ColorRect" type="ColorRect" parent="BottomBorder"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.369, 0.878, 1, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="BottomBorder"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(0.447, 1, 0.447, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="BottomBorder"]
+[node name="ColorRect3" type="ColorRect" parent="TopBorder"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.8, 0.6, 1, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="BottomBorder"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color(1, 1, 0.306, 1)
+[node name="BottomBorder" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 1220.0
+offset_right = 660.0
+offset_bottom = 1280.0
+theme_override_constants/separation = -1
 
 [node name="Orange" type="ColorRect" parent="BottomBorder"]
 layout_mode = 2
@@ -299,22 +370,58 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(1, 0.588, 0.271, 1)
 
+[node name="ColorRect" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.369, 0.878, 1, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.16, 0.64, 0.16, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.8, 0.6, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.447, 1, 0.447, 1)
+
 [node name="ColorRect6" type="ColorRect" parent="BottomBorder"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.588, 0.169, 0.588, 1)
 
+[node name="ColorRect4" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 0.306, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.969, 0.329, 0.49, 1)
+
 [node name="C" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 111.0
-offset_top = 192.323
-offset_right = 205.0
-offset_bottom = 363.323
+offset_left = 118.0
+offset_top = 209.323
+offset_right = 212.0
+offset_bottom = 380.323
 rotation = -0.174533
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.447059, 1, 0.447059, 1)
+theme_override_colors/default_color = Color(0.968627, 0.329412, 0.490196, 1)
 theme_override_constants/line_separation = 0
 theme_override_constants/table_h_separation = 0
 theme_override_constants/text_highlight_h_padding = 0
@@ -328,15 +435,16 @@ fit_content = true
 scroll_active = false
 shortcut_keys_enabled = false
 
-[node name="O" type="RichTextLabel" parent="."]
+[node name="O2" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 224.0
-offset_top = 201.323
-offset_right = 318.0
-offset_bottom = 372.323
+offset_left = 233.0
+offset_top = 217.323
+offset_right = 327.0
+offset_bottom = 388.323
+rotation = 0.0872665
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(1, 0.588235, 0.270588, 1)
+theme_override_colors/default_color = Color(0.368627, 0.878431, 1, 1)
 theme_override_font_sizes/normal_font_size = 125
 theme_override_font_sizes/bold_font_size = 50
 theme_override_font_sizes/italics_font_size = 50
@@ -348,10 +456,10 @@ fit_content = true
 [node name="L" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 354.0
-offset_top = 174.323
-offset_right = 448.0
-offset_bottom = 345.323
+offset_left = 355.0
+offset_top = 197.323
+offset_right = 449.0
+offset_bottom = 368.323
 rotation = 0.174533
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(1, 1, 0.305882, 1)
@@ -363,15 +471,15 @@ theme_override_font_sizes/mono_font_size = 50
 text = "L"
 fit_content = true
 
-[node name="O2" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 409.0
-offset_top = 221.323
-offset_right = 503.0
-offset_bottom = 392.323
-size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.368627, 0.878431, 1, 1)
+[node name="O3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 227.323
+offset_right = 495.0
+offset_bottom = 398.323
+rotation = -0.0872665
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.447059, 1, 0.447059, 1)
 theme_override_font_sizes/normal_font_size = 125
 theme_override_font_sizes/bold_font_size = 50
 theme_override_font_sizes/italics_font_size = 50
@@ -383,13 +491,13 @@ fit_content = true
 [node name="R" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 490.0
-offset_top = 183.323
-offset_right = 584.0
-offset_bottom = 354.323
-rotation = -0.174533
+offset_left = 534.0
+offset_top = 198.323
+offset_right = 628.0
+offset_bottom = 369.323
+rotation = 0.174533
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.968627, 0.329412, 0.490196, 1)
+theme_override_colors/default_color = Color(0.8, 0.6, 1, 1)
 theme_override_font_sizes/normal_font_size = 125
 theme_override_font_sizes/bold_font_size = 50
 theme_override_font_sizes/italics_font_size = 50
@@ -400,13 +508,13 @@ fit_content = true
 
 [node name="S" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 169.0
-offset_top = 409.0
-offset_right = 263.0
-offset_bottom = 580.0
-rotation = -0.174533
+offset_left = 208.485
+offset_top = 383.0
+offset_right = 302.485
+offset_bottom = 554.0
+rotation = 0.349066
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.368627, 0.878431, 1, 1)
+theme_override_colors/default_color = Color(0.447059, 1, 0.447059, 1)
 theme_override_font_sizes/normal_font_size = 125
 theme_override_font_sizes/bold_font_size = 50
 theme_override_font_sizes/italics_font_size = 50
@@ -415,14 +523,15 @@ theme_override_font_sizes/mono_font_size = 50
 text = "S"
 fit_content = true
 
-[node name="O3" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 257.0
-offset_top = 374.0
-offset_right = 351.0
-offset_bottom = 545.0
-size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.447059, 1, 0.447059, 1)
+[node name="O" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 245.485
+offset_top = 410.0
+offset_right = 339.485
+offset_bottom = 581.0
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(1, 0.588235, 0.270588, 1)
 theme_override_font_sizes/normal_font_size = 125
 theme_override_font_sizes/bold_font_size = 50
 theme_override_font_sizes/italics_font_size = 50
@@ -433,13 +542,13 @@ fit_content = true
 
 [node name="R2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 351.0
-offset_top = 397.0
-offset_right = 445.0
-offset_bottom = 568.0
-rotation = -0.0872665
+offset_left = 331.485
+offset_top = 406.0
+offset_right = 425.485
+offset_bottom = 577.0
+rotation = -0.174533
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(1, 0.760784, 0.8, 1)
+theme_override_colors/default_color = Color(0.368627, 0.878431, 1, 1)
 theme_override_font_sizes/normal_font_size = 125
 theme_override_font_sizes/bold_font_size = 50
 theme_override_font_sizes/italics_font_size = 50
@@ -450,43 +559,34 @@ fit_content = true
 
 [node name="T" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 460.0
-offset_top = 378.0
-offset_right = 585.0
-offset_bottom = 549.0
+offset_left = 450.485
+offset_top = 406.0
+offset_right = 575.485
+offset_bottom = 577.0
 rotation = 0.174533
 size_flags_vertical = 0
-theme_override_colors/default_color = Color(0.8, 0.6, 1, 1)
+theme_override_colors/default_color = Color(0.968627, 0.329412, 0.490196, 1)
 theme_override_font_sizes/normal_font_size = 125
 theme_override_font_sizes/bold_font_size = 50
 theme_override_font_sizes/italics_font_size = 50
 theme_override_font_sizes/bold_italics_font_size = 50
 theme_override_font_sizes/mono_font_size = 50
-text = "T!"
+text = "T"
 fit_content = true
 
-[node name="Reset" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = 110.0
-offset_right = 200.0
-offset_bottom = 210.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-theme = SubResource("Theme_lon7r")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = ExtResource("1_0yikw")
-theme_override_styles/hover = ExtResource("1_0yikw")
-theme_override_styles/pressed = ExtResource("1_0yikw")
-theme_override_styles/disabled = ExtResource("1_0yikw")
-theme_override_styles/focus = ExtResource("1_0yikw")
-action_mode = 0
-shortcut = SubResource("Shortcut_k3xuq")
-text = "Play Game"
-script = ExtResource("1_w2il2")
+[node name="!" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 406.0
+offset_right = 660.0
+offset_bottom = 577.0
+rotation = 0.174533
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(1, 1, 0.305882, 1)
+theme_override_font_sizes/normal_font_size = 125
+theme_override_font_sizes/bold_font_size = 50
+theme_override_font_sizes/italics_font_size = 50
+theme_override_font_sizes/bold_italics_font_size = 50
+theme_override_font_sizes/mono_font_size = 50
+text = "!"
+fit_content = true

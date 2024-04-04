@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://reset_button.gd" id="1_46l8a"]
 [ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://toolbar_button.tres" id="1_ny3u1"]
-[ext_resource type="Script" path="res://undo_button.gd" id="2_lic3n"]
-[ext_resource type="Script" path="res://help_button.gd" id="3_qsdwp"]
+[ext_resource type="Script" path="res://undo_button.gd" id="2_16ngt"]
+[ext_resource type="Script" path="res://help_button.gd" id="4_n56ya"]
 
 [sub_resource type="Theme" id="Theme_3tauq"]
 default_font_size = 10
@@ -18,6 +18,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -120.0
 offset_bottom = -1180.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -27,9 +28,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = -130.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 62
 
 [node name="Undo" type="Button" parent="Buttons"]
 layout_mode = 2
@@ -42,7 +46,7 @@ theme_override_styles/pressed = ExtResource("1_ny3u1")
 theme_override_styles/disabled = ExtResource("1_ny3u1")
 theme_override_styles/focus = ExtResource("1_ny3u1")
 text = "Undo"
-script = ExtResource("2_lic3n")
+script = ExtResource("2_16ngt")
 
 [node name="Reset" type="Button" parent="Buttons"]
 layout_mode = 2
@@ -73,4 +77,20 @@ action_mode = 0
 shortcut = SubResource("Shortcut_g7neh")
 text = "Help
 "
-script = ExtResource("3_qsdwp")
+script = ExtResource("4_n56ya")
+
+[node name="Mute" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_0nw6a")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("1_ny3u1")
+theme_override_styles/hover = ExtResource("1_ny3u1")
+theme_override_styles/pressed = ExtResource("1_ny3u1")
+theme_override_styles/disabled = ExtResource("1_ny3u1")
+theme_override_styles/focus = ExtResource("1_ny3u1")
+action_mode = 0
+shortcut = SubResource("Shortcut_g7neh")
+text = "Mute
+"
+script = ExtResource("1_46l8a")

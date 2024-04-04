@@ -4,6 +4,7 @@ extends Node
 var color_filename = "res://colors.txt"
 var bottles_scene = preload("res://level.tscn")
 var game_screen = preload("res://game.tscn")
+var win_msg = preload("res://win_msg.tscn")
 
 signal reset_level
 signal make_move
@@ -18,8 +19,8 @@ signal undo_move
 
 var max_colors  # number of colors in the color file
 
-var level_data = {}  # data for one level
 var move_array = []  # keeps track of moves
+var level_data = {}  # data for one level
 var levels = []      # each element is an array of data for 1 level
 var colors = {}      # ckey: name of color
 							 # val: Color(r,g,b,a)
@@ -48,7 +49,7 @@ func load_colors():
 			# rgba[0] is the name of the color. the next 4 vals are the rgba values of the color
 			var rgba = color_file.get_line().split(" ")
 			# add the color to the list
-			colors[rgba[0]] = Color(float(rgba[1]), float(rgba[2]), float(rgba[3]), float(rgba[4]))
+			colors[rgba[0]] = Color(rgba[1])
 			
 		color_file.close()
 		empty_color = colors["empty"]
@@ -58,3 +59,4 @@ func load_colors():
 		print("Error: Could not load color file.")
 		return false
 	
+
