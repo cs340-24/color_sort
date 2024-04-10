@@ -42,14 +42,12 @@ func make_move(bottle_from, bottle_to, undo):
 			# change empty block to color
 			
 			# This is where implementing the Tween node would take place, since this is where the top colors change.
-			var tween = get_tree().create_tween()
-			tween.tween_property(bottle_to.get_child(0).get_child(0).get_child(to_index).get_theme_stylebox("panel"), "bg_color", color, 0.25)
-			await tween.finished
+			var tween = get_tree().create_tween().set_parallel(true)
+			tween.tween_property(bottle_to.get_child(0).get_child(0).get_child(to_index).get_theme_stylebox("panel"), "bg_color", color, 0.33)
 			# bottle_to.get_child(0).get_child(0).get_child(to_index).get_theme_stylebox("panel").bg_color = color
 			
 			# change color block to empty
-			tween = get_tree().create_tween()
-			tween.tween_property(bottle_from.get_child(0).get_child(0).get_child(i + from_index).get_theme_stylebox("panel"), "bg_color", GameData.empty_color, 0.25)
+			tween.tween_property(bottle_from.get_child(0).get_child(0).get_child(i + from_index).get_theme_stylebox("panel"), "bg_color", GameData.empty_color, 0.33)
 			await tween.finished
 			# bottle_from.get_child(0).get_child(0).get_child(i + from_index).get_theme_stylebox("panel").bg_color = GameData.empty_color
 			
