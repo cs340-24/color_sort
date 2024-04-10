@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://k8hnf3djk3l7"]
+[gd_scene load_steps=6 format=3 uid="uid://k8hnf3djk3l7"]
 
 [ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://toolbar_button.tres" id="1_0yikw"]
 [ext_resource type="Script" path="res://start_button.gd" id="1_w2il2"]
+[ext_resource type="Script" path="res://help_button.gd" id="3_6wncq"]
 
 [sub_resource type="Theme" id="Theme_lon7r"]
 default_font_size = 10
@@ -79,7 +80,7 @@ theme_override_styles/focus = ExtResource("1_0yikw")
 action_mode = 0
 shortcut = SubResource("Shortcut_k3xuq")
 text = "How To Play"
-script = ExtResource("1_w2il2")
+script = ExtResource("3_6wncq")
 
 [node name="RightBorder" type="VBoxContainer" parent="."]
 layout_mode = 1

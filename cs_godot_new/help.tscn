@@ -637,5 +637,5 @@ theme_override_styles/hover = ExtResource("1_dehda")
 theme_override_styles/pressed = ExtResource("1_dehda")
 theme_override_styles/disabled = ExtResource("1_dehda")
 theme_override_styles/focus = ExtResource("1_dehda")
-text = "Back to Game"
+text = "Back"
 script = ExtResource("2_8ujci")

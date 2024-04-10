@@ -4,6 +4,8 @@ var welcome
 var game
 var game_filename = "res://levelData/1per.txt"
 var welcome_screen = preload("res://welcome_screen.tscn")
+var help_screen = preload("res://help.tscn")
+var help_var
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +15,8 @@ func load_game():
 		# load the welcome screen
 	load_welcome()
 	GameData.game_complete.connect(load_next_game)
+	GameData.help.connect(load_help)
+	GameData.back_to_game.connect(clear_help_screen)
 
 	# wait till user presses "play game" to start the game
 	# when they do, clear the welcome screen 
@@ -53,7 +57,19 @@ func _deferred_clear_welcome_screen():
 
 func clear_welcome_screen():
 	call_deferred("_deferred_clear_welcome_screen")
-	
+
+func load_help():
+	help_var = help_screen.instantiate()
+	help_var.set_name("HelpScreen")
+	get_tree().root.add_child(help_var)
+	help_var.set_owner(get_tree().root)
+
+func clear_help_screen():
+	call_deferred("_deffered_clear_help_screen", help_var)
+
+func _deffered_clear_help_screen(help_var):
+	help_var.free()
+
 func load_game_data():
 	
 	# Make a list of each level's data
