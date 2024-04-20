@@ -3,6 +3,8 @@ extends Node
 var currentLevel = 'res://levelData/currentLevel.txt'
 var saveVec = {}
 var levelVec = {}
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameData.save_level_type.connect(save_game)
@@ -28,6 +30,16 @@ func save_game(saveType):
 		if FileAccess.file_exists(currentLevel):
 			var file = FileAccess.open(currentLevel, FileAccess.READ_WRITE)
 			file.seek_end()
+			var level = get_node("../Level")
+			## Use gamedata.colors to compare the bottles in numBottles's blocks to RGBA values to set currentBLock = index of checked block
+			print(GameData.colors)
+			for i in level.get_children():
+				for j in i.get_node("Blocks").get_children():
+					print(j.color)
+				#level.get_child("Bottle")
+				#for j in level.bottle[i]:
+					print("TEST")
+			
 		else:
 			var file = FileAccess.open(currentLevel, FileAccess.WRITE)
 			var Level = get_node("../Level")
