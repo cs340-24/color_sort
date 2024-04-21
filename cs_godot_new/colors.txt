@@ -1,13 +1,13 @@
-empty .202 .258 .349 1 
-light_blue .369 .878 1 1
-light_green .447 1 .447 1
-lavender .8 .6 1 1
-light_yellow 1 1 .306 1
-light_pink 1 .761 .8 1
-dark_purple .588 .169 .588 1
-hot_pink .969 .329 .49 1
-dark_blue .125 .549 .729 1
-dark_yellow .679 .679 .1 1
-dark_pink .69 .165 .314 1
-orange 1 .588 .271 1
-dark_green .16 .64 .16 1 
+empty 212c3d
+light_blue 5ee0ff
+light_green 72ff72
+lavender cc99ff
+light_yellow ffff4e
+light_pink ffc2cc
+dark_purple 962b96
+hot_pink e45479
+dark_blue 218ebc
+dark_yellow c0a432
+dark_pink 9c2346
+orange ff9645
+dark_green 29a329 

@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5naxbuwid7xb"]
+
+[ext_resource type="StyleBox" uid="uid://bv4jc6ma1hjas" path="res://bottle_button.tres" id="1_uo8r7"]
+
+[sub_resource type="Theme" id="Theme_fo848"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_611tx"]
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y0ih"]
+bg_color = Color(0.34902, 0.666667, 0.623529, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hj5b"]
+bg_color = Color(0.980392, 0, 0.92549, 1)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="button" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = -678.0
+offset_bottom = -1180.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_fo848")
+theme_override_styles/normal = ExtResource("1_uo8r7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_611tx")
+
+[node name="Panel2" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6y0ih")
+
+[node name="Panel3" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_3hj5b")
