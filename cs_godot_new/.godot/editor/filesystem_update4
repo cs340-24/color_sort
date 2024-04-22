@@ -4,11 +4,3 @@ res://level.tscn
 res://game.tscn
 res://toolbar.tscn
 res://help.tscn
-res://color_block.tres
-res://mute_button.gd
-res://Mute_Toggle.gd
-res://volume_button.gd
-res://load_level.gd
-res://SoundBox.gd
-res://game_data.gd
-res://sounds.gd

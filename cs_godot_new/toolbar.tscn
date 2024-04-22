@@ -112,6 +112,7 @@ expand_icon = true
 script = ExtResource("5_78l4l")
 
 [node name="VolBackground" type="CanvasLayer" parent="Buttons/Volume"]
+visible = false
 
 [node name="Panel" type="Panel" parent="Buttons/Volume/VolBackground"]
 offset_left = 427.0
