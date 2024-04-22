@@ -14,6 +14,7 @@ func _ready():
 	GameData.help.connect(display_help)
 	GameData.back_to_game.connect(clear_help_screen)
 	await GameData.game_loaded
+	$Background_music.play()
 	
 	for level_data in GameData.levels:
 	#var level_data = GameData.levels[3]

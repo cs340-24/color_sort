@@ -9,3 +9,4 @@ func _button_pressed():
 	GameData.move_array.clear()
 	GameData.reset_level.emit(GameData.level_data)
 	GameData.save_level_type.emit("Reset")
+	GameData.sound_control.emit('buttonPress')

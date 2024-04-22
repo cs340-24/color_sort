@@ -9,3 +9,4 @@ func _ready():
 
 func _on_pressed():
 	GameData.emit_signal("undo_move") # Replace with function body.
+	GameData.sound_control.emit('buttonPress')
