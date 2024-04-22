@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dso5mlog2m67y"]
+[gd_scene load_steps=9 format=3 uid="uid://dso5mlog2m67y"]
 
 [ext_resource type="Script" path="res://reset_button.gd" id="1_46l8a"]
-[ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://toolbar_button.tres" id="1_ny3u1"]
+[ext_resource type="StyleBox" path="res://toolbar_button.tres" id="1_ny3u1"]
 [ext_resource type="Script" path="res://undo_button.gd" id="2_16ngt"]
 [ext_resource type="Script" path="res://help_button.gd" id="4_n56ya"]
+[ext_resource type="Script" path="res://mute_button.gd" id="5_6pn1s"]
 
 [sub_resource type="Theme" id="Theme_3tauq"]
 default_font_size = 10
@@ -93,4 +94,4 @@ action_mode = 0
 shortcut = SubResource("Shortcut_g7neh")
 text = "Mute
 "
-script = ExtResource("1_46l8a")
+script = ExtResource("5_6pn1s")

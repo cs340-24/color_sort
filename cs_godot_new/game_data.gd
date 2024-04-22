@@ -13,6 +13,7 @@ signal start
 signal load_game
 signal game_loaded
 signal game_complete
+signal sound_control
 signal save_level_type
 signal help
 signal back_to_game
