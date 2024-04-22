@@ -9,8 +9,17 @@ func _ready():
 	self.volume_db = -80
 	get_parent().get_node("Background_music").volume_db = -80
 	GameData.sound_control.connect(sound_control_func)
+	GameData.volume_control.connect(vol_control_func)
+	
 
 
+func vol_control_func(volType, volVal):
+	if volType == 'Music':
+		get_parent().get_node("Background_music").volume_db = volVal
+	elif volType == 'Sound':
+		self.volume_db = volVal
+	
+	
 func sound_control_func(soundType):
 	if soundType == 'toggleMute':
 		print ("!! Mute Button Pressed !!")
@@ -20,9 +29,13 @@ func sound_control_func(soundType):
 		if self.volume_db != -80:
 			self.volume_db = -80
 			get_parent().get_node("Background_music").volume_db = -80
+			get_parent().get_node("Toolbar/Buttons/Volume/VolBackground/SoundBox/Sound_Slider").editable = false
+			get_parent().get_node("Toolbar/Buttons/Volume/VolBackground/SoundBox/Music_Slider").editable = false
 		elif self.volume_db == -80:
 			self.volume_db = -20
 			get_parent().get_node("Background_music").volume_db = -20
+			get_parent().get_node("Toolbar/Buttons/Volume/VolBackground/SoundBox/Sound_Slider").editable = true
+			get_parent().get_node("Toolbar/Buttons/Volume/VolBackground/SoundBox/Music_Slider").editable = true
 	
 	elif soundType == 'bottleSelect':
 		currentSound = load('res://sounds/bottleSelect.wav')
