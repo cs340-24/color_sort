@@ -23,6 +23,7 @@ func make_move(bottle_from, bottle_to, undo):
 		if(!undo):
 			GameData.move_array.push_back(bottle_from.get_meta("top_blocks"))
 			GameData.move_array.push_back(bottle_to.get_meta("top_blocks"))
+			GameData.moves += 1
 		if(undo):
 			blocks_to_move = GameData.move_array.pop_back()
 		else:

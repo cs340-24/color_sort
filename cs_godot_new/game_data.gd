@@ -36,6 +36,7 @@ var bottles_completed        # number of bottles completed so far in a level
 var bottles_pressed          # how many bottles have been pressed consecutively
 var bottle_from              # bottle moving color from
 var bottle_to                # bottle moving color to
+var moves                    # number of moves made for a single game
 var level_pos = Vector2(50, 180)    # position of the grid on the game screen
 var level_size = Vector2(620, 1050) # size of the grid on the game screen
 

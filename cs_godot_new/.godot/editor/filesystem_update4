@@ -1,6 +1,11 @@
-res://main.tscn
-res://load_game.gd
-res://level.tscn
 res://game.tscn
+res://load_game.gd
+res://load_level.gd
+res://make_move.gd
+res://game_data.gd
+res://main.tscn
+res://level.tscn
 res://toolbar.tscn
 res://help.tscn
+res://win_msg.tscn
+res://welcome_screen.tscn

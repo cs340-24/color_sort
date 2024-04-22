@@ -14,6 +14,7 @@ func _ready():
 	GameData.help.connect(display_help)
 	GameData.back_to_game.connect(clear_help_screen)
 	await GameData.game_loaded
+	GameData.moves = 0
 	$Background_music.play()
 	
 	for level_data in GameData.levels:
@@ -185,10 +186,12 @@ func _deferred_clear_level(level):
 	win_message.set_owner(get_node("."))
 	win_message.position[0] = 64
 	win_message.position[1] = 450
+	win_message.get_child(0).text = "[center]Level Complete!\nMoves: %d[/center]" % GameData.moves
 	add_child(win_message)
 	level.free()
 	await get_tree().create_timer(1.5).timeout
 	win_message.free()
+	GameData.moves = 0
 	get_parent().modulate = Color(1,1,1,1)
 
 
