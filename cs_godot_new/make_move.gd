@@ -15,6 +15,7 @@ func make_move(bottle_from, bottle_to, undo):
 	print(bottle_from.get_meta("top_blocks"),bottle_to.get_meta("top_blocks"))
 
 	if check_bottles(bottle_from, bottle_to, undo):
+		GameData.sound_control.emit("canMove")
 		print("make_move: ", bottle_from.name, " ", bottle_to.name)
 		print("top blocks: ", bottle_from.get_meta("top_blocks"), " empties: ", bottle_to.get_meta("empty_blocks"))
 		print("moving ", min(bottle_from.get_meta("top_blocks"), bottle_to.get_meta("empty_blocks")), " blocks")
@@ -107,18 +108,22 @@ func make_move(bottle_from, bottle_to, undo):
 			
 			
 		get_parent().print_metadata(bottle_from.get_parent())
-		
+		GameData.save_level_type.emit("Save")
 		if (GameData.bottles_completed == GameData.num_colors):
 			print("emitting level complete")
 			GameData.level_complete.emit()
+			GameData.save_level_type.emit("Complete")
+			GameData.sound_control.emit("complete")
 	
 	else:
-		print("no move for you")	
+		print("no move for you")
+		GameData.sound_control.emit('noMove')	
 
 	if(!undo):
 		GameData.move_array.push_back(blocks_to_move)
 		GameData.move_array.push_back(bottle_from)
 		GameData.move_array.push_back(bottle_to)
+		
 	print(bottle_from.get_meta("top_blocks"),bottle_to.get_meta("top_blocks"))
 
 	

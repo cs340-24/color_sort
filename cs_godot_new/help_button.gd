@@ -7,4 +7,5 @@ func _ready():
 
 func _button_pressed():
 	GameData.help.emit()
+	GameData.sound_control.emit('buttonPress')
 	print("Help Button Pressed, in button.")

@@ -8,3 +8,4 @@ func _ready():
 
 func _button_pressed():
 	GameData.start.emit()
+	GameData.sound_control.emit('buttonPress')

@@ -6,6 +6,7 @@ func _ready():
 
 func _button_pressed():
 	print("BOTTLE PRESSED")
+	GameData.sound_control.emit('bottleSelect')
 	# 1st bottle selected
 	if GameData.bottles_pressed == 0 or GameData.bottles_pressed == 2:
 		print(get_parent().get_name(), " pressed 1st")

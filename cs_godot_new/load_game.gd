@@ -88,7 +88,8 @@ func load_game_data():
 				"cols" : nums[1], 
 				"num_colors" : 0,
 				"num_bottles" : nums[2], 
-				"num_blocks" : nums[3], 
+				"num_blocks" : nums[3],
+				"level_string" : numStr 
 			}
 			
 			# add number of colors 
