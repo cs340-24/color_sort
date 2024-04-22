@@ -48,7 +48,6 @@ grow_vertical = 1
 layout_mode = 0
 offset_left = 2.0
 offset_right = 2.0
-script = ExtResource("3_r26t4")
 
 [node name="Minutes" type="Label" parent="Panel"]
 layout_mode = 0
