@@ -18,7 +18,8 @@ signal save_level_type
 signal help
 signal back_to_game
 signal undo_move
-
+signal time_challenge_mode
+signal reset_time
 var max_colors  # number of colors in the color file
 
 var move_array = []  # keeps track of moves
