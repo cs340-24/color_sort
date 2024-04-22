@@ -3,13 +3,4 @@ res://load_game.gd
 res://level.tscn
 res://game.tscn
 res://toolbar.tscn
-res://sounds.gd
-res://load_level.gd
-res://bottle_buttons.gd
-res://make_move.gd
-res://start_button.gd
-res://undo_button.gd
-res://help_button.gd
-res://reset_button.gd
 res://help.tscn
-res://mute_button.gd

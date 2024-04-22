@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dso5mlog2m67y"]
+[gd_scene load_steps=12 format=3 uid="uid://dso5mlog2m67y"]
 
 [ext_resource type="Script" path="res://reset_button.gd" id="1_46l8a"]
 [ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://toolbar_button.tres" id="1_ny3u1"]
 [ext_resource type="Script" path="res://undo_button.gd" id="2_16ngt"]
 [ext_resource type="Script" path="res://help_button.gd" id="4_n56ya"]
-[ext_resource type="Script" path="res://mute_button.gd" id="5_6pn1s"]
+[ext_resource type="Script" path="res://volume_button.gd" id="5_78l4l"]
+[ext_resource type="Script" path="res://SoundBox.gd" id="6_kqd0o"]
+[ext_resource type="Script" path="res://Mute_Toggle.gd" id="6_p7a82"]
 
 [sub_resource type="Theme" id="Theme_3tauq"]
 default_font_size = 10
@@ -13,6 +15,18 @@ default_font_size = 10
 
 [sub_resource type="Theme" id="Theme_0nw6a"]
 /styles/StyleBoxFlat = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wl8tt"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="toolbar" type="Control"]
 layout_mode = 3
@@ -80,7 +94,7 @@ text = "Help
 "
 script = ExtResource("4_n56ya")
 
-[node name="Mute" type="Button" parent="Buttons"]
+[node name="Volume" type="Button" parent="Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = SubResource("Theme_0nw6a")
@@ -92,7 +106,57 @@ theme_override_styles/disabled = ExtResource("1_ny3u1")
 theme_override_styles/focus = ExtResource("1_ny3u1")
 action_mode = 0
 shortcut = SubResource("Shortcut_g7neh")
-text = "Mute
+text = "Volume
 "
 expand_icon = true
-script = ExtResource("5_6pn1s")
+script = ExtResource("5_78l4l")
+
+[node name="VolBackground" type="CanvasLayer" parent="Buttons/Volume"]
+visible = false
+
+[node name="Panel" type="Panel" parent="Buttons/Volume/VolBackground"]
+offset_left = 427.0
+offset_top = 110.0
+offset_right = 582.0
+offset_bottom = 246.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wl8tt")
+
+[node name="SoundBox" type="VBoxContainer" parent="Buttons/Volume/VolBackground"]
+offset_left = 435.0
+offset_top = 115.0
+offset_right = 576.0
+offset_bottom = 242.0
+script = ExtResource("6_kqd0o")
+
+[node name="MusicLabel" type="Label" parent="Buttons/Volume/VolBackground/SoundBox"]
+layout_mode = 2
+text = "  Music Volume"
+
+[node name="Music_Slider" type="HSlider" parent="Buttons/Volume/VolBackground/SoundBox"]
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+
+[node name="MusicLabel2" type="Label" parent="Buttons/Volume/VolBackground/SoundBox"]
+layout_mode = 2
+text = "  Sound Volume
+"
+
+[node name="Sound_Slider" type="HSlider" parent="Buttons/Volume/VolBackground/SoundBox"]
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+
+[node name="Mute_Toggle" type="Button" parent="Buttons/Volume/VolBackground/SoundBox"]
+y_sort_enabled = true
+layout_mode = 2
+action_mode = 0
+text = "Unmute Volume"
+clip_text = true
+script = ExtResource("6_p7a82")
+
+[connection signal="changed" from="Buttons/Volume/VolBackground/SoundBox/Music_Slider" to="Buttons/Volume/VolBackground/SoundBox" method="_on_music_slider_changed"]
+[connection signal="value_changed" from="Buttons/Volume/VolBackground/SoundBox/Music_Slider" to="Buttons/Volume" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Buttons/Volume/VolBackground/SoundBox/Music_Slider" to="Buttons/Volume/VolBackground/SoundBox" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Buttons/Volume/VolBackground/SoundBox/Sound_Slider" to="Buttons/Volume/VolBackground/SoundBox" method="_on_sound_slider_value_changed"]
+[connection signal="pressed" from="Buttons/Volume/VolBackground/SoundBox/Mute_Toggle" to="Buttons/Volume/VolBackground/SoundBox/Mute_Toggle" method="_on_pressed"]
