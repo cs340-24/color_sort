@@ -3,17 +3,17 @@ var isMuted = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-		pressed.connect(_button_pressed)
+	pressed.connect(_button_pressed)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func _button_pressed():
-	
-	if $VolBackground.visible == true:
-		$VolBackground.hide()
-	else:
-		$VolBackground.show()
+	if $VolBackground.visible == false:
+		$VolBackground.popup()
+		
 	GameData.sound_control.emit("buttonPressed")
+
+func _process(delta):
+	if $VolBackground.visible == true:
+		get_parent().get_parent().get_parent().modulate = Color(.255, .255, .255, 1)
+	else:
+		get_parent().get_parent().get_parent().modulate = Color(1,1,1,1)

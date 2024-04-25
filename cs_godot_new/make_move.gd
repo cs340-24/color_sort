@@ -6,29 +6,29 @@ func _ready():
 	GameData.make_move.connect(make_move)
 	GameData.undo_move.connect(undo_move)
 
-	
 func make_move(bottle_from, bottle_to, undo):
 	var blocks_to_move # number of blocks getting moved. min of top blocks in source or
 					   # empty blocks in destination
 	var blocks         # vertical container holding the blocks
 	
-	print(bottle_from.get_meta("top_blocks"),bottle_to.get_meta("top_blocks"))
+	#print(bottle_from.get_meta("top_blocks"),bottle_to.get_meta("top_blocks"))
 
 	if check_bottles(bottle_from, bottle_to, undo):
 		GameData.sound_control.emit("canMove")
 		print("make_move: ", bottle_from.name, " ", bottle_to.name)
 		print("top blocks: ", bottle_from.get_meta("top_blocks"), " empties: ", bottle_to.get_meta("empty_blocks"))
 		print("moving ", min(bottle_from.get_meta("top_blocks"), bottle_to.get_meta("empty_blocks")), " blocks")
-		
-		if(!undo):
+	
+		if(undo):
+			blocks_to_move = GameData.move_array.pop_back()
+			if blocks_to_move == null:
+				return false
+		else:
+			blocks_to_move = min(bottle_from.get_meta("top_blocks"), bottle_to.get_meta("empty_blocks"))
 			GameData.move_array.push_back(bottle_from.get_meta("top_blocks"))
 			GameData.move_array.push_back(bottle_to.get_meta("top_blocks"))
 			GameData.moves += 1
-		if(undo):
-			blocks_to_move = GameData.move_array.pop_back()
-		else:
-			blocks_to_move = min(bottle_from.get_meta("top_blocks"), bottle_to.get_meta("empty_blocks"))
-		
+			
 		# color being moved
 		var color = bottle_from.get_meta("top_color")
 		bottle_to.set_meta("top_color", color)
@@ -51,10 +51,17 @@ func make_move(bottle_from, bottle_to, undo):
 				# change color block to empty
 				tween.tween_property(bottle_from.get_child(0).get_child(0).get_child(i + from_index).get_theme_stylebox("panel"), "bg_color", GameData.empty_color, 0.25)
 				await tween.finished
+				
+
+				bottle_to.get_child(0).get_child(0).get_child(to_index).set_meta("color", color)
+				bottle_to.get_child(0).get_child(0).get_child(to_index).set_meta("hidden", false)
+				bottle_from.get_child(0).get_child(0).get_child(i + from_index).set_meta("color", GameData.empty_color)
 			else:
 				bottle_to.get_child(0).get_child(0).get_child(to_index).get_theme_stylebox("panel").bg_color = color
+				bottle_to.get_child(0).get_child(0).get_child(to_index).set_meta("color", color)
 				bottle_from.get_child(0).get_child(0).get_child(i + from_index).get_theme_stylebox("panel").bg_color = GameData.empty_color
-
+				bottle_from.get_child(0).get_child(0).get_child(i + from_index).set_meta("color", GameData.empty_color)
+				
 		# increment number of emtpy blocks in source bottle
 		var new_empties = bottle_from.get_meta("empty_blocks") + blocks_to_move
 		bottle_from.set_meta("empty_blocks", new_empties)
@@ -63,14 +70,20 @@ func make_move(bottle_from, bottle_to, undo):
 		if bottle_from.get_meta("empty_blocks") != GameData.num_blocks:
 			# increment from_index by block_to_move to get index of new top block after move
 			from_index = from_index + blocks_to_move
-			var new_color = bottle_from.get_child(0).get_child(0).get_child(from_index).get_theme_stylebox("panel").bg_color
+			print("get_meta: ", bottle_from.get_child(0).get_child(0).get_child(from_index).get_meta("color"))
+			print("bg_color: ", bottle_from.get_child(0).get_child(0).get_child(from_index).get_theme_stylebox("panel").bg_color)
+			var new_color = bottle_from.get_child(0).get_child(0).get_child(from_index).get_meta("color")
+			bottle_from.get_child(0).get_child(0).get_child(from_index).get_theme_stylebox("panel").bg_color = new_color
+			bottle_from.get_child(0).get_child(0).get_child(from_index).set_meta("hidden", false)
+			print("new color = ", new_color, "  from_index = ", from_index)
 			bottle_from.set_meta("top_color", new_color)
-			
+			#bottle_from.get_child(0).get_child(0).get_child(from_index).get_theme_stylebox("panel").bg_color = bottle_from.get_child(0).get_child(0).get_child(from_index).get_meta("color")
+		
 			# count consecutive blocks
 			blocks = bottle_from.get_child(0).get_child(0).get_children()
-			var top_blocks = 0
-			for j in range(from_index, blocks.size()):
-				if blocks[j].get_theme_stylebox("panel").bg_color == new_color:
+			var top_blocks = 1
+			for j in range(from_index+1, blocks.size()):
+				if blocks[j].get_meta("color") == new_color && blocks[j].get_meta("hidden") == false:
 					top_blocks = top_blocks + 1
 				else:
 					break
@@ -83,12 +96,14 @@ func make_move(bottle_from, bottle_to, undo):
 		# to_index will equal number of enpty blocks	
 		bottle_to.set_meta("empty_blocks", to_index)
 		
-		# count consecutive top color blocks in source. skip over the empties.
+		# count consecutive top color blocks in destination. skip over the empties.
+		# start at the first non-empty block
 		blocks = bottle_to.get_child(0).get_child(0).get_children()
 		var top_blocks = 0
-		# start at the first non-empty block
+
 		for j in range(to_index, blocks.size()):
-			if blocks[j].get_theme_stylebox("panel").bg_color == color:
+			if blocks[j].get_meta("color") == color && blocks[j].get_meta("hidden") == false:
+			#if blocks[j].get_theme_stylebox("panel").bg_color == color:
 				top_blocks = top_blocks + 1
 			else:
 				break
@@ -128,7 +143,6 @@ func make_move(bottle_from, bottle_to, undo):
 	print(bottle_from.get_meta("top_blocks"),bottle_to.get_meta("top_blocks"))
 
 	
-
 
 func check_bottles(bottle_from, bottle_to, undo):
 	if undo:

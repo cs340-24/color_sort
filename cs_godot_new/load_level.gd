@@ -4,6 +4,7 @@ var level
 var bottle 
 var blocks
 var block 
+var button
 
 var help_screen = preload("res://help.tscn")
 var help_var
@@ -15,30 +16,30 @@ func _ready():
 	GameData.back_to_game.connect(clear_help_screen)
 	await GameData.game_loaded
 	GameData.moves = 0
+	level = get_child(6)
 	$Background_music.play()
+	GameData.hide_colors = false;
 	
 	for level_data in GameData.levels:
-	#var level_data = GameData.levels[3]
-		# load the level scene
-		level = GameData.bottles_scene.instantiate()
-		level.set_position(GameData.level_pos)
-		level.set_size(GameData.level_size)
-		level.set_name("Level")
-		add_child(level)
 		GameData.level_data = level_data 
-		
+
 		# bottles_completed and bottles_pressed need to be 0 to start
 		GameData.bottles_completed = 0
 		GameData.bottles_pressed = 0
 
-		#GameData.borders.connect(add_borders)
 		
 		# load the level's data
 		load_level_data(level_data)
-
 		
 		GameData.level_complete.connect(clear_level)
 		await GameData.level_complete
+		
+		# load the level scene
+		level = GameData.bottles_scene.instantiate()
+		level.set_name("Level")
+		add_child(level)
+		level.set_owner(get_node("."))
+		
 		
 	GameData.game_complete.emit()
 
@@ -50,6 +51,7 @@ func _ready():
 # Set the color values for the blocks and spacing around the bottles
 func load_level_data(level_data):
 	bottle = level.get_child(0)
+	button = bottle.get_child(0)
 	blocks = bottle.get_child(0).get_child(0)
 	block = blocks.get_child(0)
 	
@@ -61,11 +63,22 @@ func load_level_data(level_data):
 	GameData.num_blocks = level_data["num_blocks"]
 	GameData.num_colors = level_data["num_colors"]
 	
-	# adjust bottle separation for 2 rows
-	if level_data["rows"] == 2:
-		level.add_theme_constant_override("h_separation", 75)
-		if level_data["cols"] != 4:
-			level.add_theme_constant_override("v_separation", 200)
+	# Adjust the grid spacing
+	if (level_data["rows"] == 2):
+		if level_data["cols"] == 4:
+			level.add_theme_constant_override("h_separation", 400)
+			level.add_theme_constant_override("v_separation", 800)			
+		else:
+			level.add_theme_constant_override("h_separation", 200)
+			level.add_theme_constant_override("v_separation", 1500)			
+	elif (level_data["rows"] == 3):
+		if level_data["cols"] == 3:
+			level.add_theme_constant_override("h_separation", 200)
+			level.add_theme_constant_override("v_separation", 400)		
+		else:
+			level.add_theme_constant_override("h_separation", 350)
+			level.add_theme_constant_override("v_separation", 550)		
+
 
 	# duplicate bottle1's color blocks. have to do this before duplicating the bottles
 	# or there will be problems with setting the metadata later
@@ -95,7 +108,6 @@ func load_level_data(level_data):
 # iterate through the color blocks and set their colors
 # set bottle metadata (top_color, top_blocks, empty_blocks
 func set_colors(level_data):
-		# iterate through the color blocks, setting their colors
 	var color
 	var block_index = 0
 	for i in level.get_children():
@@ -105,7 +117,6 @@ func set_colors(level_data):
 			
 
 			var block_style = StyleBoxFlat.new()
-			block_style.set_bg_color(color)
 			block_style.border_color = Color("3f3f3f")
 			block_style.border_blend = true
 			block_style.border_width_left = 10
@@ -113,25 +124,39 @@ func set_colors(level_data):
 			
 			# round off the corners if it's the bottom block
 			if int(block_index) % int(GameData.num_blocks) - 3 == 0:
-				block_style.corner_radius_bottom_right = 60
-				block_style.corner_radius_bottom_left = 60
+				block_style.corner_radius_bottom_right = 130
+				block_style.corner_radius_bottom_left = 130
 				block_style.corner_detail = 10
 				block_style.border_width_bottom = 10
 				
-			j.add_theme_stylebox_override("panel", block_style)
-
-			
+				
 			block_index = block_index + 1
 			
 			# set top color
 			if j.get_name() == "Block1":
+				block_style.set_bg_color(color)
 				GameData.top_color = color
 				i.set_meta("top_color", GameData.top_color)
-		
+				block_style.corner_radius_top_right = 40
+				block_style.corner_radius_top_left = 40
 				# if top color is empty color, this is an empty bottle
 				if GameData.top_color == GameData.empty_color:
 					i.set_meta("empty_blocks", level_data["num_blocks"])
 					i.set_meta("is_complete", false)
+			else: 
+				#if GameData.top_color != GameData.empty_color:
+				if GameData.hide_colors == true && GameData.top_color != GameData.empty_color:
+					block_style.set_bg_color("000000")
+					j.set_meta("hidden", true)
+				else: 
+					block_style.set_bg_color(color)
+					j.set_meta("hidden", false)
+				#else:
+					#block_style.set_bg_color(color)
+					#j.set_meta("hidden", false)
+				
+			j.add_theme_stylebox_override("panel", block_style)
+			j.set_meta("color", color)		
 			
 			
 	# if bottle isn't empty, need to see how many consecutive blocks of top_color there are
@@ -141,7 +166,7 @@ func set_colors(level_data):
 		if i.get_meta("top_color") != GameData.empty_color:
 			var top_blocks = 0
 			for j in i.get_child(0).get_child(0).get_children():
-				if j.get_theme_stylebox("panel").bg_color == i.get_meta("top_color"):
+				if j.get_meta("color") == i.get_meta("top_color") && j.get_meta("hidden") == false:
 					top_blocks = top_blocks + 1
 				else:
 					break
@@ -153,8 +178,6 @@ func set_colors(level_data):
 				GameData.bottles_completed = GameData.bottles_completed  + 1
 			else:
 				i.set_meta("is_complete", false)
-	
-	# round off bottom block
 
 
 func print_metadata(bottles):
@@ -162,12 +185,13 @@ func print_metadata(bottles):
 		print(i.get_name(), ": top color: ", i.get_meta("top_color"), " top blocks: ", i.get_meta("top_blocks"))
 		print("num empties = ", i.get_meta("empty_blocks"), " is_complete: ", i.get_meta("is_complete"))
 		for j in i.get_child(0).get_child(0).get_children():
-			print(j.get_name(), ": S", j.get_theme_stylebox("bottle_button").get_bg_color())
+			print(j.get_name(), ": S", j.get_meta("color"))
 	print("\n")	
 
 
 func reset(level_data):
 	GameData.bottles_completed = 0
+	GameData.moves = 0
 	set_colors(level_data)
 
 		
@@ -184,8 +208,8 @@ func _deferred_clear_level(level):
 	var win_message = GameData.win_msg.instantiate()
 	
 	win_message.set_owner(get_node("."))
-	win_message.position[0] = 64
-	win_message.position[1] = 450
+	win_message.position[0] = 300
+	win_message.position[1] = 1500
 	win_message.get_child(0).text = "[center]Level Complete!\nMoves: %d[/center]" % GameData.moves
 	add_child(win_message)
 	level.free()
