@@ -6,7 +6,14 @@ var game_filename = "res://levelData/demo.txt"
 var welcome_screen = preload("res://welcome_screen.tscn")
 var help_screen = preload("res://help.tscn")
 var help_var
-
+var loadSaveVec = {}
+var loadSaveFile = "res://levelData/currentLevel.txt"
+var saveExists = false
+var savedLevelFirst = []
+var savedLevelLastMove = []
+var savedLevelFirstString = []
+var savedLevelLastMoveString = []
+var reachedSaveLevel = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_game()
@@ -74,46 +81,75 @@ func load_game_data():
 	
 	# Make a list of each level's data
 	var game_file = FileAccess.open(game_filename, FileAccess.READ)
-	if game_file != null: 
+	if FileAccess.file_exists(loadSaveFile):
+		saveExists = true
+		var saveFile = FileAccess.open(loadSaveFile, FileAccess.READ)
+		var counter = 0
+		var fileToVec
+		while (saveFile.eof_reached() == false):
+			fileToVec = saveFile.get_line()
+			loadSaveVec[counter] = fileToVec
+			counter = counter+1
+		loadSaveVec.erase(counter-1)
+		savedLevelFirstString = loadSaveVec[0].split(" ")
+		savedLevelFirstString.remove_at(savedLevelFirstString.size()-1)
+		savedLevelLastMoveString = loadSaveVec[counter-2].split(" ") 
+		savedLevelLastMoveString.remove_at(savedLevelLastMoveString.size()-1)
+		for x in savedLevelFirstString:
+			savedLevelFirst.push_back(float(x))
+		for y in savedLevelLastMoveString:
+			savedLevelLastMove.push_back(float(y))
+			saveFile.close()
+	if game_file != null:
 		while game_file.get_position() < game_file.get_length():
+			if saveExists:
+				reachedSaveLevel = false
 			var numStr = game_file.get_line().split(" ")
-						
 			# convert to floats
 			var nums = []
-			for num in numStr:
-				nums.push_back(float(num))
-
-			GameData.level_data = {
-				"rows" : nums[0], 
-				"cols" : nums[1], 
-				"num_colors" : 0,
-				"num_bottles" : nums[2], 
-				"num_blocks" : nums[3],
-				"level_string" : numStr,
-				"hidden" : false
-			}
-			
-			if numStr[numStr.size() - 1] == "H":
-				GameData.level_data["hidden"] = true
-				numStr.remove_at(numStr.size() - 1);
-			
-			# add number of colors 
-			if GameData.level_data["num_bottles"] > 4:
-				GameData.level_data["num_colors"] = GameData.level_data["num_bottles"] - 2
-			else:
-				GameData.level_data["num_colors"] = GameData.level_data["num_bottles"] - 1
-			
-			# cut off first 4 values to make a vector of the color blocks' colors
-			nums = nums.slice(4)
-			var block_colors = []
-			# convert the ints to corresponding its Color
-			# the index of the color in the dictionary corresponds to the color val in 
-			# the vector. so nums[i] = 3 corresponds to colors.values()[3]
-			for num in nums:
-				block_colors.push_back(GameData.colors.values()[num])
-			# add the block's colors to the dictionary
-			GameData.level_data["color_vals"] = block_colors
-			GameData.levels.push_back(GameData.level_data)
+			if reachedSaveLevel:
+				for num in numStr:
+					nums.push_back(float(num))
+			print("SaveLevel = ", savedLevelFirstString)
+			print("nums = ", numStr)
+			if saveExists:
+				if numStr == savedLevelFirstString:
+					reachedSaveLevel = true
+					for num in savedLevelLastMoveString:
+						nums.push_back(float(num))
+			print(nums)
+			if reachedSaveLevel:
+				GameData.level_data = {
+					"rows" : nums[0], 
+					"cols" : nums[1], 
+					"num_colors" : 0,
+					"num_bottles" : nums[2], 
+					"num_blocks" : nums[3],
+					"level_string" : numStr,
+					"hidden" : false
+				}
+				
+				if numStr[numStr.size() - 1] == "H":
+					GameData.level_data["hidden"] = true
+					numStr.remove_at(numStr.size() - 1);
+				
+				# add number of colors 
+				if GameData.level_data["num_bottles"] > 4:
+					GameData.level_data["num_colors"] = GameData.level_data["num_bottles"] - 2
+				else:
+					GameData.level_data["num_colors"] = GameData.level_data["num_bottles"] - 1
+				
+				# cut off first 4 values to make a vector of the color blocks' colors
+				nums = nums.slice(4)
+				var block_colors = []
+				# convert the ints to corresponding its Color
+				# the index of the color in the dictionary corresponds to the color val in 
+				# the vector. so nums[i] = 3 corresponds to colors.values()[3]
+				for num in nums:
+					block_colors.push_back(GameData.colors.values()[num])
+				# add the block's colors to the dictionary
+				GameData.level_data["color_vals"] = block_colors
+				GameData.levels.push_back(GameData.level_data)
 		game_file.close()
 		
 		GameData.game_loaded.emit()

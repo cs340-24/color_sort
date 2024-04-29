@@ -32,7 +32,7 @@ func save_game(saveType):
 		if FileAccess.file_exists(currentLevel):
 			var file = FileAccess.open(currentLevel, FileAccess.READ_WRITE)
 			file.seek_end(0)
-			var level = get_parent().get_child(3)
+			var level = get_parent().get_child(6)
 			## Use gamedata.colors to compare the bottles in numBottles's blocks to RGBA values to set currentBLock = index of checked block
 			#print(GameData.colors.values())
 			var index = 0
@@ -41,7 +41,7 @@ func save_game(saveType):
 				index = index + 1
 			for i in level.get_children():
 				for j in i.get_node("Button/Blocks").get_children():
-					#print(j.get_theme_stylebox("panel").bg_color)
+					#print("Color: ", j.get_theme_stylebox("panel").bg_color)
 					var colorIndex = GameData.colors.values().find(j.get_theme_stylebox("panel").bg_color)
 					##if j.get_theme_stylebox("panel").bg_color in GameData.colors.values():
 					if (colorIndex >= 0):
