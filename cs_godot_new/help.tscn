@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8xq5rbhs03vv"]
+[gd_scene load_steps=9 format=3 uid="uid://c8xq5rbhs03vv"]
 
+[ext_resource type="Texture2D" uid="uid://bql6teyxokhhh" path="res://help_images/initial_state.png" id="1_21gni"]
 [ext_resource type="StyleBox" uid="uid://dikoqnuk7jpc4" path="res://return_game.tres" id="1_dehda"]
 [ext_resource type="Script" path="res://return_button.gd" id="2_8ujci"]
+[ext_resource type="Texture2D" uid="uid://cih88a7glp14l" path="res://help_images/move_1.png" id="2_nqdn7"]
+[ext_resource type="Texture2D" uid="uid://b1w1b5tl4vimu" path="res://help_images/move_2.png" id="3_3mmpb"]
+[ext_resource type="Texture2D" uid="uid://1q5tnbswi1sm" path="res://help_images/move_3.png" id="4_t37ax"]
+[ext_resource type="Texture2D" uid="uid://ccqbnroftt2j4" path="res://help_images/move_4.png" id="5_xnhir"]
+[ext_resource type="Texture2D" uid="uid://l8d5pk578vc1" path="res://help_images/final_move.png" id="6_sll6q"]
 
 [node name="HelpScreen" type="Control"]
 layout_mode = 3
@@ -112,91 +118,69 @@ bbcode_enabled = true
 text = "[u]Example Game:[/u]"
 fit_content = true
 
-[node name="BottleGroup1" type="HBoxContainer" parent="."]
+[node name="FirstRow" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1600.0
-offset_top = -800.0
-offset_right = -900.0
-offset_bottom = 600.0
+offset_left = -1750.0
+offset_top = -900.0
+offset_right = 1750.0
+offset_bottom = 650.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 200
+alignment = 1
+metadata/_edit_group_ = true
 
-[node name="ExampleBottle1" type="VBoxContainer" parent="BottleGroup1"]
+[node name="InitialStateImg" type="TextureRect" parent="FirstRow"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 20
+texture = ExtResource("1_21gni")
 
-[node name="Green" type="ColorRect" parent="BottleGroup1/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Blue" type="ColorRect" parent="BottleGroup1/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Green2" type="ColorRect" parent="BottleGroup1/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup1/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="ExampleBottle2" type="VBoxContainer" parent="BottleGroup1"]
+[node name="FirstMove" type="TextureRect" parent="FirstRow"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 20
+texture = ExtResource("2_nqdn7")
 
-[node name="Blue" type="ColorRect" parent="BottleGroup1/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup1/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Green" type="ColorRect" parent="BottleGroup1/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Green2" type="ColorRect" parent="BottleGroup1/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="ExampleBottle3" type="VBoxContainer" parent="BottleGroup1"]
+[node name="SecondMove" type="TextureRect" parent="FirstRow"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 20
+texture = ExtResource("3_3mmpb")
 
-[node name="Empty" type="ColorRect" parent="BottleGroup1/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="SecondRow" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1750.0
+offset_top = 960.0
+offset_right = 1750.0
+offset_bottom = 2510.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+alignment = 1
+metadata/_edit_group_ = true
 
-[node name="Empty2" type="ColorRect" parent="BottleGroup1/ExampleBottle3"]
+[node name="ThirdMove" type="TextureRect" parent="SecondRow"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
+texture = ExtResource("4_t37ax")
 
-[node name="Empty3" type="ColorRect" parent="BottleGroup1/ExampleBottle3"]
+[node name="FourthMove" type="TextureRect" parent="SecondRow"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
+texture = ExtResource("5_xnhir")
 
-[node name="Empty4" type="ColorRect" parent="BottleGroup1/ExampleBottle3"]
+[node name="FinalMove" type="TextureRect" parent="SecondRow"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
+texture = ExtResource("6_sll6q")
 
 [node name="InitialState" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -206,9 +190,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1600.0
-offset_top = 650.0
+offset_top = 679.0
 offset_right = -900.0
-offset_bottom = 787.0
+offset_bottom = 816.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 100
@@ -216,92 +200,6 @@ theme_override_font_sizes/bold_font_size = 120
 bbcode_enabled = true
 text = "[center]Start State[/center]"
 fit_content = true
-
-[node name="BottleGroup2" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -350.0
-offset_top = -800.0
-offset_right = 350.0
-offset_bottom = 600.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="ExampleBottle1" type="VBoxContainer" parent="BottleGroup2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Green" type="ColorRect" parent="BottleGroup2/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Blue" type="ColorRect" parent="BottleGroup2/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Green2" type="ColorRect" parent="BottleGroup2/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup2/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="ExampleBottle2" type="VBoxContainer" parent="BottleGroup2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Blue" type="ColorRect" parent="BottleGroup2/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup2/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Green" type="ColorRect" parent="BottleGroup2/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Green2" type="ColorRect" parent="BottleGroup2/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="ExampleBottle3" type="VBoxContainer" parent="BottleGroup2"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Empty" type="ColorRect" parent="BottleGroup2/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Empty2" type="ColorRect" parent="BottleGroup2/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Empty3" type="ColorRect" parent="BottleGroup2/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Empty4" type="ColorRect" parent="BottleGroup2/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
 
 [node name="Move1" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -311,101 +209,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -451.0
-offset_top = 650.0
+offset_top = 679.0
 offset_right = 451.0
-offset_bottom = 788.0
+offset_bottom = 817.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[center]Bottle 2 to Bottle 3[/center]"
 fit_content = true
-
-[node name="BottleGroup3" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 900.0
-offset_top = -800.0
-offset_right = 1600.0
-offset_bottom = 600.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="ExampleBottle1" type="VBoxContainer" parent="BottleGroup3"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Green" type="ColorRect" parent="BottleGroup3/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Blue" type="ColorRect" parent="BottleGroup3/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Green2" type="ColorRect" parent="BottleGroup3/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup3/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="ExampleBottle2" type="VBoxContainer" parent="BottleGroup3"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Blue" type="ColorRect" parent="BottleGroup3/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup3/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Green" type="ColorRect" parent="BottleGroup3/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Green2" type="ColorRect" parent="BottleGroup3/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="ExampleBottle3" type="VBoxContainer" parent="BottleGroup3"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Empty" type="ColorRect" parent="BottleGroup3/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Empty2" type="ColorRect" parent="BottleGroup3/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Empty3" type="ColorRect" parent="BottleGroup3/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Empty4" type="ColorRect" parent="BottleGroup3/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
 
 [node name="Move2" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -414,102 +226,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 800.0
-offset_top = 650.0
-offset_right = 1702.0
-offset_bottom = 787.0
+offset_left = 757.0
+offset_top = 679.0
+offset_right = 1659.0
+offset_bottom = 816.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[center]Bottle 1 to Bottle 2[/center]"
 fit_content = true
-
-[node name="BottleGroup4" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -1600.0
-offset_top = -2200.0
-offset_right = -900.0
-offset_bottom = -800.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 20
-
-[node name="ExampleBottle1" type="VBoxContainer" parent="BottleGroup4"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Green" type="ColorRect" parent="BottleGroup4/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Blue" type="ColorRect" parent="BottleGroup4/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Green2" type="ColorRect" parent="BottleGroup4/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup4/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="ExampleBottle2" type="VBoxContainer" parent="BottleGroup4"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Blue" type="ColorRect" parent="BottleGroup4/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup4/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Green" type="ColorRect" parent="BottleGroup4/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Green2" type="ColorRect" parent="BottleGroup4/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="ExampleBottle3" type="VBoxContainer" parent="BottleGroup4"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Empty" type="ColorRect" parent="BottleGroup4/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Empty2" type="ColorRect" parent="BottleGroup4/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Empty3" type="ColorRect" parent="BottleGroup4/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Empty4" type="ColorRect" parent="BottleGroup4/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
 
 [node name="Move3" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -519,101 +245,15 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -1650.0
-offset_top = -700.0
+offset_top = -670.0
 offset_right = -748.0
-offset_bottom = -562.0
+offset_bottom = -532.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[center]Bottle 1 to Botle 3[/center]"
 fit_content = true
-
-[node name="BottleGroup5" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -350.0
-offset_top = -2200.0
-offset_right = 350.0
-offset_bottom = -800.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 20
-
-[node name="ExampleBottle1" type="VBoxContainer" parent="BottleGroup5"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Green" type="ColorRect" parent="BottleGroup5/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Blue" type="ColorRect" parent="BottleGroup5/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Green2" type="ColorRect" parent="BottleGroup5/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup5/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="ExampleBottle2" type="VBoxContainer" parent="BottleGroup5"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Blue" type="ColorRect" parent="BottleGroup5/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup5/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Green" type="ColorRect" parent="BottleGroup5/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Green2" type="ColorRect" parent="BottleGroup5/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="ExampleBottle3" type="VBoxContainer" parent="BottleGroup5"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Empty" type="ColorRect" parent="BottleGroup5/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Empty2" type="ColorRect" parent="BottleGroup5/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Empty3" type="ColorRect" parent="BottleGroup5/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Empty4" type="ColorRect" parent="BottleGroup5/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
 
 [node name="Move4" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -623,101 +263,15 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -451.0
-offset_top = -700.0
+offset_top = -670.0
 offset_right = 451.0
-offset_bottom = -562.0
+offset_bottom = -532.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
 text = "[center]Bottle 1 to Bottle 2[/center]"
 fit_content = true
-
-[node name="BottleGroup6" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 900.0
-offset_top = -2200.0
-offset_right = 1600.0
-offset_bottom = -800.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 20
-
-[node name="ExampleBottle1" type="VBoxContainer" parent="BottleGroup6"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Green" type="ColorRect" parent="BottleGroup6/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Blue" type="ColorRect" parent="BottleGroup6/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Green2" type="ColorRect" parent="BottleGroup6/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup6/ExampleBottle1"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ExampleBottle2" type="VBoxContainer" parent="BottleGroup6"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Blue" type="ColorRect" parent="BottleGroup6/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Blue2" type="ColorRect" parent="BottleGroup6/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Green" type="ColorRect" parent="BottleGroup6/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="Green2" type="ColorRect" parent="BottleGroup6/ExampleBottle2"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0, 1, 0, 1)
-
-[node name="ExampleBottle3" type="VBoxContainer" parent="BottleGroup6"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 20
-
-[node name="Empty" type="ColorRect" parent="BottleGroup6/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Empty2" type="ColorRect" parent="BottleGroup6/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Empty3" type="ColorRect" parent="BottleGroup6/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
-
-[node name="Empty4" type="ColorRect" parent="BottleGroup6/ExampleBottle3"]
-layout_mode = 2
-size_flags_vertical = 3
-color = Color(0.211765, 0.439216, 1, 1)
 
 [node name="FinalMove" type="RichTextLabel" parent="."]
 layout_mode = 1
@@ -726,10 +280,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 800.0
-offset_top = -700.0
-offset_right = 1702.0
-offset_bottom = -426.0
+offset_left = 782.0
+offset_top = -670.0
+offset_right = 1684.0
+offset_bottom = -396.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 100
