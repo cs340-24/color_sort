@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dfaukdix71p4f"]
+
+[node name="PopupPanel" type="PopupPanel"]
+size = Vector2i(3000, 2000)
+visible = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 2996.0
+offset_bottom = 1996.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+fit_content = true

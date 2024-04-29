@@ -8,6 +8,7 @@ var button
 
 var help_screen = preload("res://help.tscn")
 var help_var
+var con
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +19,6 @@ func _ready():
 	GameData.moves = 0
 	level = get_child(6)
 	$Background_music.play()
-	
 	
 	for level_data in GameData.levels:
 		GameData.level_data = level_data 
@@ -35,6 +35,7 @@ func _ready():
 		
 		# load the level's data
 		load_level_data(level_data)
+		
 		
 		GameData.level_complete.connect(clear_level)
 		await GameData.level_complete
@@ -211,15 +212,19 @@ func _deferred_clear_level(level):
 
 	get_parent().modulate = Color(.255, .255, .255, 1)
 	var win_message = GameData.win_msg.instantiate()
-	
-	win_message.set_owner(get_node("."))
-	win_message.position[0] = 300
-	win_message.position[1] = 1500
-	win_message.get_child(0).text = "[center]Level Complete!\nMoves: %d[/center]" % GameData.moves
 	add_child(win_message)
+	win_message.set_owner(get_node("."))
+	win_message.get_child(0).position[0] = 300
+	win_message.get_child(0).position[1] = 1500
+	#win_message.get_child(0).get_child(0).text = "[center]Level Complete!\nMoves: %d[/center]" % GameData.moves
+	win_message.get_child(0).get_child(0).text = "[center]\nLevel Complete![/center]" 
+	win_message.get_child(0).get_child(1)._set_emitting(true)
+	
 	level.free()
+	
 	await get_tree().create_timer(1.5).timeout
 	win_message.free()
+
 	GameData.moves = 0
 	get_parent().modulate = Color(1,1,1,1)
 
