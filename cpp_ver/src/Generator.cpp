@@ -43,6 +43,7 @@ Generator::Generator(){
     max_colors = 12;
     num_blocks = 4;
     num_bottles = 0;
+    hidden = false;
     
     for (i = 1; i <= max_colors; i++){
         colors.push_back(i);
@@ -68,6 +69,7 @@ Generator::Generator(const int &blocks, const int &max){
     max_colors = max;
     num_blocks = blocks;
     num_bottles = 0;
+    hidden = false;
     
     for (i = 1; i <= max_colors; i++){
         colors.push_back(i);
@@ -96,6 +98,7 @@ bool Generator::generate_level(const int &number_colors){
 
     // num_colors must be >= 2 and <= max_colors
     if (number_colors > max_colors || number_colors < 2){
+        cout << "number_colors out of range\n";
         return false;
     }
 
@@ -186,10 +189,15 @@ void Generator::print_level_data(ostream& stream){
     size_t i;
 
     stream << rows << " " << cols << " " << num_bottles << " " << num_blocks << " ";
-    for (i = 0; i < bottles.size()-1; i++){
+    for (i = 0; i < bottles.size(); i++){
         stream << bottles[i] << " ";
     }
-    stream << bottles[bottles.size()-1] << endl;
+    if (is_hidden()){
+        stream << "H" << endl;
+    } else {
+        stream << endl;
+    }
+    //stream << bottles[bottles.size()-1] << endl;
 }
 
 
@@ -250,4 +258,16 @@ void Generator::set_rows_cols(){
         rows = 2;
     }
     return;
+}
+
+void Generator::set_hidden(bool val){
+    hidden = val;
+}
+
+bool Generator::is_hidden(){
+    if (hidden == true){
+        return true;
+    } else {
+        return false;
+    }
 }

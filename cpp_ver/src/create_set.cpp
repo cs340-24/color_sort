@@ -32,6 +32,8 @@
 #include <vector>
 #include <iostream>
 #include <cstring>
+#include <string>
+#include <sstream>
 #include <dirent.h>
 #include <sys/stat.h>
 #include "../include/Generator.hpp"
@@ -54,7 +56,9 @@ int main(int argc, char *argv[]){
     string level_filename;           // Filename for individual level file
     string level_files_dir;          // Directory to put the individual level files into
     string games_dir;                // Directory to put file that contains all level data
-
+    string line;                     // for reading input file
+    char hidden;
+    istringstream ss;
 
     // Print instructions if given bad command line args
     if (argc != 4){
@@ -136,11 +140,27 @@ int main(int argc, char *argv[]){
 
 
     // Read the level data file and create the levels
-    while (input_file >> num_colors >> num_levels){
+    while (getline(input_file, line)){
+        hidden = ' ';
+        int res = sscanf(line.c_str(), "%d %d %c", &num_colors, &num_levels, &hidden);
+        if (res < 2 || res > 3){
+            cerr << "Bad input file\n";
+            return -1;
+        }
+        cout << "num_colors: " << num_colors << " num_level: " << num_levels << " hidden; " << hidden << endl;
+        if (hidden == 'H'){
+            gen->set_hidden(true);
+        } else {
+            gen->set_hidden(false);
+        }
+    //while (input_file >> num_colors >> num_levels){
 
         for (i = 0; i < num_levels; i++){
+
             if (gen->generate_level(num_colors) == false){
                 cerr << "Could not generate level.\n";
+            } else {
+                gen->print_level_data(cout);
             }
 
             // Write level data to individual file if requested

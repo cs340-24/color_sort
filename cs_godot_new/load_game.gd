@@ -2,7 +2,7 @@ extends Control
 
 var welcome
 var game
-var game_filename = "res://levelData/1per.txt"
+var game_filename = "res://levelData/demo.txt"
 var welcome_screen = preload("res://welcome_screen.tscn")
 var help_screen = preload("res://help.tscn")
 var help_var
@@ -77,7 +77,7 @@ func load_game_data():
 	if game_file != null: 
 		while game_file.get_position() < game_file.get_length():
 			var numStr = game_file.get_line().split(" ")
-			
+						
 			# convert to floats
 			var nums = []
 			for num in numStr:
@@ -89,8 +89,13 @@ func load_game_data():
 				"num_colors" : 0,
 				"num_bottles" : nums[2], 
 				"num_blocks" : nums[3],
-				"level_string" : numStr 
+				"level_string" : numStr,
+				"hidden" : false
 			}
+			
+			if numStr[numStr.size() - 1] == "H":
+				GameData.level_data["hidden"] = true
+				numStr.remove_at(numStr.size() - 1);
 			
 			# add number of colors 
 			if GameData.level_data["num_bottles"] > 4:

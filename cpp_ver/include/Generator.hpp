@@ -64,6 +64,12 @@ public:
 
     void set_rows_cols();
 
+    // set value of hidden to true or false
+    void set_hidden(bool val);
+    
+    // returns true if level is a hidden level and false if not
+    bool is_hidden();
+
 protected:
     std::vector <int> colors;   // Bank of colors available to use 
                                  // (ints starting with 'A')
@@ -74,4 +80,5 @@ protected:
     int num_bottles;             // Number of bottles in the level
     int rows;
     int cols;
+    bool hidden;                 // true if this level hides colors for added difficulty
 };

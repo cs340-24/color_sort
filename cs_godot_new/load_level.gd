@@ -18,11 +18,16 @@ func _ready():
 	GameData.moves = 0
 	level = get_child(6)
 	$Background_music.play()
-	GameData.hide_colors = false;
+	
 	
 	for level_data in GameData.levels:
 		GameData.level_data = level_data 
-
+		
+		if GameData.level_data["hidden"] == true:
+			GameData.hide_colors = true
+		else:
+			GameData.hide_colors = false
+		
 		# bottles_completed and bottles_pressed need to be 0 to start
 		GameData.bottles_completed = 0
 		GameData.bottles_pressed = 0
