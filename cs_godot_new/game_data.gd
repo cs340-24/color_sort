@@ -1,10 +1,9 @@
 extends Node
 
-
 var color_filename = "res://colors.txt"
 var bottles_scene = preload("res://level.tscn")
 var game_screen = preload("res://game.tscn")
-var win_msg = preload("res://win_msg.tscn")
+var win_msg = preload("res://new_win.tscn")
 
 signal reset_level
 signal make_move
