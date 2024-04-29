@@ -12,9 +12,11 @@ default_font_size = 10
 
 [node name="WelcomeScreen" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 3600.0
-offset_bottom = 6400.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -448,11 +450,15 @@ size_flags_vertical = 3
 color = Color(0.969, 0.329, 0.49, 1)
 
 [node name="Title" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 1250.0
-offset_right = 3200.0
-offset_bottom = 3250.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1375.0
+offset_top = 1000.0
+offset_right = 1375.0
+offset_bottom = 3000.0
+grow_horizontal = 2
 theme_override_constants/separation = -600
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Title"]
