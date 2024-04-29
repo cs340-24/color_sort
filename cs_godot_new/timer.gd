@@ -1,4 +1,4 @@
-extends Panel
+extends HBoxContainer
 
 var time: float = 10000
 var minutes: int = 0
