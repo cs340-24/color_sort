@@ -1,4 +1,10 @@
 res://main.tscn
 res://game.tscn
+res://load_game.gd
 res://load_level.gd
+res://levelData/currentLevel.txt
 res://levelData/demo.txt
+res://save_level.gd
+res://Background_music.gd
+res://sounds.gd
+res://toolbar.tscn

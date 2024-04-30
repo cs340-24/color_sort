@@ -92,9 +92,9 @@ func load_game_data():
 			counter = counter+1
 		loadSaveVec.erase(counter-1)
 		savedLevelFirstString = loadSaveVec[0].split(" ")
-		savedLevelFirstString.remove_at(savedLevelFirstString.size()-1)
+		#savedLevelFirstString.remove_at(savedLevelFirstString.size()-1)
 		savedLevelLastMoveString = loadSaveVec[counter-2].split(" ") 
-		savedLevelLastMoveString.remove_at(savedLevelLastMoveString.size()-1)
+		#savedLevelLastMoveString.remove_at(savedLevelLastMoveString.size()-1)
 		for x in savedLevelFirstString:
 			savedLevelFirst.push_back(float(x))
 		for y in savedLevelLastMoveString:
@@ -106,6 +106,8 @@ func load_game_data():
 		while game_file.get_position() < game_file.get_length():
 			var numStr = game_file.get_line().split(" ")
 			# convert to floats
+			print("NUMSTR", numStr)
+			print("SAVEDLEVELFIRST", savedLevelFirstString)
 			var nums = []
 			if reachedSaveLevel:
 				for num in numStr:
@@ -113,8 +115,10 @@ func load_game_data():
 			if saveExists:
 				if numStr == savedLevelFirstString:
 					reachedSaveLevel = true
+					numStr = savedLevelLastMoveString
 					for num in savedLevelLastMoveString:
 						nums.push_back(float(num))
+					print("Num - Saved")
 			if reachedSaveLevel:
 				GameData.level_data = {
 					"rows" : nums[0], 
@@ -125,7 +129,6 @@ func load_game_data():
 					"level_string" : numStr,
 					"hidden" : false
 				}
-				
 				if numStr[numStr.size() - 1] == "H":
 					GameData.level_data["hidden"] = true
 					numStr.remove_at(numStr.size() - 1);
@@ -148,7 +151,6 @@ func load_game_data():
 				GameData.level_data["color_vals"] = block_colors
 				GameData.levels.push_back(GameData.level_data)
 		game_file.close()
-		
 		GameData.game_loaded.emit()
 	else: 
 		print("Error: Could not load level data.")

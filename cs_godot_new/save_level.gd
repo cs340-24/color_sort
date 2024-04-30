@@ -47,10 +47,11 @@ func save_game(saveType):
 					if (colorIndex >= 0):
 						levelVec[index] = colorIndex
 						index = index + 1
-			for j in levelVec.size():
+			for j in levelVec.size()-1:
 				levelStr = levelStr + str(levelVec[j]) + " "
+			levelStr = levelStr + str(levelVec[levelVec.size()-1])
 			if GameData.level_data["hidden"] == true:
-				levelStr = levelStr + "H"+ '\n'
+				levelStr = levelStr + " H"+ '\n'
 			else: 
 				levelStr = levelStr + '\n'
 			print("PRINT STRING: ",levelStr)
@@ -60,15 +61,16 @@ func save_game(saveType):
 			
 		else:
 			var file = FileAccess.open(currentLevel, FileAccess.WRITE)
-			var level = get_parent().get_child(3)
+			var level = get_parent().get_child(6)
 			var index = 0
 			for i in GameData.level_data["level_string"].size():
 				levelVec[index] = GameData.level_data["level_string"][i]
 				index = index+1
-			for j in levelVec.size():
-				levelStr = levelStr + String(levelVec[j]) + " "
+			for j in levelVec.size()-1:
+				levelStr = levelStr + str(levelVec[j]) + " "
+			levelStr = levelStr + str(levelVec[levelVec.size()-1])
 			if GameData.level_data["hidden"] == true:
-				levelStr = levelStr + "H"+ '\n'	
+				levelStr = levelStr + " H"+ '\n'	
 			else:
 				levelStr = levelStr + '\n'
 			print("PRINT STRING: ",levelStr)
@@ -77,21 +79,10 @@ func save_game(saveType):
 		
 
 	elif saveType == 'Reset':
-		var file = FileAccess.open(currentLevel, FileAccess.WRITE_READ)
-		print("Connection 'reset_save' connected")
-		print("!! RESET !!")
-		var level = get_parent().get_child(3)
-		var index = 0
-		for i in GameData.level_data["level_string"].size():
-			levelVec[index] = GameData.level_data["level_string"][i]
-			index = index+1
-		for j in levelVec.size():
-			levelStr = levelStr + String(levelVec[j]) + " "
-		if GameData.level_data["hidden"] == true:
-			levelStr = levelStr + "H"+ '\n'
-		else:
-			levelStr = levelStr + '\n'
-		print("PRINT STRING: ",levelStr)
-		file.store_string(levelStr)
-		file.close()
+		if FileAccess.file_exists(currentLevel):
+			var dir = DirAccess.open('res://levelData')
+			dir.remove('currentLevel.txt')
+		levelVec = {}
+		save_game("Save")
+
 	

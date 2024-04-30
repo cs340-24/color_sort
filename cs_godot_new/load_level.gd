@@ -19,10 +19,9 @@ func _ready():
 	GameData.moves = 0
 	level = get_child(6)
 	$Background_music.play()
-	
 	for level_data in GameData.levels:
 		GameData.level_data = level_data 
-		
+		print ("Iterating")
 		if GameData.level_data["hidden"] == true:
 			GameData.hide_colors = true
 		else:
@@ -32,7 +31,7 @@ func _ready():
 		GameData.bottles_completed = 0
 		GameData.bottles_pressed = 0
 
-		
+		print(" Pre load level data")
 		# load the level's data
 		load_level_data(level_data)
 		
@@ -102,7 +101,7 @@ func load_level_data(level_data):
 		new_bottle.set_name(node_name)
 		level.add_child(new_bottle)
 		new_bottle.set_owner(get_node("."))
-	
+	print("Loaded load_level_data")
 	set_colors(level_data)
 
 						
@@ -203,6 +202,7 @@ func set_colors(level_data):
 			
 			i.set_meta("top_blocks", top_blocks)
 			i.set_meta("empty_blocks", numEmpty)
+			print("loaded set colors")
 				
 
 
