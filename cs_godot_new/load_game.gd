@@ -101,23 +101,20 @@ func load_game_data():
 			savedLevelLastMove.push_back(float(y))
 			saveFile.close()
 	if game_file != null:
+		if saveExists:
+			reachedSaveLevel = false
 		while game_file.get_position() < game_file.get_length():
-			if saveExists:
-				reachedSaveLevel = false
 			var numStr = game_file.get_line().split(" ")
 			# convert to floats
 			var nums = []
 			if reachedSaveLevel:
 				for num in numStr:
 					nums.push_back(float(num))
-			print("SaveLevel = ", savedLevelFirstString)
-			print("nums = ", numStr)
 			if saveExists:
 				if numStr == savedLevelFirstString:
 					reachedSaveLevel = true
 					for num in savedLevelLastMoveString:
 						nums.push_back(float(num))
-			print(nums)
 			if reachedSaveLevel:
 				GameData.level_data = {
 					"rows" : nums[0], 

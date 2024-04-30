@@ -184,6 +184,26 @@ func set_colors(level_data):
 				GameData.bottles_completed = GameData.bottles_completed  + 1
 			else:
 				i.set_meta("is_complete", false)
+				# Loading from save file
+		if i.get_meta("top_color") == GameData.empty_color:
+			var top_blocks = 0
+			var numEmpty = 0
+			for j in i.get_child(0).get_child(0).get_children():
+				if j.get_meta("color") != GameData.empty_color:
+					i.set_meta("top_color", j.get_meta("color"))
+					break
+				else:
+					numEmpty = numEmpty + 1
+			
+			for j in i.get_child(0).get_child(0).get_children():
+				if j.get_meta("color") == i.get_meta("top_color") && j.get_meta("hidden") == false:
+					top_blocks = top_blocks + 1
+				else:
+					break
+			
+			i.set_meta("top_blocks", top_blocks)
+			i.set_meta("empty_blocks", numEmpty)
+				
 
 
 func print_metadata(bottles):

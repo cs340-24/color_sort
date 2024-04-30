@@ -40,16 +40,19 @@ func save_game(saveType):
 				levelVec[index] = GameData.level_data["level_string"][x]
 				index = index + 1
 			for i in level.get_children():
-				for j in i.get_node("Button/Blocks").get_children():
+				for j in i.get_child(0).get_child(0).get_children():
 					#print("Color: ", j.get_theme_stylebox("panel").bg_color)
-					var colorIndex = GameData.colors.values().find(j.get_theme_stylebox("panel").bg_color)
+					var colorIndex = GameData.colors.values().find(j.get_meta("color"))
 					##if j.get_theme_stylebox("panel").bg_color in GameData.colors.values():
 					if (colorIndex >= 0):
 						levelVec[index] = colorIndex
 						index = index + 1
 			for j in levelVec.size():
 				levelStr = levelStr + str(levelVec[j]) + " "
-			levelStr = levelStr + '\n'
+			if GameData.level_data["hidden"] == true:
+				levelStr = levelStr + "H"+ '\n'
+			else: 
+				levelStr = levelStr + '\n'
 			print("PRINT STRING: ",levelStr)
 			file.store_string(levelStr)
 			file.close()
@@ -64,7 +67,10 @@ func save_game(saveType):
 				index = index+1
 			for j in levelVec.size():
 				levelStr = levelStr + String(levelVec[j]) + " "
-			levelStr = levelStr + '\n'
+			if GameData.level_data["hidden"] == true:
+				levelStr = levelStr + "H"+ '\n'	
+			else:
+				levelStr = levelStr + '\n'
 			print("PRINT STRING: ",levelStr)
 			file.store_string(levelStr)
 			file.close()
@@ -81,7 +87,10 @@ func save_game(saveType):
 			index = index+1
 		for j in levelVec.size():
 			levelStr = levelStr + String(levelVec[j]) + " "
-		levelStr = levelStr + '\n'
+		if GameData.level_data["hidden"] == true:
+			levelStr = levelStr + "H"+ '\n'
+		else:
+			levelStr = levelStr + '\n'
 		print("PRINT STRING: ",levelStr)
 		file.store_string(levelStr)
 		file.close()
