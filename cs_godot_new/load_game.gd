@@ -106,8 +106,8 @@ func load_game_data():
 		while game_file.get_position() < game_file.get_length():
 			var numStr = game_file.get_line().split(" ")
 			# convert to floats
-			print("NUMSTR", numStr)
-			print("SAVEDLEVELFIRST", savedLevelFirstString)
+			#print("NUMSTR", numStr)
+			#print("SAVEDLEVELFIRST", savedLevelFirstString)
 			var nums = []
 			if reachedSaveLevel:
 				for num in numStr:
