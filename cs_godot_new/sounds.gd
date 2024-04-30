@@ -33,7 +33,7 @@ func sound_control_func(soundType):
 			get_parent().get_node("Toolbar/Buttons/Volume/VolBackground/Panel/SoundBox/Music_Slider").editable = false
 		elif self.volume_db == -80:
 			self.volume_db = -20
-			get_parent().get_node("Background_music").volume_db = -20
+			get_parent().get_node("Background_music").volume_db = 0
 			get_parent().get_node("Toolbar/Buttons/Volume/VolBackground/Panel/SoundBox/Sound_Slider").editable = true
 			get_parent().get_node("Toolbar/Buttons/Volume/VolBackground/Panel/SoundBox/Music_Slider").editable = true
 	
