@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://cybn5fxu4w8xu"]
+
+[ext_resource type="PackedScene" uid="uid://balni2jh5uo8e" path="res://themes/fake_confetti_particles.tscn" id="1_jnw0w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnb4t"]
+bg_color = Color(0.243137, 0.701961, 0.792157, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="WinMsg" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+initial_position = 2
+size = Vector2i(3000, 2500)
+visible = true
+unresizable = false
+content_scale_size = Vector2i(3000, 0)
+content_scale_mode = 2
+content_scale_aspect = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnb4t")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupPanel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+fit_content = true
+
+[node name="FakeConfettiParticles" parent="PopupPanel" instance=ExtResource("1_jnw0w")]
+position = Vector2(500, 200)
+scale = Vector2(3, 3)
+amount = 200
+size = 10.0
+random_size = true
+random_position = true
+one_shot = false

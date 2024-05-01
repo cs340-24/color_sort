@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddxjsvd1edph"]
+
+[ext_resource type="Script" path="res://scripts/fake_confetti_particles.gd" id="1_4ye71"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmrmh"]
+
+[node name="WinMsg" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Popup" type="PopupPanel" parent="."]
+position = Vector2i(60, 0)
+size = Vector2i(600, 300)
+max_size = Vector2i(720, 1280)
+content_scale_size = Vector2i(1200, 300)
+theme_override_styles/panel = SubResource("StyleBoxFlat_rmrmh")
+
+[node name="MarginContainer" type="MarginContainer" parent="Popup"]
+offset_right = 600.0
+offset_bottom = 300.0
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 30
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 75
+text = "    Level 
+Complete!"
+fit_content = true
+
+[node name="Confetti" type="Node2D" parent="."]
+script = ExtResource("1_4ye71")
+amount = 150
+random_amount = true
+size = 3.0
+random_size = true
+visibility_rect = Rect2(0, 0, 1024, 600)
+random_position = true
+one_shot = false
+timer_wait_time = 1.0

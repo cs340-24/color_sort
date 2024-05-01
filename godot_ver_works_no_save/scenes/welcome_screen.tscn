@@ -1,0 +1,476 @@
+[gd_scene load_steps=9 format=3 uid="uid://k8hnf3djk3l7"]
+
+[ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://themes/toolbar_button.tres" id="1_0yikw"]
+[ext_resource type="Script" path="res://scripts/start_button.gd" id="1_w2il2"]
+[ext_resource type="Script" path="res://scripts/help_button.gd" id="3_6wncq"]
+[ext_resource type="Script" path="res://scripts/time_challenge_mode.gd" id="4_hlo4p"]
+[ext_resource type="Texture2D" uid="uid://debqsliglubjx" path="res://images/logo_color.png" id="5_urixu"]
+[ext_resource type="Texture2D" uid="uid://dwy8ifh7oepxs" path="res://images/logo_sort.png" id="6_d7ixt"]
+
+[sub_resource type="Theme" id="Theme_lon7r"]
+default_font_size = 10
+
+[sub_resource type="Shortcut" id="Shortcut_k3xuq"]
+
+[node name="WelcomeScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.168627, 0.219608, 0.301961, 1)
+
+[node name="PlayGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = 550.0
+offset_right = 800.0
+offset_bottom = 950.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_lon7r")
+theme_override_font_sizes/font_size = 180
+theme_override_styles/normal = ExtResource("1_0yikw")
+theme_override_styles/hover = ExtResource("1_0yikw")
+theme_override_styles/pressed = ExtResource("1_0yikw")
+theme_override_styles/disabled = ExtResource("1_0yikw")
+theme_override_styles/focus = ExtResource("1_0yikw")
+action_mode = 0
+shortcut = SubResource("Shortcut_k3xuq")
+text = "Play Game"
+script = ExtResource("1_w2il2")
+
+[node name="HowTo" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = 1300.0
+offset_right = 800.0
+offset_bottom = 1700.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_lon7r")
+theme_override_font_sizes/font_size = 180
+theme_override_styles/normal = ExtResource("1_0yikw")
+theme_override_styles/hover = ExtResource("1_0yikw")
+theme_override_styles/pressed = ExtResource("1_0yikw")
+theme_override_styles/disabled = ExtResource("1_0yikw")
+theme_override_styles/focus = ExtResource("1_0yikw")
+action_mode = 0
+shortcut = SubResource("Shortcut_k3xuq")
+text = "How To Play"
+script = ExtResource("3_6wncq")
+
+[node name="Timed Mode" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = 2050.0
+offset_right = 800.0
+offset_bottom = 2450.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_lon7r")
+theme_override_font_sizes/font_size = 180
+theme_override_styles/normal = ExtResource("1_0yikw")
+theme_override_styles/hover = ExtResource("1_0yikw")
+theme_override_styles/pressed = ExtResource("1_0yikw")
+theme_override_styles/disabled = ExtResource("1_0yikw")
+theme_override_styles/focus = ExtResource("1_0yikw")
+action_mode = 0
+shortcut = SubResource("Shortcut_k3xuq")
+text = "Timed Mode
+"
+script = ExtResource("4_hlo4p")
+
+[node name="RightBorder" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = -1
+
+[node name="DarkBlue2" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+color = Color(0.125, 0.549, 0.729, 1)
+
+[node name="LightGreen" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.447059, 1, 0.447059, 1)
+
+[node name="Red" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.69, 0.165, 0.314, 1)
+
+[node name="Lilac3" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.8, 0.6, 1, 1)
+
+[node name="Orange" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.588235, 0.270588, 1)
+
+[node name="DarkBlue" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.125, 0.549, 0.729, 1)
+
+[node name="Yellow2" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 0.306, 1)
+
+[node name="LightBlue2" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.368627, 0.878431, 1, 1)
+
+[node name="DarkPink" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.968627, 0.329412, 0.490196, 1)
+
+[node name="LightGreen2" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.447, 1, 0.447, 1)
+
+[node name="Lilac" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.8, 0.6, 1, 1)
+
+[node name="Yellow" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 0.305882, 1)
+
+[node name="LightPink" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.760784, 0.8, 1)
+
+[node name="LightBlue" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.369, 0.878, 1, 1)
+
+[node name="DarkPurple" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.588235, 0.168627, 0.588235, 1)
+
+[node name="Orange2" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.588, 0.271, 1)
+
+[node name="DarkBlue3" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.125, 0.549, 0.729, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.16, 0.64, 0.16, 1)
+
+[node name="LightBlue3" type="ColorRect" parent="RightBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.87
+color = Color(0.369, 0.878, 1, 1)
+
+[node name="LeftBorder" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 120.0
+grow_vertical = 2
+theme_override_constants/separation = -1
+
+[node name="LightGreen" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.447, 1, 0.447, 1)
+
+[node name="Orange" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.588, 0.271, 1)
+
+[node name="LightBlue" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.369, 0.878, 1, 1)
+
+[node name="DarkPurple" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.588, 0.169, 0.588, 1)
+
+[node name="DarkBlue2" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.125, 0.549, 0.729, 1)
+
+[node name="Yellow" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 0.306, 1)
+
+[node name="LightPink" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.761, 0.8, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.16, 0.64, 0.16, 1)
+
+[node name="Orange3" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.588, 0.271, 1)
+
+[node name="LightBlue2" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.369, 0.878, 1, 1)
+
+[node name="DarkPink" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.969, 0.329, 0.49, 1)
+
+[node name="LightGreen2" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.447, 1, 0.447, 1)
+
+[node name="Lilac" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.8, 0.6, 1, 1)
+
+[node name="Red" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.69, 0.165, 0.314, 1)
+
+[node name="LightPink2" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.761, 0.8, 1)
+
+[node name="LightBlue3" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.369, 0.878, 1, 1)
+
+[node name="Orange2" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 0.588235, 0.270588, 1)
+
+[node name="Yellow2" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(1, 1, 0.306, 1)
+
+[node name="Lilac3" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.8, 0.6, 1, 1)
+
+[node name="DarkPink2" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.968627, 0.329412, 0.490196, 1)
+
+[node name="DarkBlue" type="ColorRect" parent="LeftBorder"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.97
+color = Color(0.125, 0.549, 0.729, 1)
+
+[node name="TopBorder" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_constants/separation = -1
+
+[node name="ColorRect7" type="ColorRect" parent="TopBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.969, 0.329, 0.49, 1)
+
+[node name="ColorRect" type="ColorRect" parent="TopBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.369, 0.878, 1, 1)
+
+[node name="LightPink" type="ColorRect" parent="TopBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 0.760784, 0.8, 1)
+
+[node name="Orange" type="ColorRect" parent="TopBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 0.588, 0.271, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="TopBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.447, 1, 0.447, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="TopBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.588, 0.169, 0.588, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="TopBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 0.306, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="TopBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.8, 0.6, 1, 1)
+
+[node name="BottomBorder" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = -1
+
+[node name="Orange" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 0.588, 0.271, 1)
+
+[node name="ColorRect" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.369, 0.878, 1, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.16, 0.64, 0.16, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.8, 0.6, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.447, 1, 0.447, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.588, 0.169, 0.588, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 0.306, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="BottomBorder"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.969, 0.329, 0.49, 1)
+
+[node name="Color" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1288.5
+offset_top = 1000.0
+offset_right = 1288.5
+offset_bottom = 2131.0
+grow_horizontal = 2
+texture = ExtResource("5_urixu")
+
+[node name="Sort" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1017.0
+offset_top = 2000.0
+offset_right = 1017.0
+offset_bottom = 2960.0
+grow_horizontal = 2
+texture = ExtResource("6_d7ixt")

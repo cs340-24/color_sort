@@ -1,0 +1,240 @@
+[gd_scene load_steps=17 format=3 uid="uid://dso5mlog2m67y"]
+
+[ext_resource type="Script" path="res://scripts/reset_button.gd" id="1_46l8a"]
+[ext_resource type="StyleBox" uid="uid://b4ntsttr27pb3" path="res://themes/toolbar_button.tres" id="1_ny3u1"]
+[ext_resource type="Script" path="res://scripts/undo_button.gd" id="2_16ngt"]
+[ext_resource type="Script" path="res://scripts/help_button.gd" id="4_n56ya"]
+[ext_resource type="Script" path="res://scripts/volume_button.gd" id="5_78l4l"]
+[ext_resource type="Script" path="res://scripts/SoundBox.gd" id="6_kqd0o"]
+[ext_resource type="Script" path="res://scripts/Mute_Toggle.gd" id="6_p7a82"]
+[ext_resource type="StyleBox" uid="uid://b16a3dgebw51b" path="res://themes/slider.tres" id="7_ns4hg"]
+[ext_resource type="StyleBox" uid="uid://dll8kig8jal2o" path="res://themes/grabber_highlight.tres" id="8_3huj3"]
+[ext_resource type="StyleBox" uid="uid://cnlmf4wwv85qe" path="res://themes/mute_normal.tres" id="9_ilnud"]
+
+[sub_resource type="Theme" id="Theme_3tauq"]
+default_font_size = 10
+
+[sub_resource type="Shortcut" id="Shortcut_g7neh"]
+
+[sub_resource type="Theme" id="Theme_0nw6a"]
+/styles/StyleBoxFlat = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j4gi"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+border_width_left = 40
+border_width_top = 40
+border_width_right = 40
+border_width_bottom = 40
+border_color = Color(0.541176, 0.541176, 0.541176, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vq4mg"]
+bg_color = Color(0, 0.909804, 0.890196, 1)
+border_width_left = 40
+border_width_right = 40
+border_width_bottom = 40
+border_color = Color(0.541176, 0.541176, 0.541176, 1)
+border_blend = true
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4yrj6"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+border_width_left = 40
+border_width_right = 40
+border_width_bottom = 40
+border_color = Color(0.541176, 0.541176, 0.541176, 1)
+border_blend = true
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="toolbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -300.0
+offset_bottom = -6000.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = -130.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 200
+
+[node name="Undo" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_3tauq")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = ExtResource("1_ny3u1")
+theme_override_styles/hover = ExtResource("1_ny3u1")
+theme_override_styles/pressed = ExtResource("1_ny3u1")
+theme_override_styles/disabled = ExtResource("1_ny3u1")
+theme_override_styles/focus = ExtResource("1_ny3u1")
+text = "Undo"
+script = ExtResource("2_16ngt")
+
+[node name="Reset" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_3tauq")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = ExtResource("1_ny3u1")
+theme_override_styles/hover = ExtResource("1_ny3u1")
+theme_override_styles/pressed = ExtResource("1_ny3u1")
+theme_override_styles/disabled = ExtResource("1_ny3u1")
+theme_override_styles/focus = ExtResource("1_ny3u1")
+action_mode = 0
+shortcut = SubResource("Shortcut_g7neh")
+text = "Reset"
+script = ExtResource("1_46l8a")
+
+[node name="Help" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_0nw6a")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = ExtResource("1_ny3u1")
+theme_override_styles/hover = ExtResource("1_ny3u1")
+theme_override_styles/pressed = ExtResource("1_ny3u1")
+theme_override_styles/disabled = ExtResource("1_ny3u1")
+theme_override_styles/focus = ExtResource("1_ny3u1")
+action_mode = 0
+shortcut = SubResource("Shortcut_g7neh")
+text = "Help
+"
+script = ExtResource("4_n56ya")
+
+[node name="Volume" type="Button" parent="Buttons"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_0nw6a")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = ExtResource("1_ny3u1")
+theme_override_styles/hover = ExtResource("1_ny3u1")
+theme_override_styles/pressed = ExtResource("1_ny3u1")
+theme_override_styles/disabled = ExtResource("1_ny3u1")
+theme_override_styles/focus = ExtResource("1_ny3u1")
+action_mode = 0
+shortcut = SubResource("Shortcut_g7neh")
+text = "Volume
+"
+expand_icon = true
+script = ExtResource("5_78l4l")
+
+[node name="VolBackground" type="Popup" parent="Buttons/Volume"]
+position = Vector2i(50, 1200)
+size = Vector2i(3500, 3000)
+
+[node name="Panel" type="Panel" parent="Buttons/Volume/VolBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0j4gi")
+
+[node name="SoundBox" type="VBoxContainer" parent="Buttons/Volume/VolBackground/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+script = ExtResource("6_kqd0o")
+
+[node name="MusicLabel" type="Label" parent="Buttons/Volume/VolBackground/Panel/SoundBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 200
+text = "     
+
+      Music Volume"
+
+[node name="Music_Slider" type="HSlider" parent="Buttons/Volume/VolBackground/Panel/SoundBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/center_grabber = 0
+theme_override_constants/grabber_offset = 0
+theme_override_styles/slider = ExtResource("7_ns4hg")
+theme_override_styles/grabber_area = ExtResource("8_3huj3")
+theme_override_styles/grabber_area_highlight = ExtResource("8_3huj3")
+min_value = -80.0
+max_value = 0.0
+
+[node name="MusicLabel2" type="Label" parent="Buttons/Volume/VolBackground/Panel/SoundBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 200
+text = "     
+      Sound Effect Volume
+"
+vertical_alignment = 1
+
+[node name="Sound_Slider" type="HSlider" parent="Buttons/Volume/VolBackground/Panel/SoundBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/slider = ExtResource("7_ns4hg")
+theme_override_styles/grabber_area = ExtResource("8_3huj3")
+theme_override_styles/grabber_area_highlight = ExtResource("8_3huj3")
+min_value = -80.0
+max_value = 0.0
+
+[node name="MusicLabel3" type="Label" parent="Buttons/Volume/VolBackground/Panel/SoundBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 100
+text = "                                                                                         
+                                         
+                     
+                   
+
+
+
+
+
+"
+vertical_alignment = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Mute_Toggle" type="Button" parent="Buttons/Volume/VolBackground/Panel/SoundBox"]
+y_sort_enabled = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 200
+theme_override_styles/normal = ExtResource("9_ilnud")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vq4mg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4yrj6")
+action_mode = 0
+text = "   Unmute Volume"
+clip_text = true
+script = ExtResource("6_p7a82")
+
+[connection signal="changed" from="Buttons/Volume/VolBackground/Panel/SoundBox/Music_Slider" to="Buttons/Volume/VolBackground/Panel/SoundBox" method="_on_music_slider_changed"]
+[connection signal="value_changed" from="Buttons/Volume/VolBackground/Panel/SoundBox/Music_Slider" to="Buttons/Volume/VolBackground/Panel/SoundBox" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Buttons/Volume/VolBackground/Panel/SoundBox/Sound_Slider" to="Buttons/Volume/VolBackground/Panel/SoundBox" method="_on_sound_slider_value_changed"]
+[connection signal="pressed" from="Buttons/Volume/VolBackground/Panel/SoundBox/Mute_Toggle" to="Buttons/Volume/VolBackground/Panel/SoundBox/Mute_Toggle" method="_on_pressed"]

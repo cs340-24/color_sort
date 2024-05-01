@@ -1,0 +1,13 @@
+empty 212c3d
+light_blue 5ee0ff
+light_green 72ff72
+lavender cc99ff
+light_yellow ffff4e
+light_pink ffc2cc
+dark_purple 962b96
+hot_pink e45479
+dark_blue 218ebc
+dark_yellow c0a432
+dark_pink 9c2346
+orange ff9645
+dark_green 29a329 
