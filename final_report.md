@@ -48,14 +48,14 @@ Since we have not publicly released the app, we did not receive any measures of 
     * Give user limited amount of time to complete levels
 
 ### Features Actually Implemented:
-&#9989; Reset levels
-&#9989; Undo moves
-&#10060; Save game progress 
-&#9989; Difficulty level customization
-* Additional challenges:
-    &#9989; Hide some colors from the user
-    &#10060; Limit the number of moves that can made to complete the level
-    &#10060; Give user limited amount of time to complete levels
+&#9989; Reset levels <br>
+&#9989; Undo moves <br>
+&#10060; Save game progress <br>
+&#9989; Difficulty level customization <br>
+* Additional challenges: <br>
+    &#9989; Hide some colors from the user <br>
+    &#10060; Limit the number of moves that can made to complete the level <br>
+    &#10060; Give user limited amount of time to complete levels <br>
     
 ### Description of Incomplete Features
 Unfortunately, we were unable to fully implement the save game functionality before the due date. We are able to succesfully save and load the game state. However, loading a saved game causes probelms with the game control buttons, such as undo, reset, and start game. We were very close to completing this though, so we expect to be able to complete this feature soon. <br>
